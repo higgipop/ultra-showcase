@@ -18,7 +18,7 @@ const siteConfig = {
   },
 
   statItems: [
-    { value: "98+", label: "Sites Launched" },
+    { value: "800+", label: "Sites Launched" },
     { value: "< 2s", label: "Avg. Load Time" },
     { value: "90+", label: "Avg. PageSpeed" },
     { value: "4.9★", label: "Client Rating" },
