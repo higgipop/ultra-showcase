@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const links = [
-  { href: "/about", label: "About" },
-  { href: "/impact", label: "Impact" },
-  { href: "/environment", label: "Environment" },
-  { href: "/community", label: "Community" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contact" },
+  { href: "/services", label: "Services" },
+  { href: "/industries", label: "Industries" },
+  { href: "/work", label: "Work" },
+  { href: "/process", label: "Process" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Nav() {
@@ -30,15 +30,13 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between gap-6">
-        <Link href="/" className="flex-shrink-0 flex items-center gap-3">
-          <div className="flex flex-col leading-none">
-            <span className={`text-base font-semibold tracking-wide transition-colors ${scrolled ? "text-[var(--color-heading)]" : "text-white"}`}>
-              Amory Tech Park
-            </span>
-            <span className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${scrolled ? "text-[var(--color-primary)]" : "text-[var(--color-accent)]"}`}>
-              Monroe County, MS
-            </span>
+        <Link href="/" className="flex-shrink-0 flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg cp-gradient-bar flex items-center justify-center">
+            <span className="text-white font-black text-sm">U</span>
           </div>
+          <span className={`text-base font-bold tracking-tight transition-colors ${scrolled ? "text-[var(--color-heading)]" : "text-white"}`}>
+            ULTRA
+          </span>
         </Link>
 
         <nav className="hidden xl:flex items-center gap-7 flex-1 justify-center">
@@ -58,11 +56,17 @@ export default function Nav() {
         </nav>
 
         <div className="hidden xl:flex items-center gap-3 flex-shrink-0">
-          <Link
-            href="/community"
-            className="text-sm font-semibold px-4 py-2 rounded-md bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white transition-colors whitespace-nowrap"
+          <a
+            href="tel:8135550100"
+            className={`text-sm font-medium transition-colors ${scrolled ? "text-[var(--color-heading)]" : "text-white/70 hover:text-white"}`}
           >
-            Get Involved
+            (813) 555-0100
+          </a>
+          <Link
+            href="/contact"
+            className="text-sm font-semibold px-5 py-2.5 rounded-lg bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white transition-colors whitespace-nowrap"
+          >
+            Get a Quote
           </Link>
         </div>
 
@@ -94,12 +98,13 @@ export default function Nav() {
             </Link>
           ))}
           <div className="flex flex-col gap-3 pt-2 border-t border-gray-100">
+            <a href="tel:8135550100" className="text-sm text-gray-500 text-center">(813) 555-0100</a>
             <Link
-              href="/community"
+              href="/contact"
               onClick={() => setOpen(false)}
-              className="text-sm font-semibold bg-[var(--color-primary)] text-white px-4 py-2.5 rounded-md text-center"
+              className="text-sm font-semibold bg-[var(--color-primary)] text-white px-4 py-2.5 rounded-lg text-center"
             >
-              Get Involved
+              Get a Quote
             </Link>
           </div>
         </div>

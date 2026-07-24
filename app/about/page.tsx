@@ -1,100 +1,100 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import siteConfig from "@/lib/site.config";
 
 export const metadata: Metadata = {
-  title: "About | Amory Technology Park",
-  description: "A different approach to community partnership — building trust from the very first step.",
+  title: "About | ULTRA Design Agency",
+  description: "Who we are, how we work, and why we build sites the way we do.",
 };
 
-const bullets = [
-  "Listen respectfully.",
-  "Share information openly.",
-  "Answer questions honestly.",
-  "Continue engaging long after construction is complete.",
+const values = [
+  { title: "No page builders. Ever.", body: "Every site we build is custom code on modern infrastructure. No WordPress, no Squarespace, no Wix. This isn't snobbery — it's why our sites load in under 2 seconds and score 90+ on PageSpeed." },
+  { title: "Fixed price. Fixed scope.", body: "You know exactly what you're paying before the project starts. We don't track hours. We don't send invoices for 'extra time'. The scope is agreed, the price is set, the site gets built." },
+  { title: "One point of contact.", body: "You work with the person building your site, not an account manager relaying messages. Faster decisions. No miscommunication. Better outcomes." },
+  { title: "Results over aesthetics.", body: "A beautiful site that doesn't rank or convert is a liability. We measure success in leads, rankings, and load times — not awards." },
+];
+
+const team = [
+  { name: "Michael H.", title: "Founder & Creative Director", bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. 12 years building websites for local businesses, national brands, and everyone in between." },
+  { name: "Dignesh P.", title: "Lead Developer", bio: "Lorem ipsum dolor sit amet. Full-stack engineer specializing in Next.js, performance optimization, and the kind of code that doesn't break at 2am." },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="relative">
-      <div className="absolute top-0 left-0 right-0 h-1 cp-gradient-bar" />
-
-      <section className="bg-[var(--color-dark)] pt-28 pb-16">
+    <>
+      <section className="relative bg-[var(--color-dark)] hex-pattern pt-32 pb-24">
+        <div className="absolute top-0 left-0 right-0 h-1 cp-gradient-bar" />
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[var(--color-accent)] text-sm font-semibold tracking-widest uppercase mb-3">The Project</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight max-w-2xl">
-            A Different Approach to Community Partnership
+          <p className="text-[var(--color-accent)] text-sm font-semibold tracking-widest uppercase mb-6">About ULTRA</p>
+          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight max-w-3xl mb-8">
+            We build websites.<br /><span className="cp-gradient-text">We measure results.</span>
           </h1>
+          <p className="text-white/60 text-xl max-w-2xl leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. ULTRA is a small web design agency based in Tampa, FL. We work with service businesses, medical practices, law firms, and other local companies that need a site that actually performs.
+          </p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <p className="text-gray-600 leading-relaxed text-lg mb-8">
-            {siteConfig.project.description}
-          </p>
-          <p className="text-gray-600 leading-relaxed text-lg mb-10">
-            Technology plays an important role in everyday life. It supports hospitals, schools, businesses, emergency services, banking, communications, and countless digital services we rely on every day. The Amory Technology Park is designed to help support that future while creating new opportunities for the people of Amory.
-          </p>
-          <p className="text-[var(--color-primary)] text-xs font-semibold tracking-widest uppercase mb-4">Our Commitment</p>
-          <ul className="space-y-4 mb-10">
-            {bullets.map((b) => (
-              <li key={b} className="border-l-4 border-[var(--color-primary)] pl-5 text-gray-700 text-lg">
-                {b}
-              </li>
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <p className="text-[var(--color-primary)] text-xs font-semibold tracking-widest uppercase mb-3">Our Story</p>
+              <h2 className="text-3xl font-bold text-[var(--color-heading)] mb-6 leading-tight">
+                Started because most agency websites were terrible.
+              </h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. After years of auditing small business websites, the pattern was clear: slow load times, no SEO foundation, outdated design, and a monthly retainer for a care plan that meant nothing.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. We started ULTRA to fix that — custom-built, properly optimized, and maintained by people who actually know what they're doing.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. That was the plan. It's still the plan.</p>
+              </div>
+            </div>
+            <div className="space-y-5">
+              {values.map((v) => (
+                <div key={v.title} className="bg-[var(--color-mid)] rounded-xl p-6 border border-gray-100">
+                  <div className="w-6 h-1 cp-gradient-bar rounded-full mb-3" />
+                  <h3 className="font-bold text-[var(--color-heading)] mb-2">{v.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{v.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-[var(--color-dark)]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-[var(--color-accent)] text-xs font-semibold tracking-widest uppercase mb-3">The Team</p>
+            <h2 className="text-3xl font-bold text-white">Small by design.</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {team.map((p) => (
+              <div key={p.name} className="bg-white/5 border border-white/10 rounded-2xl p-8">
+                <div className="w-14 h-14 rounded-full cp-gradient-bar flex items-center justify-center text-white font-bold text-xl mb-5">
+                  {p.name[0]}
+                </div>
+                <h3 className="font-bold text-white mb-1">{p.name}</h3>
+                <p className="text-[var(--color-accent)] text-xs font-semibold tracking-widest uppercase mb-4">{p.title}</p>
+                <p className="text-white/60 text-sm leading-relaxed">{p.bio}</p>
+              </div>
             ))}
-          </ul>
-          <p className="text-[var(--color-heading)] font-semibold text-xl italic">
-            Trust isn&rsquo;t built through presentations. It&rsquo;s built through relationships.
-          </p>
+          </div>
         </div>
       </section>
 
-      <section className="bg-[var(--color-dark)] py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <p className="text-[var(--color-accent)] text-xs font-semibold tracking-widest uppercase mb-4">The Community</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">
-            A Community Built on Resilience
-          </h2>
-          <p className="text-white/70 text-lg leading-relaxed">
-            Amory is known for its resilience. When devastating tornadoes impacted the community, neighbors came together to help neighbors. Families, businesses, churches, schools, first responders, and volunteers worked side by side to rebuild and move forward. That spirit of determination, hard work, and community is what makes Amory special. We believe any company choosing to invest here should reflect those same values.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <p className="text-[var(--color-primary)] text-xs font-semibold tracking-widest uppercase mb-4">Looking Ahead</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-heading)] mb-8 leading-tight">
-            Investing in Amory&rsquo;s Next Chapter
-          </h2>
-          <p className="text-gray-600 leading-relaxed text-lg mb-6">
-            Like many communities across America, Amory has faced economic challenges in recent years. The permanent closure of the Enviva manufacturing facility in 2025 resulted in the loss of local jobs and reminded everyone how important it is to attract long-term investment that creates opportunity for local families.
-          </p>
-          <p className="text-gray-600 leading-relaxed text-lg mb-6">
-            We believe the Amory Technology Park can become part of the solution. Not by replacing the industries that came before it, but by helping write the next chapter of Amory&rsquo;s economy.
-          </p>
-          <p className="text-gray-600 leading-relaxed text-lg mb-10">
-            The campus represents a long-term investment that can create jobs during construction, provide permanent careers, support local businesses, and generate millions of dollars in new property tax revenue for decades to come. Those new revenues can help strengthen the services every family depends on &mdash; from schools and public safety to parks, roads, and community programs.
-          </p>
-          <Link href="/impact" className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-block">
-            See Local Impact Numbers &rarr;
-          </Link>
-        </div>
-      </section>
-
-      <section className="bg-[var(--color-dark)] py-16">
+      <section className="py-24 bg-[var(--color-mid)]">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="w-12 h-1 cp-gradient-bar mx-auto mb-8 rounded-full" />
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Our Promise</h2>
-          <blockquote className="text-xl md:text-2xl text-white/90 font-medium leading-relaxed mb-6">
-            &ldquo;{siteConfig.quote.text}&rdquo;
-          </blockquote>
-          <p className="text-[var(--color-accent)] text-sm font-semibold tracking-wide">
-            &mdash; {siteConfig.quote.attribution}
-          </p>
+          <h2 className="text-3xl font-bold text-[var(--color-heading)] mb-6">Ready to work together?</h2>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact" className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
+              Start a Conversation
+            </Link>
+            <Link href="/work" className="bg-white border border-gray-200 hover:border-[var(--color-primary)] text-[var(--color-heading)] font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
+              See Our Work
+            </Link>
+          </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

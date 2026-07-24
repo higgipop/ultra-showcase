@@ -8,21 +8,15 @@ import siteConfig from "@/lib/site.config";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.amorytechpark.com"),
+  metadataBase: new URL("https://ultra-showcase.vercel.app"),
   title: siteConfig.meta.title,
   description: siteConfig.meta.description,
   openGraph: {
     title: siteConfig.meta.title,
     description: siteConfig.meta.description,
-    url: "https://www.amorytechpark.com",
-    siteName: "Amory Technology Park",
-    images: [
-      {
-        url: "/rendering.jpg",
-        width: 1920,
-        alt: "Amory Technology Park — Monroe County, MS",
-      },
-    ],
+    url: "https://ultra-showcase.vercel.app",
+    siteName: "ULTRA Design Agency",
+    images: [{ url: "/rendering.jpg", width: 1920, alt: "ULTRA Design Agency" }],
     type: "website",
   },
   twitter: {
