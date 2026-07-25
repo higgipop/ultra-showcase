@@ -14,10 +14,12 @@ const industries = [
     accentBg: "bg-[#0A4DA1]",
     accentText: "text-[#E84C27]",
     pages: [
-      { page: "home", label: "Home Page", desc: "Urgency bar, blue hero with coupon cards, phone CTA, service grid, reviews." },
-      { page: "services", label: "Services Page", desc: "6 service detail cards with common issues, flat-rate pricing strip, emergency callout." },
-      { page: "about", label: "About Page", desc: "25+ years story, team grid, core values, guarantees, accreditations." },
-      { page: "contact", label: "Contact / Schedule", desc: "Booking form, service area, hours, emergency line highlighted in orange." },
+      { page: "home", label: "Home Page", desc: "Urgency bar, blue hero with coupon cards, phone CTA, service grid, reviews, blog tips." },
+      { page: "services", label: "Services Page", desc: "6 service cards with common issues, flat-rate pricing strip, emergency callout." },
+      { page: "air-conditioning", label: "Air Conditioning", desc: "Service detail: AC repair/install/maintenance, seasonal specials, trust badges." },
+      { page: "plumbing", label: "Plumbing", desc: "Service detail: emergency plumbing, drain cleaning, water heater, pipe repair." },
+      { page: "about", label: "About Page", desc: "25+ years story, team grid, core values, guarantees, accreditations, certifications." },
+      { page: "contact", label: "Book a Service", desc: "Booking form, service area map, hours, emergency line highlighted in orange." },
     ],
   },
   {
@@ -29,25 +31,29 @@ const industries = [
     accentBg: "bg-[#0C4A6E]",
     accentText: "text-[#0891B2]",
     pages: [
-      { page: "home", label: "Home Page", desc: "Booking form in hero, provider cards, stats strip, insurance accepted, teal palette." },
-      { page: "services", label: "Services Page", desc: "6 specialty cards with what's included, same-day availability banner, insurance grid." },
-      { page: "about", label: "Our Providers", desc: "Expanded provider bios, accepting status, practice philosophy, join our team CTA." },
-      { page: "contact", label: "Appointment Request", desc: "Full intake form, hours, new patient checklist, insurance verification note." },
+      { page: "home", label: "Home Page", desc: "Booking form in hero, provider cards, stats strip, 9 insurance badges, teal palette." },
+      { page: "services", label: "Services Overview", desc: "6 specialty cards with what's included, same-day availability banner, insurance grid." },
+      { page: "primary-care", label: "Primary Care", desc: "Service detail: conditions treated, first visit steps, FAQ, sidebar booking form." },
+      { page: "pediatrics", label: "Pediatrics", desc: "Well-child visit schedule, vaccine grid, emergency symptom callout, parent FAQ." },
+      { page: "about", label: "Meet Your Providers", desc: "4 full provider profiles, practice philosophy, support staff, awards." },
+      { page: "contact", label: "Appointment Request", desc: "Full intake form, hours, location, new patient checklist, insurance verification note." },
     ],
   },
   {
     slug: "legal",
     label: "Legal",
     tagline: "Personal Injury · Business · Family · Estate",
-    description: "Professional navy and gold. Attorney spotlight, verdicts & settlements, news grid, and awards badges that establish instant authority.",
-    accent: "#C9A84C",
-    accentBg: "bg-[#0C2340]",
-    accentText: "text-[#C9A84C]",
+    description: "Professional dark/red design. Attorney spotlight, verdicts & settlements, news grid, and awards badges that establish instant authority.",
+    accent: "#DC2626",
+    accentBg: "bg-[#111827]",
+    accentText: "text-[#DC2626]",
     pages: [
-      { page: "home", label: "Home Page", desc: "Navy hero, verdicts card, practice areas, attorney grid, news section, gold CTAs." },
-      { page: "services", label: "Practice Areas", desc: "6 practice area deep-dives with common cases, no-fee callout, awards strip." },
-      { page: "about", label: "Our Attorneys", desc: "Full attorney bios, bar admissions, firm timeline, community, credentials." },
-      { page: "contact", label: "Case Evaluation", desc: "Case intake form, what to expect in 3 steps, confidentiality statement." },
+      { page: "home", label: "Home Page", desc: "Dark hero, $17M+ settlements, case eval form, clickable FAQ, video testimonials." },
+      { page: "practice-areas", label: "Practice Areas", desc: "6 practice area cards with settlement ranges, no-fee bar, settlement showcase." },
+      { page: "personal-injury", label: "Personal Injury", desc: "2-col layout: case wins sidebar, FREE CASE EVALUATION form, 11-question FAQ." },
+      { page: "business-litigation", label: "Business Litigation", desc: "Business dispute detail: case wins, multi-million recoveries, business FAQ." },
+      { page: "about", label: "Our Attorneys", desc: "Attorney spotlights, recognitions, firm history timeline, community involvement." },
+      { page: "contact", label: "Case Evaluation", desc: "Case intake form, what happens next steps, confidentiality statement, office." },
     ],
   },
   {
@@ -59,55 +65,63 @@ const industries = [
     accentBg: "bg-[#0F1923]",
     accentText: "text-[#1E90FF]",
     pages: [
-      { page: "home", label: "Home Page", desc: "Dark hero with stats, capability grid by category, cert strip, RFQ CTA." },
-      { page: "services", label: "Capabilities", desc: "4 process deep-dives with equipment, tolerances, materials, lead times." },
-      { page: "about", label: "About the Company", desc: "40+ year history, facility stats, leadership team, certifications detail." },
-      { page: "contact", label: "Request a Quote", desc: "RFQ form with part specs, 48-hour turnaround promise, NDA note." },
+      { page: "home", label: "Home Page", desc: "ISO cert bar, 2-col hero, capability tile grid, industry tabs, dark cert strip, RFQ CTA." },
+      { page: "capabilities", label: "Full Capabilities", desc: "Filter tabs, NAICS codes, clearances table, contract vehicles (GSA/SEWP/SeaPort)." },
+      { page: "cnc-machining", label: "CNC Machining", desc: "5-axis milling/turning/grinding blocks with spec tables, sidebar RFQ form, file formats." },
+      { page: "fabrication", label: "Fabrication", desc: "TIG/MIG/laser/sheet metal blocks with weld certifications sidebar (AWS/ASME/MIL-STD)." },
+      { page: "about", label: "About the Company", desc: "Founded 1983, 12,000 sq ft facility, 4 leadership profiles, 5 values, ISO cert table." },
+      { page: "contact", label: "Request a Quote", desc: "Full RFQ form with part specs, 48-hour guarantee, NDA note, engineering contact." },
     ],
   },
   {
     slug: "hospitality",
     label: "Hospitality",
-    tagline: "Fine Dining · Catering · Private Events",
-    description: "Warm cream palette, elegant serif typography, and full-bleed imagery. Category navigation, menu showcase, and event inquiry flow.",
+    tagline: "Full-Service Catering · Weddings · Corporate Events",
+    description: "Warm cream palette, elegant serif typography, and full-width imagery. Service categories, menu highlights, and event inquiry flow.",
     accent: "#D4B896",
-    accentBg: "bg-[#1A120B]",
+    accentBg: "bg-[#1C1917]",
     accentText: "text-[#9C7A56]",
     pages: [
-      { page: "home", label: "Home Page", desc: "Dark full-bleed hero, category nav bar, about split, menu preview, press quotes." },
-      { page: "services", label: "Menus & Dining", desc: "Elegant menu by category with wine list, dietary notes, custom menu CTA." },
-      { page: "about", label: "Our Story", desc: "Chef bio, kitchen philosophy, awards, sourcing partners, team grid." },
-      { page: "contact", label: "Reservations", desc: "Elegant split: dining reservation form + private event inquiry, hours, location." },
+      { page: "home", label: "Home Page", desc: "Serif hero, 5 service cards, who-we-serve pills, philosophy paragraph, service areas." },
+      { page: "catering", label: "Catering Services", desc: "5 alternating catering sections: included list, guest range, proposal CTA per service." },
+      { page: "weddings", label: "Weddings", desc: "4-step process, menu highlights grid, 6 gallery placeholders, embedded proposal form." },
+      { page: "corporate-events", label: "Corporate Events", desc: "4 event type cards, dietary grid (6 accommodations), volume stats, proposal form." },
+      { page: "about", label: "Our Story", desc: "Founder bio (Elena Ricci), philosophy quote, 4 team cards, service areas directory." },
+      { page: "contact", label: "Reservations & Inquiries", desc: "Side-by-side: dining reservation form + private event inquiry, 3 location directory." },
     ],
   },
   {
     slug: "financial",
     label: "Financial Services",
     tagline: "Wealth Management · Retirement · Tax · Estate",
-    description: "Navy and white, Georgia serif, no gradients. Text-forward credibility with AUM stats, advisor profiles, and fiduciary positioning.",
-    accent: "#1B3A5C",
-    accentBg: "bg-[#1B3A5C]",
-    accentText: "text-[#1B3A5C]",
+    description: "Navy and white, no gradients. Text-forward credibility with AUM stats, advisor profiles, and fee-only fiduciary positioning.",
+    accent: "#1B3060",
+    accentBg: "bg-[#1B3060]",
+    accentText: "text-[#1B3060]",
     pages: [
-      { page: "home", label: "Home Page", desc: "Text-forward hero, AUM stats, service cards with rule accents, advisor list, partner logos." },
-      { page: "services", label: "Services & Approach", desc: "4 service deep-dives with what's included, fee-only section, fiduciary pledge." },
-      { page: "about", label: "Our Team", desc: "Advisor bios with philosophy, firm values, professional affiliations, office info." },
-      { page: "contact", label: "Schedule Consultation", desc: "Consultation form, what happens next, no-pressure copy, ADV disclosure." },
+      { page: "home", label: "Home Page", desc: "Pure text hero on white, 25+ yrs / $600M+ stats, 4 service cards, news grid, partner logos." },
+      { page: "services", label: "Services & Approach", desc: "4 alternating service sections, fee-only/fiduciary dark callout, ADV disclosure note." },
+      { page: "wealth-management", label: "Wealth Management", desc: "6-item numbered list, 6 client types grid, 4-step process, 6-question FAQ." },
+      { page: "retirement-planning", label: "Retirement Planning", desc: "SS optimization, Medicare, withdrawal sequencing, income floor, RMD, sequence-of-returns." },
+      { page: "about", label: "Our Advisors", desc: "3 advisor profiles with credentials, firm story (RIA since 2001), 4 professional affiliations." },
+      { page: "contact", label: "Schedule Consultation", desc: "Consultation form, what happens next, no-pressure copy, ADV Part 2A disclosure link." },
     ],
   },
   {
     slug: "defense",
     label: "Defense & Government",
     tagline: "Systems Integration · Cyber · Software · Program Support",
-    description: "Dark geometric with electric blue. CAGE/NAICS/SAM status, capability matrix, contract vehicles, and B2G authority signals.",
-    accent: "#00A8FF",
-    accentBg: "bg-[#080E14]",
-    accentText: "text-[#00A8FF]",
+    description: "Dark nav/white body with electric blue. CAGE/NAICS/SAM status, division cards, capability matrix, and B2G authority signals.",
+    accent: "#0057FF",
+    accentBg: "bg-[#0F1929]",
+    accentText: "text-[#0057FF]",
     pages: [
-      { page: "home", label: "Home Page", desc: "SAM.gov status bar, dark hero, capability matrix, contract vehicles, NAICS table." },
-      { page: "services", label: "Capabilities Statement", desc: "4 domain deep-dives with standards/frameworks, deliverables, NAICS table, clearances." },
-      { page: "about", label: "About the Company", desc: "Leadership with military backgrounds, certifications matrix, locations, veteran hiring." },
-      { page: "contact", label: "Program Office Contact", desc: "Secure inquiry form, 3-step process, capability brief download, security notice." },
+      { page: "home", label: "Home Page", desc: "Full-width dark hero, 3 division cards on white, 01/02/03 mission blocks, accordion capabilities, careers block." },
+      { page: "capabilities", label: "Capabilities Statement", desc: "4 division sections with 8 items each, NAICS codes, clearances, contract vehicles." },
+      { page: "cybersecurity", label: "Cybersecurity Division", desc: "CMMC L2/L3, Zero Trust, NIST 800-171 blocks, sidebar certs + contact form, 5-question FAQ." },
+      { page: "systems-integration", label: "Systems Integration", desc: "C4ISR, EW, sensor fusion, mission systems blocks, platform experience sidebar, FAQ." },
+      { page: "about", label: "About the Company", desc: "Culture section, mission/vision/values, 6 leadership profiles with clearances, veteran hiring." },
+      { page: "contact", label: "Program Office Contact", desc: "PMO inquiry form, 3-step next steps, capability statement download, CUI security notice." },
     ],
   },
 ];
@@ -122,7 +136,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!ind) return {};
   return {
     title: `${ind.label} Website Design Demo | ULTRA Design Agency`,
-    description: `See every page of what ULTRA would build for a ${ind.label.toLowerCase()} business — home, services, about, and contact pages.`,
+    description: `See every page of what ULTRA would build for a ${ind.label.toLowerCase()} business — 6 fully designed demo pages.`,
   };
 }
 
@@ -134,6 +148,23 @@ export default async function IndustryIndexPage({ params }: Props) {
   const pageIcons: Record<string, string> = {
     home: "🏠",
     services: "📋",
+    "air-conditioning": "❄️",
+    plumbing: "🔧",
+    "practice-areas": "⚖️",
+    "personal-injury": "🏥",
+    "business-litigation": "💼",
+    "primary-care": "🩺",
+    pediatrics: "👶",
+    capabilities: "⚙️",
+    "cnc-machining": "🔩",
+    fabrication: "🏭",
+    catering: "🍽️",
+    weddings: "💍",
+    "corporate-events": "🏢",
+    "wealth-management": "📈",
+    "retirement-planning": "🏖️",
+    cybersecurity: "🔐",
+    "systems-integration": "📡",
     about: "👥",
     contact: "📞",
   };
@@ -166,31 +197,31 @@ export default async function IndustryIndexPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Page cards */}
+      {/* Page cards — 6 per industry */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-center text-gray-400 text-xs font-semibold tracking-[0.2em] uppercase mb-10">
-            Browse the demo pages
+            Browse all 6 demo pages
           </p>
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {ind.pages.map((p, i) => (
               <Link
                 key={p.page}
                 href={`/industries/${slug}/${p.page}`}
-                className="group bg-white border border-gray-100 rounded-2xl p-8 hover:border-[#007BFF]/30 hover:shadow-lg transition-all"
+                className="group bg-white border border-gray-100 rounded-2xl p-7 hover:border-[#007BFF]/30 hover:shadow-lg transition-all"
               >
-                <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-[#007BFF]/5 transition-colors">
-                    {pageIcons[p.page]}
+                <div className="flex items-start gap-4">
+                  <div className="w-11 h-11 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-[#007BFF]/5 transition-colors">
+                    {pageIcons[p.page] ?? "📄"}
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">0{i + 1}</span>
-                      <h2 className="font-bold text-gray-900 group-hover:text-[#007BFF] transition-colors">
+                      <h2 className="font-bold text-gray-900 group-hover:text-[#007BFF] transition-colors text-sm">
                         {p.label}
                       </h2>
                     </div>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-4">{p.desc}</p>
+                    <p className="text-gray-500 text-xs leading-relaxed mb-4">{p.desc}</p>
                     <span className="text-xs font-semibold text-[#007BFF] group-hover:translate-x-1 inline-block transition-transform">
                       View demo →
                     </span>
