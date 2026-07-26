@@ -88,8 +88,8 @@ export default function DefenseSystemsIntegration() {
                 ))}
               </ul>
             </div>
-            <div className="bg-gray-100 rounded-2xl aspect-video flex items-center justify-center text-gray-400 text-sm">
-              {tabs[activeTab].label} Photo
+            <div className="rounded-2xl aspect-video overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1540575467537-409ae19e97c6?w=900&q=80&auto=format&fit=crop" alt={tabs[activeTab].label} className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

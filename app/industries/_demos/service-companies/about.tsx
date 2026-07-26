@@ -79,7 +79,9 @@ export default function ServiceCompaniesAbout() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
             {team.map((m) => (
               <div key={m.name} className="text-center">
-                <div className="bg-gray-200 rounded-2xl aspect-square mb-3 flex items-center justify-center text-gray-400 text-xs">Photo</div>
+                <div className="rounded-2xl aspect-square mb-3 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&q=80&auto=format&fit=crop&face" alt="Team member" className="w-full h-full object-cover object-top" />
+                </div>
                 <p className="font-black text-gray-900 text-sm">{m.name}</p>
                 <p className="text-gray-500 text-xs">{m.title}</p>
                 <p className="text-[#1B4B8A] font-bold text-xs mt-1">{m.years} experience</p>

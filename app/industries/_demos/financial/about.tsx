@@ -58,7 +58,9 @@ export default function FinancialAbout() {
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
               {i % 2 === 0 ? (
                 <>
-                  <div className="bg-gray-200 aspect-[3/4] rounded flex items-center justify-center text-gray-400 text-sm">{a.name.split(",")[0]} Photo</div>
+                  <div className="aspect-[3/4] rounded overflow-hidden">
+                    <img src={i === 0 ? "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80&auto=format&fit=crop&fit=crop&crop=faces" : i === 1 ? "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop&crop=faces" : "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop&crop=faces"} alt={a.name} className="w-full h-full object-cover object-top" />
+                  </div>
                   <div className="lg:col-span-2">
                     <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">{a.title}</p>
                     <h2 className="text-2xl font-bold text-[#1B2B4B] mb-4">{a.name}</h2>
@@ -82,7 +84,9 @@ export default function FinancialAbout() {
                       ))}
                     </div>
                   </div>
-                  <div className="bg-gray-200 aspect-[3/4] rounded flex items-center justify-center text-gray-400 text-sm">{a.name.split(",")[0]} Photo</div>
+                  <div className="aspect-[3/4] rounded overflow-hidden">
+                    <img src={i === 0 ? "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80&auto=format&fit=crop&fit=crop&crop=faces" : i === 1 ? "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop&crop=faces" : "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop&crop=faces"} alt={a.name} className="w-full h-full object-cover object-top" />
+                  </div>
                 </>
               )}
             </div>

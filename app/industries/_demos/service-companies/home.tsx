@@ -161,8 +161,8 @@ export default function HomeServicesHome() {
               ))}
             </ul>
           </div>
-          <div className="bg-gray-100 rounded-2xl aspect-[4/3] flex items-center justify-center text-gray-300 text-lg font-semibold">
-            Team / Truck Photo
+          <div className="rounded-2xl aspect-[4/3] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1200&q=80&auto=format&fit=crop" alt="ComfortPro service team" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -177,7 +177,9 @@ export default function HomeServicesHome() {
           <div className="grid md:grid-cols-3 gap-6">
             {tips.map((t) => (
               <div key={t.title} className="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow group">
-                <div className="bg-gray-100 aspect-video flex items-center justify-center text-gray-300 text-sm">Blog Image</div>
+                <div className="aspect-video overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop" alt="Home service tips" className="w-full h-full object-cover" />
+                </div>
                 <div className="p-5">
                   <p className="text-gray-400 text-xs mb-2">{t.date} · {t.read} read</p>
                   <h3 className="font-bold text-gray-900 leading-snug mb-3 group-hover:text-[#1B4B8A] transition-colors">{t.title}</h3>

@@ -77,7 +77,9 @@ export default function ManufacturingAbout() {
               ))}
             </div>
           </div>
-          <div className="bg-gray-200 rounded-2xl aspect-video flex items-center justify-center text-gray-400 text-sm">Facility / Shop Floor Photo</div>
+          <div className="rounded-2xl aspect-video overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=80&auto=format&fit=crop" alt="Shop floor" className="w-full h-full object-cover" />
+          </div>
         </div>
       </section>
 
@@ -108,7 +110,9 @@ export default function ManufacturingAbout() {
             <div className="space-y-4">
               {leadership.map((l) => (
                 <div key={l.name} className="flex items-center gap-4 border border-gray-100 rounded-xl p-4">
-                  <div className="w-12 h-12 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center text-gray-400 text-xs">Photo</div>
+                  <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=100&q=80&auto=format&fit=crop&crop=faces" alt="Team member" className="w-full h-full object-cover" />
+                  </div>
                   <div>
                     <p className="font-black text-[#0F1923]">{l.name}</p>
                     <p className="text-[#1E90FF] text-sm font-bold">{l.title}</p>

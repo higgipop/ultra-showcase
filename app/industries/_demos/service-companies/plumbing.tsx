@@ -77,7 +77,9 @@ export default function Plumbing() {
             {["Burst Pipe Repair","Water Heater Replacement","Slab Leak Detection"].map((job) => (
               <div key={job}>
                 <div className="grid grid-cols-2 gap-2 mb-2">
-                  <div className="bg-gray-200 aspect-square rounded-xl flex items-center justify-center text-gray-400 text-xs">Before</div>
+                  <div className="aspect-square rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80&auto=format&fit=crop" alt="Plumbing before" className="w-full h-full object-cover" />
+                  </div>
                   <div className="bg-green-100 aspect-square rounded-xl flex items-center justify-center text-green-400 text-xs">After</div>
                 </div>
                 <p className="text-sm font-bold text-gray-700 text-center">{job}</p>

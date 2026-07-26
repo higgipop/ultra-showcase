@@ -60,8 +60,15 @@ export default function CorporateEvents() {
       {/* Photo row */}
       <section className="px-6 pb-20">
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {["Team Lunch","Gala Setup","Boxed Lunch","Conference Break"].map((l) => (
-            <div key={l} className="bg-stone-200 rounded-xl aspect-[4/3] flex items-center justify-center text-stone-400 font-sans text-xs">{l}</div>
+          {[
+            "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=700&q=80&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1600565597073-b308c9f3489a?w=700&q=80&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1578985545062-7726a9ce7c2f?w=700&q=80&auto=format&fit=crop",
+          ].map((src, idx) => (
+            <div key={idx} className="rounded-xl aspect-[4/3] overflow-hidden">
+              <img src={src} alt="Corporate event" className="w-full h-full object-cover" />
+            </div>
           ))}
         </div>
       </section>

@@ -43,7 +43,9 @@ export default function DefenseAbout() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {leaders.map((l) => (
               <div key={l.name} className="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
-                <div className="bg-gray-100 rounded-xl aspect-square w-20 mb-4 flex items-center justify-center text-gray-400 text-xs">Photo</div>
+                <div className="rounded-xl aspect-square w-20 mb-4 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1521737604579-b5cd6882c0a6?w=120&q=80&auto=format&fit=crop&crop=faces" alt={l.name} className="w-full h-full object-cover object-top" />
+                </div>
                 <div className="flex items-start justify-between gap-2 mb-1">
                   <h3 className="font-black text-[#0F1929] text-base leading-snug">{l.name}</h3>
                   <span className="bg-[#0057FF]/10 text-[#0057FF] text-xs font-bold px-2 py-0.5 rounded flex-shrink-0 mt-0.5">{l.clearance}</span>
@@ -103,7 +105,7 @@ export default function DefenseAbout() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {["ISO 9001:2015","CMMC C3PAO Partner","SDVOSB Certified","SAM.gov Active","8(a) Participant","GSA MAS Holder","DoD JITC Certified","SkillBridge Partner","AWS GovCloud","IL4/IL5 Capable","NIST 800-171","ITAR Compliant"].map((c) => (
               <div key={c} className="border border-gray-100 rounded-xl p-4 text-center hover:border-[#0057FF]/30 transition-colors">
-                <div className="w-10 h-10 bg-gray-100 rounded-lg mx-auto mb-2 flex items-center justify-center text-gray-300 text-xs">Logo</div>
+                <div className="w-10 h-10 rounded-lg bg-[#0057FF]/10 mx-auto mb-2 flex items-center justify-center text-[#0057FF] text-xs font-black">✓</div>
                 <p className="text-xs font-semibold text-gray-700 leading-tight">{c}</p>
               </div>
             ))}

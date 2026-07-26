@@ -112,7 +112,9 @@ export default function MedicalHome() {
               { name: "Dr. Robert Williams, MD", specialty: "Urgent Care & Family Medicine" },
             ].map((p) => (
               <div key={p.name} className="text-center group">
-                <div className="bg-gray-100 rounded-2xl aspect-square mb-3 flex items-center justify-center text-gray-300 text-sm group-hover:ring-2 group-hover:ring-[#0891B2] transition-all">Provider Photo</div>
+                <div className="rounded-2xl aspect-square mb-3 overflow-hidden group-hover:ring-2 group-hover:ring-[#0891B2] transition-all">
+                  <img src={p.name.includes("Chen") ? "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80&auto=format&fit=crop&crop=faces" : p.name.includes("Park") ? "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80&auto=format&fit=crop&crop=faces" : "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80&auto=format&fit=crop&crop=faces"} alt={p.name} className="w-full h-full object-cover object-top" />
+                </div>
                 <p className="font-black text-[#0C4A6E] text-sm">{p.name}</p>
                 <p className="text-gray-400 text-xs">{p.specialty}</p>
                 <Link href="contact" className="inline-block mt-2 text-[#0891B2] text-xs font-bold hover:underline">Book with this provider →</Link>

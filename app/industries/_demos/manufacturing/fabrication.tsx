@@ -85,7 +85,9 @@ export default function Fabrication() {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-gray-100 rounded-xl aspect-video flex items-center justify-center text-gray-400 text-sm">{p.title} Photo</div>
+                  <div className="rounded-xl aspect-video overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&q=80&auto=format&fit=crop" alt={p.title} className="w-full h-full object-cover" />
+                  </div>
                 </div>
               </div>
             </div>

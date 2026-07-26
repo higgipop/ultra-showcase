@@ -46,7 +46,9 @@ export default function HospitalityHome() {
 
       {/* Photo hero placeholder */}
       <section className="px-6 mb-20">
-        <div className="max-w-6xl mx-auto bg-stone-200 rounded-2xl aspect-[16/7] flex items-center justify-center text-stone-400 font-sans text-sm">Featured Event Photo</div>
+        <div className="max-w-6xl mx-auto rounded-2xl aspect-[16/7] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80&auto=format&fit=crop" alt="Elegant catering event" className="w-full h-full object-cover" />
+        </div>
       </section>
 
       {/* Services overview */}
@@ -56,12 +58,14 @@ export default function HospitalityHome() {
           <h2 className="text-3xl lg:text-4xl font-bold text-stone-800 italic text-center mb-16">Every Occasion, Handled with Care</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Weddings", link: "weddings", desc: "From rehearsal dinners to receptions — menus designed around your love story, logistics handled start to finish.", img: "Wedding Reception Photo" },
-              { title: "Catering", link: "catering", desc: "Drop-off, buffet, and full-service catering for events of all sizes. Seasonal menus, dietary accommodations.", img: "Catering Spread Photo" },
-              { title: "Corporate Events", link: "corporate-events", desc: "Team lunches, client dinners, product launches, and annual galas. We make your company look good.", img: "Corporate Event Photo" },
+              { title: "Weddings", link: "weddings", desc: "From rehearsal dinners to receptions — menus designed around your love story, logistics handled start to finish.", img: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80&auto=format&fit=crop" },
+              { title: "Catering", link: "catering", desc: "Drop-off, buffet, and full-service catering for events of all sizes. Seasonal menus, dietary accommodations.", img: "https://images.unsplash.com/photo-1600565597073-b308c9f3489a?w=800&q=80&auto=format&fit=crop" },
+              { title: "Corporate Events", link: "corporate-events", desc: "Team lunches, client dinners, product launches, and annual galas. We make your company look good.", img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80&auto=format&fit=crop" },
             ].map((s) => (
               <div key={s.title} className="group">
-                <div className="bg-stone-200 rounded-xl aspect-[4/3] flex items-center justify-center text-stone-400 font-sans text-sm mb-5">{s.img}</div>
+                <div className="rounded-xl aspect-[4/3] overflow-hidden mb-5">
+                  <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
                 <h3 className="text-xl font-bold text-stone-800 italic mb-3">{s.title}</h3>
                 <p className="text-stone-500 font-sans text-sm leading-relaxed mb-4">{s.desc}</p>
                 <Link href={s.link} className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-600 hover:text-stone-900 border-b border-stone-300 pb-0.5 transition-colors">Learn More →</Link>
@@ -102,7 +106,9 @@ export default function HospitalityHome() {
               ))}
             </div>
           </div>
-          <div className="bg-stone-200 rounded-2xl aspect-square flex items-center justify-center text-stone-400 font-sans text-sm">Chef / Kitchen Photo</div>
+          <div className="rounded-2xl aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600565597073-b308c9f3489a?w=900&q=80&auto=format&fit=crop" alt="Chef at work" className="w-full h-full object-cover" />
+          </div>
         </div>
       </section>
 

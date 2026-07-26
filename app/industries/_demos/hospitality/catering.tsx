@@ -70,11 +70,15 @@ export default function Catering() {
                   <p className="font-bold text-stone-800 italic text-lg mb-6">{m.price}</p>
                   <Link href="contact" className="inline-block border border-stone-800 font-sans text-xs font-semibold uppercase tracking-widest text-stone-800 px-6 py-3 hover:bg-stone-800 hover:text-white transition-colors">Request a Proposal</Link>
                 </div>
-                <div className="bg-stone-200 rounded-2xl aspect-[4/3] flex items-center justify-center text-stone-400 font-sans text-sm">{m.title} Photo</div>
+                <div className="rounded-2xl aspect-[4/3] overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80&auto=format&fit=crop" alt={m.title} className="w-full h-full object-cover" />
+                </div>
               </>
             ) : (
               <>
-                <div className="bg-stone-200 rounded-2xl aspect-[4/3] flex items-center justify-center text-stone-400 font-sans text-sm order-last lg:order-first">{m.title} Photo</div>
+                <div className="rounded-2xl aspect-[4/3] overflow-hidden order-last lg:order-first">
+                  <img src="https://images.unsplash.com/photo-1578985545062-7726a9ce7c2f?w=900&q=80&auto=format&fit=crop" alt={m.title} className="w-full h-full object-cover" />
+                </div>
                 <div>
                   <h2 className="text-3xl font-bold text-stone-800 italic mb-3">{m.title}</h2>
                   <p className="text-stone-500 font-sans leading-relaxed mb-5">{m.desc}</p>

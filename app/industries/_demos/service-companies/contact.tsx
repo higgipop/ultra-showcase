@@ -77,7 +77,9 @@ export default function ServiceCompaniesContact() {
           {/* Right sidebar — 2 cols */}
           <div className="lg:col-span-2 space-y-6">
             {/* Map placeholder */}
-            <div className="bg-gray-200 rounded-2xl aspect-video flex items-center justify-center text-gray-400">Service Area Map</div>
+            <div className="rounded-2xl aspect-video overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1200&q=80&auto=format&fit=crop" alt="Tampa Bay service area" className="w-full h-full object-cover" />
+            </div>
 
             {/* Hours */}
             <div className="border border-gray-100 rounded-2xl p-5">

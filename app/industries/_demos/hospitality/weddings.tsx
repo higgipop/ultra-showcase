@@ -39,9 +39,15 @@ export default function Weddings() {
       {/* Gallery row */}
       <section className="px-6 pb-20">
         <div className="max-w-6xl mx-auto grid grid-cols-3 gap-3">
-          <div className="bg-stone-200 rounded-xl aspect-[3/4] flex items-center justify-center text-stone-400 font-sans text-xs">Ceremony Photo</div>
-          <div className="bg-stone-300 rounded-xl aspect-[3/4] flex items-center justify-center text-stone-400 font-sans text-xs mt-8">Reception Photo</div>
-          <div className="bg-stone-200 rounded-xl aspect-[3/4] flex items-center justify-center text-stone-400 font-sans text-xs">Detail Photo</div>
+          <div className="rounded-xl aspect-[3/4] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=700&q=80&auto=format&fit=crop" alt="Wedding ceremony" className="w-full h-full object-cover" />
+          </div>
+          <div className="rounded-xl aspect-[3/4] overflow-hidden mt-8">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80&auto=format&fit=crop" alt="Wedding reception" className="w-full h-full object-cover" />
+          </div>
+          <div className="rounded-xl aspect-[3/4] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1578985545062-7726a9ce7c2f?w=700&q=80&auto=format&fit=crop" alt="Wedding detail" className="w-full h-full object-cover" />
+          </div>
         </div>
       </section>
 

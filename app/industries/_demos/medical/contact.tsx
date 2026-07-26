@@ -141,7 +141,9 @@ export default function MedicalContact() {
       {/* Location + hours */}
       <section className="bg-[#F0F9FF] border-t border-blue-100 py-14 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 bg-gray-200 rounded-2xl aspect-video flex items-center justify-center text-gray-400">Location Map</div>
+          <div className="lg:col-span-2 rounded-2xl aspect-video overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1519494026892-476d51a0a4ec?w=1200&q=80&auto=format&fit=crop" alt="Clinic location" className="w-full h-full object-cover" />
+          </div>
           <div>
             <h3 className="font-black text-[#0C4A6E] mb-4">Location & Hours</h3>
             <p className="text-gray-600 text-sm mb-1 font-semibold">4501 N. Armenia Ave, Suite 200</p>

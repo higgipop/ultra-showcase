@@ -91,7 +91,9 @@ export default function DefenseHome() {
               { title: "Engineering & Program Support", desc: "RTOS development, DO-178C, DevSecOps pipelines, and PMO support for complex defense programs.", href: "capabilities" },
             ].map((d) => (
               <div key={d.title} className="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group">
-                <div className="bg-gray-200 aspect-video flex items-center justify-center text-gray-400 text-sm">Division Photo</div>
+                <div className="aspect-video overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1540575467537-409ae19e97c6?w=900&q=80&auto=format&fit=crop" alt="Defense division" className="w-full h-full object-cover" />
+                </div>
                 <div className="p-6">
                   <h2 className="font-black text-[#0F1929] text-lg mb-2 group-hover:text-[#0057FF] transition-colors">{d.title}</h2>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">{d.desc}</p>
@@ -106,8 +108,8 @@ export default function DefenseHome() {
       {/* Sticky split — who we are + mission tabs */}
       <section className="bg-[#F8FAFC] py-16 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div className="bg-gray-200 rounded-2xl aspect-[4/3] flex items-center justify-center text-gray-400 text-sm lg:sticky lg:top-24">
-            Team / Facility Photo
+          <div className="rounded-2xl aspect-[4/3] overflow-hidden lg:sticky lg:top-24">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=80&auto=format&fit=crop" alt="APEX Defense facility" className="w-full h-full object-cover" />
           </div>
           <div>
             <p className="text-[#0057FF] text-xs font-bold uppercase tracking-[0.25em] mb-3">Who We Are</p>
@@ -174,8 +176,8 @@ export default function DefenseHome() {
                 <Link href="contact" className="text-[#0057FF] font-bold text-sm hover:underline">Request a Capability Briefing →</Link>
               </li>
             </ul>
-            <div className="bg-gray-200 rounded-2xl aspect-video flex items-center justify-center text-gray-400 text-sm">
-              {divisionTabs[divTab].label} Photo
+            <div className="rounded-2xl aspect-video overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80&auto=format&fit=crop" alt={divisionTabs[divTab].label} className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -192,8 +194,13 @@ export default function DefenseHome() {
             </p>
             <Link href="about" className="inline-block border border-[#0F1929] text-[#0F1929] font-bold px-6 py-3 rounded hover:bg-[#0F1929] hover:text-white transition-colors text-sm">View Open Positions</Link>
           </div>
-          <div className="bg-gray-800 rounded-2xl aspect-video flex items-center justify-center text-gray-400 text-sm">
-            Culture Video Placeholder
+          <div className="relative rounded-2xl aspect-video overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1522071820083-09fd938f5e3b?w=1200&q=80&auto=format&fit=crop" alt="Team culture" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+              <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
+                <svg className="w-6 h-6 text-gray-800 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
           </div>
         </div>
       </section>

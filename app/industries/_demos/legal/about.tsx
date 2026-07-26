@@ -76,7 +76,9 @@ export default function LegalAbout() {
         <div className="max-w-5xl mx-auto space-y-12">
           {attorneys.map((a, i) => (
             <div key={a.name} className={`grid grid-cols-1 lg:grid-cols-3 gap-8 items-start ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
-              <div className={`bg-gray-100 rounded-2xl aspect-square flex items-center justify-center text-gray-400 text-sm ${i % 2 === 1 ? "lg:order-2" : ""}`}>Attorney Photo</div>
+              <div className={`rounded-2xl aspect-square overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`}>
+                <img src={i % 2 === 0 ? "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80&auto=format&fit=crop&crop=faces" : "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=600&q=80&auto=format&fit=crop&crop=faces"} alt="Attorney" className="w-full h-full object-cover object-top" />
+              </div>
               <div className={`lg:col-span-2 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
                 <h2 className="text-2xl font-black text-[#111827] mb-1">{a.name}</h2>
                 <p className="text-[#DC2626] font-bold text-sm mb-2">{a.title}</p>

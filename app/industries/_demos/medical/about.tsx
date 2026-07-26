@@ -61,8 +61,8 @@ export default function MedicalAbout() {
           {providers.map((p, i) => (
             <div key={p.name} className={`rounded-2xl border border-gray-100 overflow-hidden hover:shadow-md transition-shadow ${i % 2 === 0 ? "" : "bg-[#F0F9FF] border-blue-100"}`}>
               <div className="grid grid-cols-1 sm:grid-cols-4 gap-0">
-                <div className="bg-gray-200 sm:col-span-1 aspect-square sm:aspect-auto flex items-center justify-center text-gray-400 text-sm min-h-[200px]">
-                  Provider Photo
+                <div className="sm:col-span-1 overflow-hidden min-h-[200px]">
+                  <img src={i % 2 === 0 ? "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80&auto=format&fit=crop&crop=faces" : "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80&auto=format&fit=crop&crop=faces"} alt="Provider" className="w-full h-full object-cover object-top" />
                 </div>
                 <div className="sm:col-span-3 p-7">
                   <div className="flex items-start justify-between flex-wrap gap-3 mb-1">
@@ -113,7 +113,9 @@ export default function MedicalAbout() {
                 ["Amanda Wright","Patient Coordinator"],
               ].map(([name, role]) => (
                 <div key={name} className="flex items-center gap-4 py-3 border-b border-gray-100 last:border-0">
-                  <div className="w-10 h-10 bg-gray-100 rounded-full flex-shrink-0 flex items-center justify-center text-gray-400 text-xs">Photo</div>
+                  <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&q=80&auto=format&fit=crop&crop=faces" alt="Staff member" className="w-full h-full object-cover" />
+                  </div>
                   <div>
                     <p className="font-bold text-gray-900 text-sm">{name}</p>
                     <p className="text-gray-400 text-xs">{role}</p>

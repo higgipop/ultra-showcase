@@ -129,7 +129,9 @@ export default function ManufacturingHome() {
               ))}
             </div>
           </div>
-          <div className="bg-gray-200 rounded-2xl aspect-video flex items-center justify-center text-gray-400 text-sm">Facility Photo</div>
+          <div className="rounded-2xl aspect-video overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1200&q=80&auto=format&fit=crop" alt="Manufacturing facility" className="w-full h-full object-cover" />
+          </div>
         </div>
       </section>
 

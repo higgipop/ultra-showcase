@@ -90,7 +90,9 @@ export default function AirConditioning() {
                 </ul>
                 <Link href="contact" className="inline-block bg-[#1B4B8A] hover:bg-[#153b6e] text-white font-bold px-6 py-3 rounded text-sm transition-colors">{block.cta} →</Link>
               </div>
-              <div className="bg-gray-100 rounded-2xl aspect-video flex items-center justify-center text-gray-400 text-sm">{block.title} Photo</div>
+              <div className="rounded-2xl aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=900&q=80&auto=format&fit=crop" alt="AC service" className="w-full h-full object-cover" />
+              </div>
             </div>
           ))}
         </div>
