@@ -1,86 +1,64 @@
-// terrabellas.com: light/warm, Our Story, chef/founder bio, philosophy, team, service areas
 import Link from "next/link";
 
 const team = [
-  { name: "Elena Ricci", title: "Executive Chef & Founder", bio: "Elena founded TerraBella in 2008 after a decade of fine dining in New York and Rome. Her philosophy is simple: great catering starts with great ingredients and real technique — not shortcuts." },
-  { name: "James Holloway", title: "Event Director", bio: "With 16 years in hospitality management, James leads all event logistics and client relationships. He ensures every event runs exactly as planned — and recovers gracefully when it doesn&apos;t." },
-  { name: "Sarah Park", title: "Catering Manager", bio: "Sarah manages day-of operations for all events, coordinating kitchen, front-of-house, and vendor teams. She&apos;s catered over 800 events and counting." },
-  { name: "Marcus Vega", title: "Operations Lead", bio: "Marcus manages equipment, logistics, and production scheduling. His precision ensures the right supplies arrive at the right events, every time." },
+  { name: "Maria Costello", role: "Founder & Executive Chef", bio: "Maria spent 12 years at luxury resorts across Florida before founding Terra Bella in 2009. Her philosophy: food should feel like hospitality, not a transaction.", img: "Maria Photo" },
+  { name: "Roberto Esposito", role: "Head of Operations", bio: "Roberto keeps everything running on event days — logistics, staffing, vendor coordination. 200+ events without a missed delivery window.", img: "Roberto Photo" },
+  { name: "Priya Nair", role: "Event Design Lead", bio: "Priya translates client vision into tablescaping, menu presentation, and venue flow. She has a background in interior design and it shows.", img: "Priya Photo" },
 ];
 
-const areas = [
-  { city: "Jacksonville", note: "Headquarters · Full-service events" },
-  { city: "Brunswick, GA", note: "Full-service events · 45 min from JAX" },
-  { city: "Daytona Beach", note: "Selected events · Inquiry required" },
-  { city: "Lake City", note: "Selected events · Inquiry required" },
-  { city: "Gainesville", note: "Selected events · Inquiry required" },
-];
+const areas = ["Tampa","St. Petersburg","Clearwater","Sarasota","Brandon","Westchase","New Tampa","Wesley Chapel","Lakeland","Bradenton"];
 
 export default function HospitalityAbout() {
   return (
-    <div className="bg-[#FAFAF8] font-sans">
-      <nav className="bg-[#FAFAF8] border-b border-[#E8E4DC]">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
-          <div className="font-bold text-[#1C1917] text-lg tracking-tight">TERRA<span className="font-light text-[#6B7C5C]">BELLA</span></div>
-          <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-[#4A4540]">
-            <Link href="home" className="hover:text-[#1C1917]">Home</Link>
-            <Link href="catering" className="hover:text-[#1C1917]">Catering</Link>
-            <Link href="weddings" className="hover:text-[#1C1917]">Weddings</Link>
-            <Link href="about" className="text-[#6B7C5C] border-b border-[#6B7C5C]">Our Story</Link>
+    <div className="bg-[#F9F6F0] font-serif">
+      <nav className="bg-[#F9F6F0] border-b border-stone-200 sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
+          <Link href="home" className="text-2xl font-bold tracking-tight text-stone-800 italic">Terra Bella<span className="not-italic font-light text-stone-500"> Events</span></Link>
+          <div className="hidden lg:flex items-center gap-8">
+            <Link href="weddings" className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-400 hover:text-stone-800">Weddings</Link>
+            <Link href="catering" className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-400 hover:text-stone-800">Catering</Link>
+            <Link href="about" className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-800">About</Link>
+            <Link href="contact" className="border border-stone-800 font-sans text-xs font-semibold uppercase tracking-widest text-stone-800 px-5 py-2.5 hover:bg-stone-800 hover:text-white transition-colors">Start Planning</Link>
           </div>
-          <Link href="contact" className="bg-[#1C1917] text-white font-semibold px-4 py-2 rounded text-sm hover:bg-[#2C2921] transition-colors">Request a Proposal</Link>
         </div>
       </nav>
 
-      <div className="bg-[#F5F3EF] py-12 px-4 text-center border-b border-[#E8E4DC]">
-        <h1 className="text-4xl font-bold text-[#1C1917]" style={{fontFamily: "Georgia, serif"}}>Our Story</h1>
-      </div>
-
-      {/* Story */}
-      <section className="py-16 bg-[#FAFAF8] px-4">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      {/* Story section */}
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-[#6B7C5C] text-xs font-bold uppercase tracking-[0.2em] mb-4">Founded in Jacksonville, 2008</p>
-            <h2 className="text-3xl font-bold text-[#1C1917] mb-5" style={{fontFamily: "Georgia, serif"}}>Built on the belief that every event deserves real food.</h2>
-            <p className="text-[#6B6560] leading-relaxed mb-4">
-              Elena Ricci started TerraBella after years of watching corporate catering get reduced to steam trays and premade salads. She believed — and still believes — that catering is an expression of hospitality, and that every event deserves food prepared with care and intention.
-            </p>
-            <p className="text-[#6B6560] leading-relaxed mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. What began as a solo catering operation in Jacksonville has grown to a team of 28, serving clients across Northeast Florida and Southeast Georgia.
-            </p>
-            <p className="text-[#6B6560] leading-relaxed">
-              We&apos;re still independent. Still family-run. Still obsessed with the food.
-            </p>
+            <p className="font-sans text-xs tracking-[0.2em] text-stone-400 uppercase mb-5">Our Story</p>
+            <h1 className="text-4xl lg:text-5xl font-bold text-stone-800 italic mb-6">Built Around the Belief That Food Is the Heart of Every Event</h1>
+            <p className="text-stone-500 font-sans leading-relaxed mb-5">Terra Bella was founded in 2009 by Maria Costello after years of cooking at high-end Tampa Bay venues. She saw a gap: clients were getting either cheap banquet food or overpriced catering with impersonal service. She started Terra Bella to offer something different — chef-driven menus with the feel of a small, dedicated team.</p>
+            <p className="text-stone-500 font-sans leading-relaxed">Today we&apos;ve catered over 2,000 events, from 10-person rehearsal dinners to 500-person corporate galas. The size of the event doesn&apos;t change how much care goes into the food and service.</p>
           </div>
-          <div className="bg-[#E8E4DC] rounded-2xl aspect-[4/3] flex items-center justify-center text-[#B0A898] text-sm">
-            Chef / Kitchen Photo Placeholder
-          </div>
+          <div className="bg-stone-200 rounded-2xl aspect-square flex items-center justify-center text-stone-400 font-sans text-sm">Founder / Kitchen Photo</div>
         </div>
       </section>
 
       {/* Philosophy */}
-      <section className="py-14 bg-[#F5F3EF] px-4">
+      <section className="bg-stone-800 py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <blockquote className="text-2xl font-bold text-[#1C1917] leading-relaxed mb-6" style={{fontFamily: "Georgia, serif"}}>
-            &ldquo;We build menus around your vision, not the other way around.&rdquo;
-          </blockquote>
-          <p className="text-[#6B6560]">— Elena Ricci, Executive Chef &amp; Founder</p>
+          <p className="font-sans text-xs tracking-[0.2em] text-stone-400 uppercase mb-6">Our Philosophy</p>
+          <p className="text-[#F9F6F0] text-2xl lg:text-3xl italic font-bold leading-relaxed mb-10">"We don&apos;t do templates. Every menu we write starts with a conversation about who the guests are, what matters to you, and what the moment calls for."</p>
+          <p className="text-stone-400 font-sans text-sm uppercase tracking-widest">— Maria Costello, Founder</p>
         </div>
       </section>
 
       {/* Team */}
-      <section className="py-16 bg-[#FAFAF8] px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1C1917] mb-10 text-center" style={{fontFamily: "Georgia, serif"}}>Our Team</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((m) => (
-              <div key={m.name} className="bg-[#F5F3EF] border border-[#E8E4DC] rounded-2xl p-6">
-                <div className="w-16 h-16 bg-[#E8E4DC] rounded-full flex items-center justify-center text-[#6B7C5C] font-bold text-2xl mb-4">
-                  {m.name[0]}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <p className="font-sans text-xs tracking-[0.2em] text-stone-400 uppercase mb-4 text-center">The Team</p>
+          <h2 className="text-3xl font-bold text-stone-800 italic text-center mb-14">The People Behind Your Event</h2>
+          <div className="space-y-12">
+            {team.map((m, i) => (
+              <div key={m.name} className={`grid grid-cols-1 lg:grid-cols-5 gap-10 items-center ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
+                <div className={`lg:col-span-2 bg-stone-200 rounded-2xl aspect-[4/3] flex items-center justify-center text-stone-400 font-sans text-sm ${i % 2 === 1 ? "lg:order-last" : ""}`}>{m.img}</div>
+                <div className="lg:col-span-3">
+                  <p className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-400 mb-2">{m.role}</p>
+                  <h3 className="text-2xl font-bold text-stone-800 italic mb-4">{m.name}</h3>
+                  <p className="text-stone-500 font-sans leading-relaxed">{m.bio}</p>
                 </div>
-                <h3 className="font-bold text-[#1C1917] mb-0.5">{m.name}</h3>
-                <p className="text-[#6B7C5C] text-xs font-semibold mb-3">{m.title}</p>
-                <p className="text-[#6B6560] text-sm leading-relaxed">{m.bio}</p>
               </div>
             ))}
           </div>
@@ -88,26 +66,23 @@ export default function HospitalityAbout() {
       </section>
 
       {/* Service areas */}
-      <section className="py-14 bg-[#F5F3EF] border-y border-[#E8E4DC] px-4">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1C1917] mb-8 text-center" style={{fontFamily: "Georgia, serif"}}>Service Areas</h2>
-          <div className="space-y-3">
+      <section className="border-t border-stone-200 py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <p className="font-sans text-xs tracking-[0.2em] text-stone-400 uppercase mb-4 text-center">Service Area</p>
+          <h2 className="text-2xl font-bold text-stone-800 italic text-center mb-8">We Serve Greater Tampa Bay</h2>
+          <div className="flex flex-wrap justify-center gap-3">
             {areas.map((a) => (
-              <div key={a.city} className="flex justify-between items-center bg-white border border-[#E8E4DC] rounded-xl px-5 py-4">
-                <span className="font-bold text-[#1C1917]">{a.city}</span>
-                <span className="text-[#6B6560] text-sm">{a.note}</span>
-              </div>
+              <span key={a} className="border border-stone-200 text-stone-600 font-sans text-sm px-4 py-2 rounded-full">{a}</span>
             ))}
           </div>
+          <p className="text-stone-400 font-sans text-xs text-center mt-5">Serving locations beyond this area? Contact us — we travel for larger events.</p>
         </div>
       </section>
 
-      <section className="py-14 bg-[#1C1917] text-center px-4">
-        <h2 className="text-2xl font-bold text-white mb-5" style={{fontFamily: "Georgia, serif"}}>Let&apos;s plan your next event together.</h2>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="contact" className="bg-white text-[#1C1917] font-semibold px-10 py-4 rounded hover:bg-gray-100 transition-colors">Request a Proposal</Link>
-          <Link href="contact" className="border border-white text-white font-semibold px-10 py-4 rounded hover:bg-white hover:text-[#1C1917] transition-colors">Talk With Our Team</Link>
-        </div>
+      {/* CTA */}
+      <section className="py-16 px-6 text-center bg-[#F9F6F0]">
+        <h2 className="text-3xl font-bold text-stone-800 italic mb-4">Ready to Work with Our Team?</h2>
+        <Link href="contact" className="inline-block bg-stone-800 text-[#F9F6F0] font-sans font-semibold px-10 py-4 uppercase text-xs tracking-widest hover:bg-stone-900 transition-colors">Get in Touch</Link>
       </section>
     </div>
   );

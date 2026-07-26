@@ -1,91 +1,118 @@
-// terrabellas.com: catering services overview, alternating warm sections, proposal CTAs
 import Link from "next/link";
 
-const services = [
+const menus = [
   {
-    name: "Wedding Catering", icon: "💍", href: "weddings",
-    included: ["Menu customization around your vision", "Tasting session for engaged couple", "Day-of coordination with venue", "Professional service staff", "Setup, breakdown, linens", "Custom menu cards"],
-    guestRange: "50–500 guests",
-    detail: "We handle everything from setup to breakdown, so you can be present at your wedding — not managing it.",
+    title: "Seasonal Buffet",
+    desc: "A rotating menu built around what's fresh and local. Great for 50–500 guests.",
+    items: ["Carved proteins + vegetarian main","5 seasonal sides","Artisan bread station","Dessert display","Full service staff"],
+    price: "From $42 / person",
   },
   {
-    name: "Corporate Events", icon: "🏢", href: "corporate-events",
-    included: ["Business lunch and dinner menus", "Working lunches and all-hands events", "Client entertainment setups", "Repeat/account billing available", "Dietary accommodation standard", "Quick-turn options for last-minute events"],
-    guestRange: "10–2,000 guests",
-    detail: "We understand corporate catering timelines. We can turn around a catered lunch for 30 with 48 hours notice, or coordinate a 2,000-person conference banquet with months of planning.",
+    title: "Plated Dinner Service",
+    desc: "White-glove plated service for formal occasions. Three- to five-course options.",
+    items: ["Chef's amuse-bouche","Soup or salad course","Choice of entrée (2–3 options)","Dessert service","Full table staff"],
+    price: "From $68 / person",
   },
   {
-    name: "Buffet Catering", icon: "🍽️", href: "catering",
-    included: ["Chef-curated multi-item menus", "Dietary accommodations (vegan, GF, halal, kosher)", "Service staff for replenishment", "Chafing equipment and serving ware", "Custom labeling for allergens", "Hot and cold station options"],
-    guestRange: "25–1,000 guests",
-    detail: "Our buffet menus are designed for variety and guest satisfaction — we don't do steam tray food. Every dish is prepared fresh and presented with care.",
+    title: "Heavy Appetizers",
+    desc: "Passed hors d'oeuvres and stationed displays — no formal dinner required.",
+    items: ["8–12 passed selections","2–3 stationed displays","Charcuterie & cheese board","Cocktail napkins + small plates","Butler-style service"],
+    price: "From $28 / person",
   },
   {
-    name: "BBQ Catering", icon: "🔥", href: "catering",
-    included: ["Outdoor and indoor BBQ service", "Drop-off or full-service available", "Charcoal, gas, and smoker options", "Pit master on-site (full-service)", "Classic and elevated BBQ menus", "Beer/wine pairing available"],
-    guestRange: "20–500 guests",
-    detail: "From backyard company cookouts to large community events, we bring real BBQ — slow-smoked brisket, pulled pork, and house-made sides that your guests will remember.",
-  },
-  {
-    name: "Bar Services", icon: "🥂", href: "contact",
-    included: ["TIPS-certified licensed bartenders", "Full open bar or beer/wine only", "Signature cocktail development", "Mocktail menu available", "Mobile bar setup included", "Responsible service policy"],
-    guestRange: "All event sizes",
-    detail: "Our bar service is staffed by certified, experienced bartenders who understand hospitality. We work with your budget to design a bar package that fits your event and your guests.",
+    title: "Drop-Off Catering",
+    desc: "No staff needed. We deliver, set up, and leave you the food. Perfect for office catering.",
+    items: ["Full meal packaged for self-service","Chafing dishes if requested","Utensils, napkins, serving ware","Same-day delivery available","Min. 12 guests"],
+    price: "From $18 / person",
   },
 ];
 
-export default function HospitalityCatering() {
+const dietary = ["Gluten-Free","Vegan","Vegetarian","Nut-Free","Kosher-Style","Halal","Low-Sodium","Dairy-Free"];
+
+export default function Catering() {
   return (
-    <div className="bg-[#FAFAF8] font-sans">
-      <nav className="bg-[#FAFAF8] border-b border-[#E8E4DC]">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
-          <div className="font-bold text-[#1C1917] text-lg tracking-tight">TERRA<span className="font-light text-[#6B7C5C]">BELLA</span></div>
-          <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-[#4A4540]">
-            <Link href="home" className="hover:text-[#1C1917]">Home</Link>
-            <Link href="catering" className="text-[#6B7C5C] border-b border-[#6B7C5C]">Catering</Link>
-            <Link href="weddings" className="hover:text-[#1C1917]">Weddings</Link>
-            <Link href="corporate-events" className="hover:text-[#1C1917]">Corporate</Link>
-            <Link href="about" className="hover:text-[#1C1917]">Our Story</Link>
+    <div className="bg-[#F9F6F0] font-serif">
+      <nav className="bg-[#F9F6F0] border-b border-stone-200 sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
+          <Link href="home" className="text-2xl font-bold tracking-tight text-stone-800 italic">Terra Bella<span className="not-italic font-light text-stone-500"> Events</span></Link>
+          <div className="hidden lg:flex items-center gap-8">
+            <Link href="weddings" className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-400 hover:text-stone-800">Weddings</Link>
+            <Link href="catering" className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-800">Catering</Link>
+            <Link href="corporate-events" className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-400 hover:text-stone-800">Corporate</Link>
+            <Link href="contact" className="border border-stone-800 font-sans text-xs font-semibold uppercase tracking-widest text-stone-800 px-5 py-2.5 hover:bg-stone-800 hover:text-white transition-colors">Get a Proposal</Link>
           </div>
-          <Link href="contact" className="bg-[#1C1917] text-white font-semibold px-4 py-2 rounded text-sm hover:bg-[#2C2921] transition-colors">Request a Proposal</Link>
         </div>
       </nav>
 
-      <div className="py-12 px-4 bg-[#F5F3EF] border-b border-[#E8E4DC] text-center">
-        <h1 className="text-4xl font-bold text-[#1C1917]" style={{fontFamily: "Georgia, serif"}}>Our Catering Services</h1>
-        <p className="text-[#6B6560] text-lg mt-3 max-w-2xl mx-auto">Five service types. One team. All customized around your event.</p>
-      </div>
+      {/* Page header */}
+      <section className="py-20 px-6 text-center border-b border-stone-200">
+        <p className="font-sans text-xs tracking-[0.2em] text-stone-400 uppercase mb-4">Full-Service Catering</p>
+        <h1 className="text-5xl font-bold text-stone-800 italic mb-4">Food That Elevates the Moment</h1>
+        <p className="text-stone-500 font-sans max-w-xl mx-auto leading-relaxed">Scratch-made menus, professional staff, and a planning process designed to make your event effortless.</p>
+      </section>
 
-      {services.map((s, i) => (
-        <section key={s.name} className={`py-14 px-4 ${i % 2 === 0 ? "bg-[#FAFAF8]" : "bg-[#F5F3EF]"}`}>
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-[80px_1fr] gap-8">
-            <div className="text-5xl">{s.icon}</div>
-            <div>
-              <h2 className="text-2xl font-bold text-[#1C1917] mb-2" style={{fontFamily: "Georgia, serif"}}>{s.name}</h2>
-              <p className="text-[#6B7C5C] text-sm font-semibold mb-4">{s.guestRange}</p>
-              <p className="text-[#6B6560] leading-relaxed mb-6">{s.detail}</p>
-              <div className="grid sm:grid-cols-2 gap-2 mb-6">
-                {s.included.map((item) => (
-                  <div key={item} className="flex items-start gap-2 text-[#4A4540] text-sm">
-                    <span className="text-[#6B7C5C] font-bold mt-0.5 flex-shrink-0">✓</span> {item}
-                  </div>
-                ))}
-              </div>
-              <Link href={s.href} className="inline-block border border-[#1C1917] text-[#1C1917] font-semibold px-6 py-3 rounded hover:bg-[#1C1917] hover:text-white transition-colors text-sm">
-                Request Proposal for {s.name} →
-              </Link>
-            </div>
+      {/* Service packages — alternating warm/white */}
+      {menus.map((m, i) => (
+        <section key={m.title} className={`py-16 px-6 ${i % 2 === 1 ? "bg-stone-100" : "bg-[#F9F6F0]"} border-b border-stone-200`}>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {i % 2 === 0 ? (
+              <>
+                <div>
+                  <h2 className="text-3xl font-bold text-stone-800 italic mb-3">{m.title}</h2>
+                  <p className="text-stone-500 font-sans leading-relaxed mb-5">{m.desc}</p>
+                  <ul className="space-y-2 mb-6">
+                    {m.items.map((item) => (
+                      <li key={item} className="flex items-center gap-3 font-sans text-sm text-stone-700">
+                        <span className="text-stone-400">—</span>{item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="font-bold text-stone-800 italic text-lg mb-6">{m.price}</p>
+                  <Link href="contact" className="inline-block border border-stone-800 font-sans text-xs font-semibold uppercase tracking-widest text-stone-800 px-6 py-3 hover:bg-stone-800 hover:text-white transition-colors">Request a Proposal</Link>
+                </div>
+                <div className="bg-stone-200 rounded-2xl aspect-[4/3] flex items-center justify-center text-stone-400 font-sans text-sm">{m.title} Photo</div>
+              </>
+            ) : (
+              <>
+                <div className="bg-stone-200 rounded-2xl aspect-[4/3] flex items-center justify-center text-stone-400 font-sans text-sm order-last lg:order-first">{m.title} Photo</div>
+                <div>
+                  <h2 className="text-3xl font-bold text-stone-800 italic mb-3">{m.title}</h2>
+                  <p className="text-stone-500 font-sans leading-relaxed mb-5">{m.desc}</p>
+                  <ul className="space-y-2 mb-6">
+                    {m.items.map((item) => (
+                      <li key={item} className="flex items-center gap-3 font-sans text-sm text-stone-700">
+                        <span className="text-stone-400">—</span>{item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="font-bold text-stone-800 italic text-lg mb-6">{m.price}</p>
+                  <Link href="contact" className="inline-block border border-stone-800 font-sans text-xs font-semibold uppercase tracking-widest text-stone-800 px-6 py-3 hover:bg-stone-800 hover:text-white transition-colors">Request a Proposal</Link>
+                </div>
+              </>
+            )}
           </div>
         </section>
       ))}
 
-      <section className="py-14 bg-[#1C1917] text-center px-4">
-        <h2 className="text-2xl font-bold text-white mb-5" style={{fontFamily: "Georgia, serif"}}>Ready to plan your event?</h2>
-        <p className="text-white/60 mb-8">We&apos;re happy to talk through your event needs before you commit to anything. Consultations are free.</p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="contact" className="bg-white text-[#1C1917] font-semibold px-10 py-4 rounded hover:bg-gray-100 transition-colors">Request a Proposal</Link>
-          <Link href="contact" className="border border-white text-white font-semibold px-10 py-4 rounded hover:bg-white hover:text-[#1C1917] transition-colors">Talk With Our Team</Link>
+      {/* Dietary accommodations */}
+      <section className="py-16 px-6 bg-stone-800">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="font-sans text-xs tracking-[0.2em] text-stone-400 uppercase mb-4">We Accommodate</p>
+          <h2 className="text-3xl font-bold text-[#F9F6F0] italic mb-10">Dietary Needs, Thoughtfully Handled</h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {dietary.map((d) => (
+              <span key={d} className="border border-stone-600 text-stone-300 font-sans text-xs font-semibold px-4 py-2 rounded-full tracking-wider">{d}</span>
+            ))}
+          </div>
+          <p className="text-stone-400 font-sans text-sm mt-6 max-w-md mx-auto">All dietary accommodations are handled at no additional charge. Just let us know when you request a proposal.</p>
         </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 px-6 text-center">
+        <h2 className="text-3xl font-bold text-stone-800 italic mb-4">Not Sure Which Package Is Right?</h2>
+        <p className="text-stone-500 font-sans mb-8 max-w-md mx-auto">Tell us about your event — guest count, venue, and vision — and we&apos;ll recommend the best approach and price it out.</p>
+        <Link href="contact" className="inline-block bg-stone-800 text-[#F9F6F0] font-sans font-semibold px-10 py-4 uppercase text-xs tracking-widest hover:bg-stone-900 transition-colors">Get a Custom Proposal</Link>
       </section>
     </div>
   );

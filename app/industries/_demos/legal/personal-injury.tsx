@@ -1,185 +1,117 @@
-// dennishernandez.com: 2-col layout, sidebar with case wins + form, 11 FAQ as linked headings
 import Link from "next/link";
 
 const caseWins = [
-  { amount: "$17,000,000", type: "Motorcycle Accident" },
-  { amount: "$15,000,000", type: "Auto Accident" },
-  { amount: "$7,000,000", type: "Trucking Accident" },
-  { amount: "$4,250,000", type: "Slip & Fall" },
-  { amount: "$3,000,000", type: "Wrongful Death" },
+  { amount: "$17.5M", desc: "Semi-truck accident — traumatic brain injury" },
+  { amount: "$9.8M", desc: "Wrongful death — construction accident" },
+  { amount: "$7.3M", desc: "Drunk driver — spinal cord injury" },
+  { amount: "$5.1M", desc: "Defective airbag — facial injuries" },
+  { amount: "$3.8M", desc: "Rideshare accident — multiple fractures" },
+  { amount: "$2.4M", desc: "Hit & run — permanent disability" },
+  { amount: "$1.9M", desc: "Rear-end collision — herniated disc" },
+  { amount: "$1.2M", desc: "Slip and fall — broken hip" },
 ];
 
 const faqs = [
-  { q: "How much does a personal injury lawyer cost?", a: "Nothing upfront. We work on a contingency fee basis — you pay nothing unless we win your case. Our fee comes as a percentage of your settlement or verdict." },
-  { q: "How long will my case take to settle?", a: "Most cases settle within 6–18 months. Complex cases involving serious injuries, multiple parties, or litigation may take longer. We'll give you a realistic timeline after reviewing your case." },
-  { q: "What if I was partially at fault for the accident?", a: "Florida follows a comparative negligence rule, meaning you can still recover damages even if you were partially at fault — your recovery is simply reduced by your percentage of fault." },
-  { q: "What damages can I recover in a personal injury case?", a: "Medical expenses (past and future), lost wages, loss of earning capacity, pain and suffering, emotional distress, loss of enjoyment of life, and property damage." },
-  { q: "How do I know if I have a case?", a: "If someone else's negligence caused your injury, you likely have a case. The best way to find out is a free consultation with our attorneys — we'll tell you honestly whether you have a viable claim." },
-  { q: "What should I do immediately after an accident?", a: "Seek medical care first. Then document the scene with photos, get witness contact info, don't give statements to insurance companies, and contact us as soon as possible." },
-  { q: "Will my case go to trial?", a: "Most personal injury cases settle before trial. However, we prepare every case as if it will go to trial — this is why insurance companies often offer larger settlements to our clients." },
-  { q: "How do I pay my medical bills while my case is pending?", a: "Many of our clients use their health insurance, MedPay coverage, or letters of protection that allow doctors to treat you and wait for payment from the settlement." },
-  { q: "What is the statute of limitations in Florida?", a: "Florida law generally gives you two years from the date of your injury to file a personal injury lawsuit. Waiting too long can bar you from recovering any compensation." },
-  { q: "Can I still file if the accident was months ago?", a: "Yes, if you're still within the statute of limitations. However, evidence disappears and memories fade — the sooner you contact us, the stronger your case." },
-  { q: "What makes your firm different from other injury attorneys?", a: "Direct attorney access — you'll speak with the attorney handling your case, not a case manager. $50M+ recovered. 1,429 five-star reviews. Harvard Law education. 29 years of experience." },
+  ["How long do I have to file a personal injury claim in Florida?", "Florida's statute of limitations for personal injury claims is generally 2 years from the date of the accident. However, there are exceptions — contact us immediately to protect your rights."],
+  ["What is my case worth?", "Every case is different. Compensation depends on the severity of your injuries, medical expenses, lost income, pain and suffering, and the defendant's insurance limits. We'll give you an honest assessment during your free consultation."],
+  ["What if I was partially at fault?", "Florida follows comparative negligence, which means you can still recover damages even if you were partially at fault. Your recovery is reduced by your percentage of fault."],
+  ["How long will my case take?", "Most personal injury cases settle within 6–18 months. Cases that go to trial may take 2–3 years. We work aggressively to resolve your case as quickly as possible while maximizing your recovery."],
+  ["Do I have to go to court?", "Most cases settle out of court. But we prepare every case as if it will go to trial — and insurance companies know it. That's why our clients get better settlements."],
+  ["Can I afford an attorney?", "Yes. We work on contingency — you pay nothing unless we win your case. We advance all case costs and expenses. If we don't win, you owe us nothing."],
+  ["What should I do right after an accident?", "Call 911, get medical attention immediately, document everything you can, don't talk to the other party's insurance company, and call us as soon as possible. Early evidence is critical."],
 ];
 
-const relatedAreas = ["Car Accidents", "Motorcycle Accidents", "Slip & Fall", "Wrongful Death", "Medical Malpractice", "Business Litigation"];
-
-export default function LegalPersonalInjury() {
+export default function PersonalInjury() {
   return (
     <div className="bg-white font-sans">
-      {/* Top bar */}
-      <div className="bg-[#DC2626] text-white text-center py-2 text-sm font-bold">
-        YOU PAY NOTHING UNLESS WE WIN · (813) 555-0100 · 24/7
+      <div className="bg-[#DC2626] text-white text-center text-sm py-2 font-bold">
+        FREE CASE EVALUATION · No Fee Unless We Win · <a href="tel:8135550300" className="underline">(813) 555-0300</a>
       </div>
-
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-100 py-3 px-4">
-        <div className="max-w-7xl mx-auto text-sm text-gray-500">
-          <Link href="home" className="hover:text-[#DC2626]">Home</Link>
-          <span className="mx-2">›</span>
-          <Link href="practice-areas" className="hover:text-[#DC2626]">Practice Areas</Link>
-          <span className="mx-2">›</span>
-          <span className="text-gray-900 font-semibold">Personal Injury</span>
+      <nav className="bg-[#111827]">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+          <Link href="home" className="font-black text-white text-xl">GARCIA<span className="text-[#DC2626]">LAW</span></Link>
+          <div className="hidden lg:flex gap-6 text-sm font-semibold text-gray-300">
+            <Link href="practice-areas" className="hover:text-white">Practice Areas</Link>
+            <Link href="personal-injury" className="text-white">Personal Injury</Link>
+            <Link href="business-litigation" className="hover:text-white">Business</Link>
+            <Link href="about" className="hover:text-white">Attorneys</Link>
+          </div>
+          <Link href="contact" className="bg-[#DC2626] hover:bg-red-700 text-white font-black px-4 py-2 rounded text-sm transition-colors">FREE CASE REVIEW</Link>
         </div>
-      </div>
+      </nav>
 
-      {/* Main content */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid lg:grid-cols-[1fr_340px] gap-10">
-          {/* Main */}
-          <div>
-            <h1 className="text-4xl font-black text-gray-900 mb-6">Personal Injury Attorney in Tampa, FL</h1>
+      {/* Dark page header */}
+      <section className="bg-[#111827] py-10 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-gray-500 text-xs mb-3">
+            <Link href="home" className="hover:text-gray-300">Home</Link> › <Link href="practice-areas" className="hover:text-gray-300">Practice Areas</Link> › Personal Injury
+          </div>
+          <h1 className="text-4xl font-black text-white">Personal Injury</h1>
+        </div>
+      </section>
 
-            <div className="bg-[#FEF2F2] border border-[#FCA5A5] rounded-xl px-6 py-4 mb-8">
-              <p className="text-[#DC2626] font-black text-lg">$50M+ recovered · 1,429 five-star reviews · No fees unless we win</p>
-            </div>
-
-            <p className="text-gray-700 leading-relaxed mb-6 text-lg">
-              If you&apos;ve been seriously injured through someone else&apos;s negligence, you may be entitled to significant compensation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Our personal injury attorneys have recovered over $50 million for injured clients across Tampa Bay.
-            </p>
-
-            <h2 className="text-2xl font-black text-gray-900 mb-4">Types of Personal Injury Cases We Handle</h2>
-            <ul className="grid sm:grid-cols-2 gap-2 mb-8">
-              {["Motor vehicle accidents", "Motorcycle accidents", "Truck and semi-trailer accidents", "Slip and fall accidents", "Premises liability", "Dog bites and animal attacks", "Medical malpractice", "Wrongful death", "Workplace injuries", "Defective product injuries", "Rideshare accidents (Uber/Lyft)", "Pedestrian and bicycle accidents"].map((item) => (
-                <li key={item} className="flex items-start gap-2 text-gray-700 text-sm">
-                  <span className="text-[#DC2626] font-black mt-0.5">✓</span> {item}
-                </li>
-              ))}
-            </ul>
-
-            <h2 className="text-2xl font-black text-gray-900 mb-4">What Damages Can I Recover?</h2>
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              {[
-                { label: "Economic Damages", items: ["Medical expenses (current & future)", "Lost wages and income", "Loss of earning capacity", "Property damage", "Out-of-pocket costs"] },
-                { label: "Non-Economic Damages", items: ["Pain and suffering", "Emotional distress", "Loss of enjoyment of life", "Loss of consortium", "Disability and disfigurement"] },
-              ].map((col) => (
-                <div key={col.label} className="bg-gray-50 rounded-xl p-5">
-                  <h3 className="font-black text-gray-900 mb-3 text-sm uppercase tracking-wider">{col.label}</h3>
-                  <ul className="space-y-1.5">
-                    {col.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-gray-600 text-sm">
-                        <span className="text-[#DC2626] font-black">·</span> {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            <h2 className="text-2xl font-black text-gray-900 mb-4">Our 3-Step Process</h2>
-            <div className="grid sm:grid-cols-3 gap-5 mb-10">
-              {[
-                { step: "01", title: "Free Consultation", body: "We review your case at no cost. If we can help, we take your case immediately — no retainer, no upfront fees." },
-                { step: "02", title: "We Investigate & Build", body: "Our team gathers evidence, secures expert witnesses, negotiates with insurance companies, and prepares for trial." },
-                { step: "03", title: "You Get Paid", body: "We settle or try your case for maximum compensation. Our fee comes from the recovery — you owe nothing if we don't win." },
-              ].map((s) => (
-                <div key={s.step} className="border border-gray-100 rounded-xl p-6">
-                  <p className="text-4xl font-black text-[#DC2626] mb-3">{s.step}</p>
-                  <h3 className="font-black text-gray-900 mb-2">{s.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{s.body}</p>
-                </div>
-              ))}
-            </div>
-
-            <h2 className="text-2xl font-black text-gray-900 mb-4">Why Choose Us?</h2>
-            <ul className="space-y-3 mb-12">
-              {["Direct access to your attorney — not paralegals or case managers", "Harvard Law education, 29 years of courtroom experience", "We prepare every case as if it will go to trial", "No settlement without your approval", "Available 24/7 by phone for urgent questions"].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <span className="text-[#DC2626] font-black text-xl leading-tight">✓</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* FAQ */}
-            <h2 className="text-3xl font-black text-gray-900 mb-8">Frequently Asked Questions</h2>
-            <div className="space-y-8">
-              {faqs.map((faq) => (
-                <div key={faq.q}>
-                  <h3 className="text-lg font-black text-gray-900 mb-2 hover:text-[#DC2626] cursor-pointer transition-colors">{faq.q}</h3>
-                  <p className="text-gray-600 leading-relaxed text-sm">{faq.a}</p>
-                </div>
-              ))}
+      {/* Two-column content */}
+      <section className="py-12 px-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
+          {/* Left sidebar — case wins */}
+          <div className="lg:col-span-1 order-2 lg:order-1">
+            <div className="bg-[#111827] rounded-2xl p-6 sticky top-24">
+              <p className="text-[#DC2626] text-xs font-black uppercase tracking-widest mb-4">Recent Case Results</p>
+              <div className="space-y-3">
+                {caseWins.map((c) => (
+                  <div key={c.amount + c.desc} className="border-b border-white/10 pb-3 last:border-0 last:pb-0">
+                    <p className="font-black text-[#DC2626] text-xl leading-none">{c.amount}</p>
+                    <p className="text-white/50 text-xs mt-0.5">{c.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-white/20 text-xs mt-4">Past results do not guarantee future outcomes.</p>
             </div>
           </div>
 
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Case wins */}
-            <div className="bg-[#111827] rounded-2xl p-6">
-              <p className="text-[#DC2626] text-xs font-black uppercase tracking-widest mb-4">Our Case Wins</p>
-              {caseWins.map((w) => (
-                <div key={w.amount} className="border-b border-white/10 py-3 last:border-0 last:pb-0">
-                  <p className="text-[#DC2626] font-black text-2xl">{w.amount}</p>
-                  <p className="text-gray-400 text-xs">{w.type}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Mini form */}
-            <div className="bg-white border-2 border-[#DC2626] rounded-2xl p-6">
-              <h3 className="text-xl font-black text-gray-900 mb-1">FREE CASE EVALUATION</h3>
-              <p className="text-gray-500 text-xs mb-5">No obligation · Respond in 1 hour · Confidential</p>
+          {/* Right main — form + info */}
+          <div className="lg:col-span-2 order-1 lg:order-2 space-y-10">
+            {/* Case evaluation form */}
+            <div className="bg-[#DC2626]/5 border-2 border-[#DC2626]/20 rounded-2xl p-8">
+              <h2 className="text-xl font-black text-[#111827] mb-1">FREE CASE EVALUATION</h2>
+              <p className="text-gray-400 text-sm mb-5">An attorney will call you within 1 hour. No obligation.</p>
               <form className="space-y-3">
-                <input type="text" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#DC2626] focus:outline-none" placeholder="Your Full Name" />
-                <input type="tel" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#DC2626] focus:outline-none" placeholder="Phone Number" />
-                <select className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 focus:ring-2 focus:ring-[#DC2626] focus:outline-none">
-                  <option>Type of Case</option>
-                  <option>Personal Injury</option>
+                <div className="grid grid-cols-2 gap-3">
+                  <input className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#DC2626]" placeholder="First Name" />
+                  <input className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#DC2626]" placeholder="Last Name" />
+                </div>
+                <input type="tel" className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#DC2626]" placeholder="Phone Number" />
+                <select className="border border-gray-200 rounded-lg px-4 py-3 text-base bg-white w-full focus:outline-none focus:border-[#DC2626] text-gray-700">
+                  <option>Type of Accident</option>
                   <option>Car Accident</option>
-                  <option>Motorcycle Accident</option>
+                  <option>Truck Accident</option>
                   <option>Slip & Fall</option>
+                  <option>Motorcycle Accident</option>
                   <option>Wrongful Death</option>
+                  <option>Medical Malpractice</option>
+                  <option>Other</option>
                 </select>
-                <button type="submit" className="w-full bg-[#DC2626] hover:bg-[#b91c1c] text-white font-black py-4 rounded-xl transition-colors">
-                  SUBMIT FREE REVIEW
-                </button>
+                <textarea className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full h-24 resize-none focus:outline-none focus:border-[#DC2626]" placeholder="What happened? (brief description)" />
+                <button type="submit" className="bg-[#DC2626] hover:bg-red-700 text-white font-black px-6 py-4 rounded w-full text-base transition-colors">GET MY FREE EVALUATION →</button>
+                <p className="text-center text-gray-400 text-xs">100% Confidential · No fee unless we win · Available 24/7</p>
               </form>
             </div>
 
-            {/* Phone callout */}
-            <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 text-center">
-              <p className="text-gray-500 text-sm mb-2">Available 24 hours a day</p>
-              <a href="tel:8135550100" className="text-3xl font-black text-[#DC2626] hover:underline">(813) 555-0100</a>
+            {/* FAQ */}
+            <div>
+              <h2 className="text-xl font-black text-[#111827] mb-6">Personal Injury FAQ</h2>
+              <div className="space-y-5">
+                {faqs.map(([q, a]) => (
+                  <div key={q} className="border-b border-gray-100 pb-5">
+                    <p className="font-black text-[#111827] mb-2">{q}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">{a}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Related areas */}
-      <div className="bg-gray-50 border-t border-gray-100 py-10 px-4">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-5 text-center">Related Practice Areas</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {relatedAreas.map((a) => (
-              <Link key={a} href="practice-areas" className="border border-gray-200 hover:border-[#DC2626] hover:text-[#DC2626] text-gray-700 font-semibold px-5 py-2.5 rounded-full text-sm transition-colors">
-                {a}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   );
 }

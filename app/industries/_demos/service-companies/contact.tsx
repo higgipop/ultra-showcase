@@ -1,97 +1,103 @@
 import Link from "next/link";
 
-const areas = ["Tampa", "St. Petersburg", "Clearwater", "Brandon", "Riverview", "Wesley Chapel", "Land O' Lakes", "Lutz", "New Tampa", "Odessa", "Palm Harbor", "Safety Harbor"];
+const areas = ["Tampa","St. Petersburg","Clearwater","Brandon","Riverview","Wesley Chapel","Land O' Lakes","Lutz","New Tampa","Odessa","Palm Harbor","Safety Harbor","Dunedin","Largo","Seminole"];
 
-export default function HomeServicesContact() {
+export default function ServiceCompaniesContact() {
   return (
     <div className="bg-white font-sans">
+      <div className="bg-[#F58220] text-white text-center text-sm py-2 font-semibold">
+        ⚡ Emergency? Call <a href="tel:8135550100" className="underline font-black">(813) 555-0100</a> — We Answer 24/7
+      </div>
+      <nav className="bg-white border-b border-gray-200 sticky top-[36px] z-40 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+          <Link href="home" className="font-black text-[#1B4B8A] text-xl tracking-tight">COMFORT<span className="text-[#F58220]">PRO</span></Link>
+          <div className="hidden lg:flex gap-6 text-sm font-semibold text-gray-700">
+            <Link href="services" className="hover:text-[#1B4B8A]">Services</Link>
+            <Link href="about" className="hover:text-[#1B4B8A]">About</Link>
+          </div>
+          <a href="tel:8135550100" className="bg-[#F58220] text-white font-black px-4 py-2 rounded text-sm">(813) 555-0100</a>
+        </div>
+      </nav>
+
+      {/* Header */}
       <section className="bg-[#1B4B8A] py-12 px-4 text-center">
-        <p className="text-[#F58220] text-xs font-bold uppercase tracking-widest mb-3">We&apos;re Ready Now</p>
-        <h1 className="text-4xl font-black text-white mb-3">Schedule Service</h1>
-        <p className="text-blue-200 text-lg">Same-day appointments available · Emergency service 24/7</p>
+        <h1 className="text-3xl font-black text-white mb-2">Book a Service Call</h1>
+        <p className="text-blue-200">Available today. Same-day appointments in most cases.</p>
       </section>
 
-      {/* Emergency bar */}
-      <div className="bg-[#F58220] py-4 px-4 text-center">
-        <p className="text-white font-black text-lg">🚨 AC or Plumbing Emergency? Call Now: <a href="tel:8135550100" className="underline">(813) 555-0100</a></p>
-        <p className="text-white/80 text-sm">Average response time under 2 hours · Technicians on call 24/7</p>
-      </div>
-
-      <section className="py-14 px-4">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
-          {/* Form */}
-          <div>
-            <h2 className="text-2xl font-black text-gray-900 mb-6">Book Your Appointment</h2>
-            <form className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">First Name</label>
-                  <input type="text" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1B4B8A]" placeholder="Robert" />
+      {/* Main layout */}
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
+          {/* Booking form — 3 cols */}
+          <div className="lg:col-span-3">
+            <div className="bg-[#F58220]/5 border-2 border-[#F58220]/20 rounded-2xl p-8">
+              <h2 className="text-xl font-black text-gray-900 mb-6">Schedule Your Service</h2>
+              <form className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">First Name</label>
+                    <input className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#1B4B8A] bg-white" placeholder="First" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Last Name</label>
+                    <input className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#1B4B8A] bg-white" placeholder="Last" />
+                  </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Last Name</label>
-                  <input type="text" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1B4B8A]" placeholder="Martinez" />
+                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Phone Number</label>
+                  <input className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#1B4B8A] bg-white" placeholder="(813) 555-0000" />
                 </div>
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Phone Number *</label>
-                <input type="tel" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1B4B8A]" placeholder="(813) 555-0000" />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Service Needed</label>
-                <select className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#1B4B8A]">
-                  <option>Air Conditioning Repair</option>
-                  <option>AC Installation / Replacement</option>
-                  <option>Heating Repair</option>
-                  <option>Heating Installation</option>
-                  <option>Plumbing Repair</option>
-                  <option>Drain Cleaning</option>
-                  <option>Water Heater Service</option>
-                  <option>Indoor Air Quality</option>
-                  <option>Maintenance Plan</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Preferred Date</label>
-                <input type="date" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#1B4B8A]" />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Describe the Problem</label>
-                <textarea rows={4} className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1B4B8A]" placeholder="AC not cooling, making a noise, water under unit..." />
-              </div>
-              <button type="submit" className="w-full bg-[#F58220] hover:bg-[#e07210] text-white font-black py-4 rounded-lg text-xl transition-colors">
-                Schedule My Appointment
-              </button>
-              <p className="text-gray-400 text-xs text-center">We&apos;ll confirm within 30 minutes during business hours.</p>
-            </form>
+                <div>
+                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Service Needed</label>
+                  <select className="border border-gray-200 rounded-lg px-4 py-3 text-base bg-white w-full focus:outline-none focus:border-[#1B4B8A] text-gray-700">
+                    <option>Select a service</option>
+                    <option>AC Repair</option>
+                    <option>AC Installation</option>
+                    <option>Heating Repair</option>
+                    <option>Plumbing — Emergency</option>
+                    <option>Plumbing — Non-Emergency</option>
+                    <option>Maintenance / Tune-Up</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Preferred Date</label>
+                  <input type="date" className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#1B4B8A] bg-white text-gray-700" />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Describe the Problem</label>
+                  <textarea className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full h-24 resize-none focus:outline-none focus:border-[#1B4B8A] bg-white" placeholder="Briefly describe the issue" />
+                </div>
+                <button type="submit" className="bg-[#F58220] hover:bg-[#e07210] text-white font-black px-8 py-4 rounded w-full text-lg transition-colors">Book My Service Call</button>
+                <p className="text-center text-gray-400 text-xs">We&apos;ll call to confirm within 30 minutes during business hours.</p>
+              </form>
+            </div>
           </div>
 
-          {/* Info */}
-          <div className="space-y-8">
-            <div className="bg-gray-50 border border-gray-100 rounded-2xl p-7">
-              <h3 className="font-black text-gray-900 text-lg mb-5">Contact & Hours</h3>
-              <div className="space-y-3 text-sm">
-                <div className="flex gap-3"><span className="text-[#F58220] font-bold w-5">📞</span><div><p className="font-bold text-gray-900">(813) 555-0100</p><p className="text-gray-500">Main line</p></div></div>
-                <div className="flex gap-3"><span className="text-[#F58220] font-bold w-5">🚨</span><div><p className="font-bold text-gray-900">(727) 732-2803</p><p className="text-gray-500">Emergency / after-hours</p></div></div>
-                <div className="flex gap-3"><span className="text-[#F58220] font-bold w-5">✉️</span><div><p className="font-bold text-gray-900">service@comfortpro.com</p></div></div>
-                <hr className="border-gray-200 my-3" />
-                <div className="space-y-1">
-                  <p className="font-bold text-gray-700">Business Hours</p>
-                  <p className="text-gray-500">Mon–Fri: 7:00 AM – 9:00 PM</p>
-                  <p className="text-gray-500">Saturday: 8:00 AM – 6:00 PM</p>
-                  <p className="text-gray-500">Sunday: 9:00 AM – 4:00 PM</p>
-                  <p className="text-[#F58220] font-bold">Emergency Service: 24/7/365</p>
-                </div>
+          {/* Right sidebar — 2 cols */}
+          <div className="lg:col-span-2 space-y-6">
+            {/* Map placeholder */}
+            <div className="bg-gray-200 rounded-2xl aspect-video flex items-center justify-center text-gray-400">Service Area Map</div>
+
+            {/* Hours */}
+            <div className="border border-gray-100 rounded-2xl p-5">
+              <h3 className="font-black text-gray-900 mb-3">Business Hours</h3>
+              <div className="space-y-2 text-sm">
+                {[["Monday – Friday","7:00 AM – 7:00 PM"],["Saturday","8:00 AM – 5:00 PM"],["Sunday","On-call emergency only"],["24/7 Emergency","(813) 555-0100"]].map(([day, hours]) => (
+                  <div key={day} className="flex justify-between">
+                    <span className="text-gray-500">{day}</span>
+                    <span className="font-semibold text-gray-800">{hours}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="bg-gray-50 border border-gray-100 rounded-2xl p-7">
-              <h3 className="font-black text-gray-900 text-lg mb-4">Service Area</h3>
-              <div className="bg-gray-200 rounded-xl aspect-video mb-4 flex items-center justify-center text-gray-400 font-medium">Service Area Map</div>
-              <div className="flex flex-wrap gap-2">
+            {/* Service areas */}
+            <div className="border border-gray-100 rounded-2xl p-5">
+              <h3 className="font-black text-gray-900 mb-3 text-sm">Service Areas</h3>
+              <div className="flex flex-wrap gap-1.5">
                 {areas.map((a) => (
-                  <span key={a} className="bg-white border border-gray-200 text-gray-600 text-xs font-medium px-3 py-1 rounded-full">{a}</span>
+                  <span key={a} className="bg-[#1B4B8A]/5 text-[#1B4B8A] text-xs font-semibold px-2.5 py-1 rounded-full">{a}</span>
                 ))}
               </div>
             </div>

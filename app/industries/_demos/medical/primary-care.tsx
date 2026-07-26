@@ -1,135 +1,118 @@
-// primary care service detail: teal banner, what's included, first visit steps, conditions, insurance, FAQ
 import Link from "next/link";
 
 const conditions = [
-  "Hypertension (high blood pressure)", "Type 2 Diabetes", "Thyroid disorders", "Asthma & COPD", "High cholesterol", "Obesity & metabolic syndrome",
-  "Arthritis & joint pain", "Sleep disorders", "Skin conditions", "Urinary tract infections", "Seasonal allergies", "Heart disease management",
+  "Hypertension (High Blood Pressure)","Type 2 Diabetes","Asthma & COPD","High Cholesterol","Thyroid Disorders","Anxiety & Depression","Arthritis","Obesity / Weight Management","GERD / Acid Reflux","Sleep Disorders",
 ];
 
-const faqs = [
-  { q: "How do I become a new patient?", a: "Call our office or use the online booking form to schedule a new patient visit. Please bring your insurance card, a photo ID, and a list of current medications to your first appointment." },
-  { q: "Do you accept walk-in patients?", a: "We accommodate walk-ins for acute/urgent concerns on a space-available basis. Same-day appointments are often available — we recommend calling ahead to secure a slot." },
-  { q: "Is telehealth available for primary care?", a: "Yes. Established patients can schedule telehealth visits for follow-ups, medication refills, and non-emergency concerns. Telehealth is available 7 days a week." },
-  { q: "What happens if I need care after hours?", a: "Our after-hours nurse line is available until 10pm weekdays. For emergencies, please call 911. Non-emergency urgent needs can be addressed via telehealth." },
-  { q: "Do you provide referrals to specialists?", a: "Yes. We coordinate specialist referrals and ensure your specialist has complete records. We also follow up after specialist visits to keep your care coordinated." },
-];
-
-const insurance = ["Aetna", "Humana", "BlueCross BlueShield", "United Healthcare", "Cigna", "Medicare", "Medicaid", "HealthFirst", "Molina"];
-
-export default function MedicalPrimaryCare() {
+export default function PrimaryCare() {
   return (
     <div className="bg-white font-sans">
-      <div className="bg-[#0891B2] text-white text-center py-2 text-sm font-semibold">
-        New Patients Welcome · Same-Day Appointments Available · <a href="tel:8135550100" className="underline">(813) 555-0100</a>
-      </div>
-
-      {/* Banner */}
-      <div className="bg-[#0C4A6E] py-10 px-4">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-cyan-200 text-xs font-bold uppercase tracking-widest mb-2">Our Services</p>
-          <h1 className="text-4xl font-bold text-white">Primary Care Services</h1>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid lg:grid-cols-[1fr_320px] gap-10">
-          <div>
-            {/* What's included */}
-            <h2 className="text-2xl font-bold text-[#0C4A6E] mb-5">What&apos;s Included in Primary Care</h2>
-            <div className="grid sm:grid-cols-2 gap-3 mb-10">
-              {["Annual wellness exams & health risk assessments", "Chronic disease management (diabetes, hypertension, thyroid)", "Preventive cancer screenings & immunizations", "Same-day acute & sick visit appointments", "Medication management & prescription refills", "Lab orders, results review & care coordination", "Referral management to specialists", "Lifestyle & nutrition counseling"].map((item) => (
-                <div key={item} className="flex items-start gap-2 bg-[#F0F9FF] border border-[#BAE6FD] rounded-xl px-4 py-3">
-                  <span className="text-[#0891B2] font-bold mt-0.5 flex-shrink-0">✓</span>
-                  <span className="text-gray-700 text-sm">{item}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* First visit */}
-            <h2 className="text-2xl font-bold text-[#0C4A6E] mb-5">What to Expect on Your First Visit</h2>
-            <div className="grid sm:grid-cols-3 gap-5 mb-10">
-              {[
-                { step: "1", title: "Medical History Review", body: "Your provider reviews your full medical history, current medications, allergies, and family history." },
-                { step: "2", title: "Physical Examination", body: "A comprehensive exam including vital signs, cardiovascular, respiratory, and musculoskeletal assessment." },
-                { step: "3", title: "Care Plan & Follow-Up", body: "You&apos;ll leave with a written care plan, any necessary lab orders, and a scheduled follow-up if needed." },
-              ].map((s) => (
-                <div key={s.step} className="border border-gray-100 rounded-xl p-5">
-                  <div className="w-10 h-10 bg-[#0891B2] rounded-full flex items-center justify-center text-white font-black text-lg mb-3">{s.step}</div>
-                  <h3 className="font-bold text-[#0C4A6E] mb-2 text-sm">{s.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{s.body}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Conditions */}
-            <h2 className="text-2xl font-bold text-[#0C4A6E] mb-5">Conditions We Treat</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-10">
-              {conditions.map((c) => (
-                <div key={c} className="flex items-center gap-2 text-gray-600 text-sm py-1.5 border-b border-gray-50">
-                  <span className="w-2 h-2 bg-[#0891B2] rounded-full flex-shrink-0" />
-                  {c}
-                </div>
-              ))}
-            </div>
-
-            {/* Insurance */}
-            <h2 className="text-2xl font-bold text-[#0C4A6E] mb-5">Insurance Accepted</h2>
-            <div className="flex flex-wrap gap-2 mb-10">
-              {insurance.map((ins) => (
-                <span key={ins} className="bg-[#F0F9FF] border border-[#BAE6FD] text-[#0C4A6E] text-sm font-semibold px-4 py-1.5 rounded-full">{ins}</span>
-              ))}
-            </div>
-            <p className="text-gray-500 text-sm mb-10">Don&apos;t see your plan? Call us — we work with most major carriers.</p>
-
-            {/* FAQ */}
-            <h2 className="text-2xl font-bold text-[#0C4A6E] mb-6">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {faqs.map((faq) => (
-                <div key={faq.q} className="border-b border-gray-100 pb-6 last:border-0">
-                  <h3 className="font-bold text-gray-900 mb-2">{faq.q}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
-            </div>
+      <nav className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+          <Link href="home" className="font-black text-[#0C4A6E] text-xl">Bay<span className="text-[#0891B2]">Medical</span></Link>
+          <div className="hidden lg:flex gap-6 text-sm font-semibold text-gray-600">
+            <Link href="services" className="hover:text-[#0891B2]">Services</Link>
+            <Link href="primary-care" className="text-[#0891B2]">Primary Care</Link>
+            <Link href="pediatrics" className="hover:text-[#0891B2]">Pediatrics</Link>
+            <Link href="about" className="hover:text-[#0891B2]">Providers</Link>
           </div>
+          <Link href="contact" className="bg-[#0891B2] hover:bg-[#0779a0] text-white font-bold px-4 py-2 rounded text-sm transition-colors">Book Appointment</Link>
+        </div>
+      </nav>
 
-          {/* Sidebar */}
-          <div className="space-y-5">
-            <div className="bg-[#0C4A6E] rounded-2xl p-6">
-              <h3 className="text-white font-bold text-lg mb-5">Book an Appointment</h3>
-              <form className="space-y-3">
-                <input type="text" placeholder="Your Name" className="w-full border border-white/20 bg-white/10 text-white placeholder-white/50 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#0891B2] focus:outline-none" />
-                <input type="tel" placeholder="Phone Number" className="w-full border border-white/20 bg-white/10 text-white placeholder-white/50 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#0891B2] focus:outline-none" />
-                <select className="w-full border border-white/20 bg-white/10 text-white rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#0891B2] focus:outline-none">
-                  <option>New Patient Visit</option>
-                  <option>Annual Wellness</option>
-                  <option>Sick Visit</option>
-                  <option>Follow-Up</option>
-                </select>
-                <input type="date" className="w-full border border-white/20 bg-white/10 text-white rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#0891B2] focus:outline-none" />
-                <button className="w-full bg-[#0891B2] hover:bg-[#0770A0] text-white font-bold py-3 rounded-xl transition-colors">Request Appointment</button>
-              </form>
-            </div>
-            <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 text-center">
-              <p className="text-gray-500 text-sm mb-2">Prefer to call?</p>
-              <a href="tel:8135550100" className="text-2xl font-bold text-[#0891B2] hover:underline">(813) 555-0100</a>
-              <p className="text-gray-400 text-xs mt-2">Mon–Fri 7am–7pm · Sat 8am–2pm</p>
-            </div>
-            <div className="bg-[#F0F9FF] border border-[#BAE6FD] rounded-2xl p-5">
-              <p className="text-[#0C4A6E] font-bold mb-2 text-sm">What to Bring</p>
-              <ul className="space-y-1.5 text-gray-600 text-sm">
-                {["Photo ID", "Insurance card", "List of current medications", "Prior medical records (if available)", "List of questions for provider"].map((item) => (
-                  <li key={item} className="flex items-center gap-2"><span className="text-[#0891B2]">·</span> {item}</li>
+      {/* Teal header */}
+      <section className="bg-[#0891B2] py-12 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-cyan-100 text-xs font-semibold mb-2">
+            <Link href="home" className="hover:text-white">Home</Link> › <Link href="services" className="hover:text-white">Services</Link> › Primary Care
+          </div>
+          <h1 className="text-3xl lg:text-4xl font-black text-white mb-2">Primary Care</h1>
+          <p className="text-white/70 text-lg">Comprehensive, ongoing healthcare for adults and families.</p>
+        </div>
+      </section>
+
+      {/* Two-column: conditions + sticky booking form */}
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Left content — 2 cols */}
+          <div className="lg:col-span-2 space-y-10">
+            {/* What's included */}
+            <div>
+              <h2 className="text-xl font-black text-[#0C4A6E] mb-4">What&apos;s Included in a Primary Care Visit</h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {["Comprehensive medical history review","Physical exam and vital signs","Preventive screenings (age-appropriate)","Chronic disease monitoring & management","Prescription management and refills","Lab orders and result review","Referrals to specialists when needed","Personalized care plan & goal-setting"].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-gray-700 text-sm">
+                    <span className="text-[#0891B2] font-bold mt-0.5 flex-shrink-0">✓</span>{item}
+                  </li>
                 ))}
               </ul>
             </div>
+
+            {/* Conditions we manage */}
+            <div>
+              <h2 className="text-xl font-black text-[#0C4A6E] mb-4">Conditions We Manage</h2>
+              <div className="flex flex-wrap gap-2">
+                {conditions.map((c) => (
+                  <span key={c} className="bg-[#F0F9FF] border border-[#0891B2]/20 text-[#0C4A6E] text-sm font-semibold px-3 py-1.5 rounded-full">{c}</span>
+                ))}
+              </div>
+            </div>
+
+            {/* First visit steps */}
+            <div>
+              <h2 className="text-xl font-black text-[#0C4A6E] mb-5">Your First Visit — What to Expect</h2>
+              <div className="space-y-4">
+                {[
+                  ["Arrive 15 min early","Bring your photo ID, insurance card, and a list of current medications."],
+                  ["Complete new patient forms","Or fill them out online in advance — we'll send a link when you book."],
+                  ["Meet your provider","Your physician will review your medical history, current concerns, and goals."],
+                  ["Lab work if needed","We have an in-house lab — no separate visit for most routine tests."],
+                  ["Leave with a plan","Clear next steps, follow-up schedule, and any prescriptions ordered."],
+                ].map(([step, desc], i) => (
+                  <div key={i} className="flex gap-4">
+                    <span className="w-8 h-8 rounded-full bg-[#0891B2] text-white text-sm font-black flex items-center justify-center flex-shrink-0">{i + 1}</span>
+                    <div>
+                      <p className="font-bold text-[#0C4A6E] text-sm">{step}</p>
+                      <p className="text-gray-500 text-sm">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Sticky appointment form */}
+          <div className="lg:sticky lg:top-24 self-start">
+            <div className="border-2 border-[#0891B2]/30 rounded-2xl p-6 bg-[#F0F9FF]">
+              <h3 className="font-black text-[#0C4A6E] text-lg mb-1">Book a Primary Care Visit</h3>
+              <p className="text-gray-400 text-sm mb-4">Same-day and next-day available.</p>
+              <form className="space-y-3">
+                <input className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full bg-white focus:outline-none focus:border-[#0891B2]" placeholder="Your Name" />
+                <input type="tel" className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full bg-white focus:outline-none focus:border-[#0891B2]" placeholder="Phone Number" />
+                <select className="border border-gray-200 rounded-lg px-4 py-3 text-base bg-white w-full focus:outline-none focus:border-[#0891B2] text-gray-700">
+                  <option>Visit Type</option>
+                  <option>New Patient</option>
+                  <option>Established Patient</option>
+                  <option>Annual Physical</option>
+                  <option>Sick Visit</option>
+                  <option>Follow-Up</option>
+                </select>
+                <select className="border border-gray-200 rounded-lg px-4 py-3 text-base bg-white w-full focus:outline-none focus:border-[#0891B2] text-gray-700">
+                  <option>Preferred Provider</option>
+                  <option>Dr. Maria Santos, MD</option>
+                  <option>Dr. James Park, MD</option>
+                  <option>Dr. Robert Williams, MD</option>
+                  <option>No preference</option>
+                </select>
+                <textarea className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full h-20 resize-none bg-white focus:outline-none focus:border-[#0891B2]" placeholder="Reason for visit (optional)" />
+                <button type="submit" className="bg-[#0891B2] hover:bg-[#0779a0] text-white font-black px-6 py-3 rounded w-full transition-colors">Request Appointment</button>
+              </form>
+              <div className="mt-4 pt-4 border-t border-[#0891B2]/20">
+                <p className="text-xs text-gray-400 text-center">Or call us directly: <a href="tel:8135550200" className="text-[#0891B2] font-bold">(813) 555-0200</a></p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <section className="bg-[#0C4A6E] py-12 text-center px-4">
-        <h2 className="text-2xl font-bold text-white mb-6">Ready to establish care with a primary care provider?</h2>
-        <Link href="contact" className="inline-block bg-[#0891B2] hover:bg-[#0770A0] text-white font-bold px-10 py-4 rounded-xl transition-colors text-lg">Book Your First Appointment</Link>
       </section>
     </div>
   );

@@ -1,114 +1,135 @@
-// medical services overview: 6 specialties, alternating bg sections, insurance strip
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 
 const services = [
   {
-    name: "Primary Care", icon: "🩺", href: "primary-care",
-    included: ["Annual wellness exams", "Chronic disease management (diabetes, hypertension, thyroid)", "Preventive cancer screenings", "Same-day acute/sick visits", "Medication management & refills", "Lab orders & results review"],
-    ideal: "Adults 18+ seeking a long-term primary care provider.",
-    sameDay: true,
+    icon: "🩺",
+    name: "Primary Care",
+    href: "primary-care",
+    includes: ["Annual wellness exams","Sick visits & physicals","Chronic disease management (diabetes, hypertension, etc.)","Preventive care & screenings","Medication management","Referrals to specialists"],
+    note: "Same-day sick visits available",
   },
   {
-    name: "Pediatrics", icon: "👶", href: "pediatrics",
-    included: ["Well-child visits from birth to 18", "Vaccine administration & schedules", "Developmental milestone screenings", "School & sports physicals", "Acute illness & injury care", "Behavioral health screening"],
-    ideal: "Infants, children, and adolescents aged 0–18.",
-    sameDay: true,
+    icon: "👶",
+    name: "Pediatrics",
+    href: "pediatrics",
+    includes: ["Well-child visits (birth through 18)","Childhood immunization schedule","Developmental & behavioral screenings","Sports physicals","Sick child visits","Asthma & allergy management"],
+    note: "Evening & Saturday appointments",
   },
   {
-    name: "Women's Health", icon: "🌸", href: "services",
-    included: ["Annual GYN exams & Pap smears", "Contraception counseling & management", "Prenatal care coordination", "Menopause & hormone management", "Breast health & mammogram referrals", "STI testing & treatment"],
-    ideal: "Women seeking comprehensive gynecological and preventive care.",
-    sameDay: false,
+    icon: "💻",
+    name: "Telehealth",
+    href: "contact",
+    includes: ["Video visits from home or work","Prescription refills","Follow-up consultations","Mental health check-ins","Lab result review","Sick visit for minor illness"],
+    note: "Available Mon–Fri, 7am–7pm",
   },
   {
-    name: "Mental Health", icon: "🧠", href: "services",
-    included: ["Individual therapy (CBT, DBT, ACT)", "Psychiatric medication management", "Anxiety & depression treatment", "ADHD evaluation & management", "Stress & burnout support", "Telehealth sessions available"],
-    ideal: "Adults and adolescents managing mental health conditions.",
-    sameDay: false,
+    icon: "🏃",
+    name: "Urgent Care",
+    href: "contact",
+    includes: ["Walk-in, no appointment needed","Minor injuries and lacerations","Infections (ear, sinus, UTI)","Flu & COVID testing","Sprains & strains","X-ray referrals"],
+    note: "Walk-in hours: Mon–Sat 8am–6pm",
   },
   {
-    name: "Physical Therapy", icon: "💪", href: "services",
-    included: ["Post-surgical rehabilitation", "Sports injury recovery", "Chronic pain management", "Fall prevention programs", "Manual therapy & dry needling", "Home exercise program design"],
-    ideal: "Patients recovering from surgery, injury, or managing chronic pain.",
-    sameDay: false,
+    icon: "💉",
+    name: "Immunizations",
+    href: "contact",
+    includes: ["Flu shots (seasonal)","COVID-19 boosters","Travel vaccines","Shingles & pneumonia vaccines","Childhood vaccine catch-up","Employee health immunizations"],
+    note: "No appointment required for flu shots",
   },
   {
-    name: "Telehealth", icon: "📱", href: "contact",
-    included: ["Video visits via secure portal", "Same-day or next-day appointments", "Prescription refills", "Chronic condition follow-ups", "Mental health sessions", "7-day availability including weekends"],
-    ideal: "Established patients who prefer remote care for follow-ups.",
-    sameDay: true,
+    icon: "🔬",
+    name: "Lab & Diagnostics",
+    href: "contact",
+    includes: ["In-house blood draw & urinalysis","EKG / electrocardiogram on-site","Rapid strep & flu testing","Point-of-care A1C & cholesterol","Specimen collection for send-out labs","Results via patient portal within 24 hrs"],
+    note: "In-house lab — no separate visit needed",
   },
 ];
 
-const insurance = ["Aetna", "Humana", "BlueCross BlueShield", "United Healthcare", "Cigna", "Medicare", "Medicaid", "HealthFirst", "Molina"];
-
 export default function MedicalServices() {
+  const [open, setOpen] = useState<number | null>(null);
+
   return (
     <div className="bg-white font-sans">
-      <div className="bg-[#0891B2] text-white text-center py-2 text-sm font-semibold">
-        Same-Day Appointments Often Available · New Patients Welcome · <a href="tel:8135550100" className="underline">(813) 555-0100</a>
-      </div>
-
-      <div className="bg-[#0C4A6E] py-12 px-4 text-center">
-        <h1 className="text-4xl font-bold text-white mb-3">Comprehensive Care Under One Roof</h1>
-        <p className="text-white/70 text-lg max-w-2xl mx-auto">Six specialty areas, one care team. No referrals needed between departments.</p>
-      </div>
-
-      {services.map((s, i) => (
-        <section key={s.name} className={`py-14 px-4 ${i % 2 === 0 ? "bg-white" : "bg-[#F0F9FF]"}`}>
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-[80px_1fr] gap-8 items-start">
-            <div className="text-5xl">{s.icon}</div>
-            <div>
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <h2 className="text-2xl font-bold text-[#0C4A6E]">{s.name}</h2>
-                {s.sameDay && <span className="text-xs font-bold bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full">Same-Day Appointments Available</span>}
-              </div>
-              <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">What&apos;s Included</p>
-                  <ul className="space-y-2">
-                    {s.included.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-gray-600 text-sm">
-                        <span className="text-[#0891B2] font-bold mt-0.5">✓</span> {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Ideal For</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">{s.ideal}</p>
-                </div>
-              </div>
-              <Link href={s.href} className="inline-block bg-[#0891B2] hover:bg-[#0770A0] text-white font-bold px-6 py-3 rounded-xl text-sm transition-colors">
-                Book Now →
-              </Link>
-            </div>
+      {/* Nav */}
+      <nav className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+          <Link href="home" className="font-black text-[#0C4A6E] text-xl">Bay<span className="text-[#0891B2]">Medical</span></Link>
+          <div className="hidden lg:flex gap-6 text-sm font-semibold text-gray-600">
+            <Link href="services" className="text-[#0891B2]">Services</Link>
+            <Link href="primary-care" className="hover:text-[#0891B2]">Primary Care</Link>
+            <Link href="pediatrics" className="hover:text-[#0891B2]">Pediatrics</Link>
+            <Link href="about" className="hover:text-[#0891B2]">Providers</Link>
           </div>
-        </section>
-      ))}
+          <Link href="contact" className="bg-[#0891B2] hover:bg-[#0779a0] text-white font-bold px-4 py-2 rounded text-sm transition-colors">Book Appointment</Link>
+        </div>
+      </nav>
 
-      {/* Callout */}
-      <section className="bg-[#0C4A6E] py-10 px-4 text-center">
-        <p className="text-cyan-200 font-semibold text-lg">Same-day appointments often available · Most insurance accepted</p>
-      </section>
-
-      {/* Insurance */}
-      <section className="py-14 bg-gray-50 px-4">
+      {/* Page header */}
+      <section className="bg-[#0C4A6E] py-12 px-4">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-[#0891B2] text-xs font-semibold tracking-[0.15em] uppercase mb-8">Insurance Accepted</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {insurance.map((ins) => (
-              <span key={ins} className="bg-white border border-[#BAE6FD] text-[#0C4A6E] text-sm font-semibold px-5 py-2 rounded-full">{ins}</span>
-            ))}
-          </div>
+          <h1 className="text-3xl font-black text-white mb-2">Our Services</h1>
+          <p className="text-white/60">Click any service to see what&apos;s included.</p>
         </div>
       </section>
 
-      <section className="py-16 bg-white text-center px-4">
-        <h2 className="text-2xl font-bold text-[#0C4A6E] mb-6">Ready to get started?</h2>
+      {/* Accordion service list */}
+      <section className="py-12 px-4">
+        <div className="max-w-3xl mx-auto space-y-3">
+          {services.map((s, i) => (
+            <div key={s.name} className="border border-gray-200 rounded-2xl overflow-hidden hover:border-[#0891B2]/40 transition-colors">
+              <button
+                className="w-full flex items-center justify-between px-6 py-5 text-left"
+                onClick={() => setOpen(open === i ? null : i)}
+              >
+                <div className="flex items-center gap-4">
+                  <span className="text-2xl">{s.icon}</span>
+                  <div className="text-left">
+                    <p className="font-black text-[#0C4A6E] text-base">{s.name}</p>
+                    <p className="text-gray-400 text-xs mt-0.5">{s.note}</p>
+                  </div>
+                </div>
+                <span className={`text-[#0891B2] text-2xl transition-transform ${open === i ? "rotate-45" : ""}`}>+</span>
+              </button>
+              {open === i && (
+                <div className="px-6 pb-6 border-t border-gray-100 pt-4">
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">What&apos;s included:</p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5">
+                    {s.includes.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-gray-600 text-sm">
+                        <span className="text-[#0891B2] font-bold mt-0.5 flex-shrink-0">✓</span>{item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href={s.href} className="inline-block bg-[#0891B2] hover:bg-[#0779a0] text-white font-bold px-6 py-2.5 rounded text-sm transition-colors">Book This Service →</Link>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Same-day availability banner */}
+      <section className="bg-[#0891B2] py-12 px-4 text-center">
+        <h2 className="text-2xl font-black text-white mb-2">Same-Day Appointments Available</h2>
+        <p className="text-white/80 mb-6">Call before noon for same-day sick visits. Evening and Saturday slots also open.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="contact" className="bg-[#0891B2] hover:bg-[#0770A0] text-white font-bold px-10 py-4 rounded-xl transition-colors">Book an Appointment</Link>
-          <a href="tel:8135550100" className="border-2 border-[#0C4A6E] text-[#0C4A6E] font-bold px-10 py-4 rounded-xl hover:bg-[#0C4A6E] hover:text-white transition-colors">Call (813) 555-0100</a>
+          <a href="tel:8135550200" className="bg-white text-[#0891B2] font-black px-8 py-3 rounded hover:bg-gray-50 transition-colors">(813) 555-0200</a>
+          <Link href="contact" className="border-2 border-white text-white font-bold px-8 py-3 rounded hover:bg-white hover:text-[#0891B2] transition-colors">Book Online</Link>
+        </div>
+      </section>
+
+      {/* Insurance grid */}
+      <section className="py-14 px-4 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-xl font-black text-[#0C4A6E] mb-6">Accepted Insurance Plans</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {["Blue Cross Blue Shield","Aetna","Cigna","United Healthcare","Humana","Medicare","Medicaid","Tricare","Oscar Health","Molina Healthcare","Florida Blue","Bright Health"].map((ins) => (
+              <div key={ins} className="border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-semibold text-gray-600 hover:border-[#0891B2] hover:text-[#0891B2] transition-colors text-center">{ins}</div>
+            ))}
+          </div>
+          <p className="text-gray-400 text-sm mt-4">Don&apos;t see yours? Call — we likely accept it. <Link href="contact" className="text-[#0891B2] font-bold hover:underline">Verify your coverage.</Link></p>
         </div>
       </section>
     </div>

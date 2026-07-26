@@ -1,86 +1,109 @@
-// elevationwp.com: white, retirement income planning detail, SS optimization, FAQ
 import Link from "next/link";
 
 const faqs = [
-  { q: "When should I claim Social Security?", a: "There is no universal answer — the optimal claiming age depends on your health, other income sources, spousal situation, and longevity assumptions. For most clients, delaying to age 70 maximizes lifetime benefits if health permits. We model multiple scenarios to find your optimal strategy." },
-  { q: "What is withdrawal sequencing?", a: "The order in which you draw from taxable, tax-deferred (IRA/401k), and tax-free (Roth) accounts significantly impacts your lifetime tax burden. A proper sequencing strategy can save tens of thousands of dollars over a 25-year retirement." },
-  { q: "How do I enroll in Medicare?", a: "Medicare enrollment begins at age 65. Missing your Initial Enrollment Period can result in permanent premium penalties. We guide clients through Part A, Part B, Part D, and Medigap or Medicare Advantage decisions — coordinated with your overall retirement income plan." },
-  { q: "What is an income floor?", a: "An income floor is guaranteed income sufficient to cover your essential monthly expenses — Social Security, pension, annuity income. Building a reliable floor allows you to take more investment risk with your discretionary savings, improving long-term outcomes." },
-  { q: "What is sequence-of-returns risk?", a: "A major market decline in the first few years of retirement can permanently impair your portfolio, even if markets recover. We build portfolios and withdrawal plans specifically designed to survive early retirement downturns without forcing you to sell assets at depressed prices." },
-  { q: "What happens to my RMDs?", a: "Required Minimum Distributions from IRAs and 401(k)s begin at age 73 (under current law). We plan RMD amounts years in advance to minimize tax impact — often using Roth conversions in low-income years before age 73 to reduce future RMDs." },
+  { q: "When should I start taking Social Security?", a: "It depends on your health, other income sources, spouse's benefit, and break-even analysis. We model multiple claiming scenarios to find the optimal strategy for your situation — there is no universal right answer." },
+  { q: "How much do I need to retire?", a: "The '4% rule' is a starting point, not a plan. Your number depends on your spending, tax situation, Social Security, pensions, healthcare costs, and legacy goals. We build a Monte Carlo simulation specific to you." },
+  { q: "What happens to my investments when I retire?", a: "They shift from accumulation mode to distribution mode. We restructure your portfolio for income generation, sequence-of-returns risk, and tax-efficient withdrawals. This requires active planning, not just a change in contribution amount." },
+  { q: "How do I handle Required Minimum Distributions?", a: "We plan RMDs years in advance using Roth conversions, charitable distributions (QCDs), and withdrawal sequencing to minimize the tax impact across your lifetime and your heirs'." },
+  { q: "When do I need to sign up for Medicare?", a: "Generally at 65, but the rules around Part B timing, IRMAA surcharges, and employer coverage coordination are complex. Getting it wrong can result in permanent premium penalties. We coordinate this for all clients approaching 65." },
 ];
 
-export default function FinancialRetirementPlanning() {
+export default function RetirementPlanning() {
   return (
     <div className="bg-white font-sans">
-      <nav className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-          <div className="font-bold text-[#1B3060] text-lg">ELEVATION<span className="font-light text-gray-400"> WEALTH</span></div>
-          <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-600">
-            <Link href="home" className="hover:text-[#1B3060]">Home</Link>
-            <Link href="services" className="hover:text-[#1B3060]">Services</Link>
-            <Link href="wealth-management" className="hover:text-[#1B3060]">Wealth Mgmt</Link>
-            <Link href="retirement-planning" className="text-[#1B3060] border-b border-[#1B3060]">Retirement</Link>
-            <Link href="about" className="hover:text-[#1B3060]">About</Link>
+      <nav className="border-b border-gray-100 sticky top-0 z-50 bg-white">
+        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+          <Link href="home" className="font-bold text-[#1B2B4B] text-lg tracking-tight">Meridian<span className="font-light text-gray-400"> Wealth</span></Link>
+          <div className="hidden lg:flex items-center gap-8 text-sm font-semibold text-gray-500">
+            <Link href="services" className="hover:text-[#1B2B4B]">Services</Link>
+            <Link href="wealth-management" className="hover:text-[#1B2B4B]">Wealth Management</Link>
+            <Link href="retirement-planning" className="text-[#1B2B4B]">Retirement</Link>
+            <Link href="about" className="hover:text-[#1B2B4B]">About</Link>
+            <Link href="contact" className="bg-[#1B2B4B] text-white px-5 py-2.5 hover:bg-[#243a63] transition-colors">Schedule a Call</Link>
           </div>
-          <Link href="contact" className="bg-[#1B3060] text-white font-semibold px-5 py-2.5 rounded text-sm hover:bg-[#152548] transition-colors">Let&apos;s Get Started</Link>
         </div>
       </nav>
 
-      <div className="max-w-4xl mx-auto px-6 py-14">
-        <nav className="text-xs text-gray-400 mb-5">
-          <Link href="home" className="hover:text-[#1B3060]">Home</Link> / <Link href="services" className="hover:text-[#1B3060]">Services</Link> / <span className="text-gray-700">Retirement Income Planning</span>
-        </nav>
+      {/* Header */}
+      <section className="py-20 px-6 border-b border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-5">Retirement Income Planning</p>
+          <h1 className="text-5xl font-bold text-[#1B2B4B] leading-tight mb-6">Accumulating Wealth and Distributing It Are Two Very Different Problems</h1>
+          <p className="text-gray-500 text-xl leading-relaxed max-w-2xl">The questions change when you retire. We specialize in the distribution phase — Social Security, Medicare, RMDs, withdrawal sequencing, and income sustainability.</p>
+        </div>
+      </section>
 
-        <h1 className="text-4xl font-bold text-[#1B3060] mb-6">Retirement Income Planning</h1>
-
-        <p className="text-gray-600 text-lg leading-relaxed mb-10">
-          The transition from accumulation to distribution is one of the most consequential financial events of your life. We help clients within five years of retirement — and those already retired — build structured income plans that sustain their lifestyle and minimize taxes across a 25–35 year retirement. Lorem ipsum dolor sit amet.
-        </p>
-
-        <h2 className="text-2xl font-bold text-[#1B3060] mb-5">What We Address</h2>
-        <div className="grid sm:grid-cols-2 gap-4 mb-12">
-          {[
-            { title: "Social Security Optimization", body: "Claiming age analysis for single filers, married couples, and divorced spouses. Spousal benefit coordination. Break-even analysis under longevity scenarios." },
-            { title: "Medicare Enrollment & Planning", body: "Part A/B enrollment timing, Medigap vs. Medicare Advantage comparison, Part D drug coverage, IRMAA surcharge planning." },
-            { title: "Withdrawal Sequencing", body: "Tax-efficient drawdown order across taxable, traditional, and Roth accounts. Coordination with Social Security claiming strategy." },
-            { title: "Income Floor Strategy", body: "Identifying guaranteed income sources, analyzing annuity options where appropriate, and ensuring essential expenses are covered regardless of market performance." },
-            { title: "RMD Planning", body: "Projecting future Required Minimum Distributions, Roth conversion opportunities in pre-RMD years, and qualified charitable distribution strategies." },
-            { title: "Sequence-of-Returns Management", body: "Cash buffer strategies, dynamic withdrawal rates, and portfolio construction to protect against early-retirement market downturns." },
-          ].map((item) => (
-            <div key={item.title} className="border border-gray-100 rounded-xl p-5">
-              <h3 className="font-bold text-[#1B3060] mb-2 text-sm">{item.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{item.body}</p>
+      {/* Two-column content areas */}
+      <section className="py-20 px-6 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div>
+            <h2 className="text-2xl font-bold text-[#1B2B4B] mb-6">What We Plan For</h2>
+            <div className="space-y-5">
+              {[
+                ["Social Security Optimization","We model all claiming scenarios for you and your spouse — including file-and-suspend strategies, survivor benefits, and break-even analysis — to identify the strategy that maximizes lifetime income."],
+                ["Medicare Enrollment Coordination","We walk you through Part A, B, C, and D enrollment timing, IRMAA planning, Medigap vs. Advantage plan analysis, and how employer coverage affects your choices."],
+                ["Required Minimum Distributions","Starting at 73, the IRS requires withdrawals from traditional IRAs and 401(k)s. We plan years ahead using Roth conversions and charitable strategies to minimize the long-term tax cost."],
+                ["Withdrawal Sequencing","Which accounts you draw from — and in what order — has a meaningful impact on your lifetime tax burden. We plan this systematically, not ad hoc."],
+                ["Sequence-of-Returns Risk","A market downturn early in retirement can permanently impair your portfolio. We build buffer strategies to protect against this — cash reserves, income floors, and dynamic withdrawal rates."],
+              ].map(([title, desc]) => (
+                <div key={title as string} className="border-b border-gray-100 pb-5 last:border-0 last:pb-0">
+                  <h3 className="font-bold text-[#1B2B4B] mb-2">{title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        <h2 className="text-2xl font-bold text-[#1B3060] mb-6">Who This Service Is For</h2>
-        <ul className="space-y-3 mb-12">
-          {["Within 1–10 years of planned retirement date", "Recently retired and uncertain about withdrawal strategy", "Concerned about market volatility affecting retirement income", "Approaching age 65 and navigating Medicare for the first time", "Approaching age 73 and planning for Required Minimum Distributions", "Widowed or recently divorced, taking over household finances"].map((item) => (
-            <li key={item} className="flex items-start gap-3 text-gray-700">
-              <span className="text-[#1B3060] font-bold mt-0.5">—</span> {item}
-            </li>
-          ))}
-        </ul>
-
-        {/* FAQ */}
-        <h2 className="text-2xl font-bold text-[#1B3060] mb-7">Retirement Planning FAQ</h2>
-        <div className="space-y-7 mb-12">
-          {faqs.map((faq) => (
-            <div key={faq.q} className="border-b border-gray-100 pb-7 last:border-0">
-              <h3 className="font-bold text-gray-900 mb-2">{faq.q}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+          {/* Social Security highlight callout */}
+          <div className="space-y-6">
+            <div className="border-2 border-[#1B2B4B] p-8">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-4">Maximizing Social Security</p>
+              <h3 className="text-xl font-bold text-[#1B2B4B] mb-4">The Difference Between Age 62 and 70 Is Often $100,000+</h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">Claiming early reduces your benefit permanently. Waiting increases it 8% per year past full retirement age. For married couples, coordinating both spouses&apos; claims is even more valuable — especially when there is an earnings disparity.</p>
+              <div className="space-y-3">
+                {[["Breakeven analysis","When you recoup delayed benefits"],["Spousal coordination","Maximize survivor benefits"],["Tax impact modeling","SS is taxable up to 85%"],["Healthcare bridge","Covering costs before Medicare"]].map(([k, v]) => (
+                  <div key={k} className="flex justify-between text-sm border-b border-gray-100 pb-2 last:border-0 last:pb-0">
+                    <span className="font-semibold text-gray-600">{k}</span>
+                    <span className="text-gray-400">{v}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+            <div className="bg-gray-50 border border-gray-100 p-6">
+              <h3 className="font-bold text-[#1B2B4B] mb-3">Who This Is For</h3>
+              <ul className="space-y-2">
+                {["5–10 years from retirement","Recently retired (within 3 years)","Managing an inherited IRA","Transitioning from a pension","Navigating early retirement before Medicare"].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-gray-500">
+                    <span className="text-gray-300 mt-0.5">—</span>{item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8 text-center">
-          <h2 className="text-xl font-bold text-[#1B3060] mb-3">Approaching retirement? Let&apos;s build your income plan.</h2>
-          <p className="text-gray-500 mb-6 text-sm">A 30-minute introductory conversation. No obligation.</p>
-          <Link href="contact" className="inline-block bg-[#1B3060] hover:bg-[#152548] text-white font-semibold px-10 py-4 rounded transition-colors">Schedule a Consultation</Link>
+      {/* FAQ */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-10">Common Questions</p>
+          <div className="space-y-8">
+            {faqs.map((faq) => (
+              <div key={faq.q} className="border-b border-gray-200 pb-8 last:border-0 last:pb-0">
+                <h3 className="font-bold text-[#1B2B4B] mb-3">{faq.q}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* CTA */}
+      <section className="border-t border-gray-100 py-16 px-6 text-center">
+        <h2 className="text-2xl font-bold text-[#1B2B4B] mb-4">Thinking About Retirement? Start Here.</h2>
+        <p className="text-gray-500 text-sm mb-8 max-w-md mx-auto">30-minute complimentary call to discuss your timeline, your biggest concerns, and whether we&apos;re the right fit.</p>
+        <Link href="contact" className="inline-block bg-[#1B2B4B] text-white px-10 py-4 font-semibold hover:bg-[#243a63] transition-colors">Schedule a Call</Link>
+      </section>
     </div>
   );
 }

@@ -1,181 +1,159 @@
-// medical contact: teal hero, full intake form, hours/location, what to bring
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 
 export default function MedicalContact() {
+  const [step, setStep] = useState(1);
+  const [reason, setReason] = useState("");
+  const [provider, setProvider] = useState("");
+
   return (
     <div className="bg-white font-sans">
-      <div className="bg-[#0891B2] text-white text-center py-2 text-sm font-semibold">
-        New Patients Welcome · Same-Day Appointments · <a href="tel:8135550100" className="underline">(813) 555-0100</a>
-      </div>
+      <nav className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+          <Link href="home" className="font-black text-[#0C4A6E] text-xl">Bay<span className="text-[#0891B2]">Medical</span></Link>
+          <div className="hidden lg:flex gap-6 text-sm font-semibold text-gray-600">
+            <Link href="services" className="hover:text-[#0891B2]">Services</Link>
+            <Link href="about" className="hover:text-[#0891B2]">Providers</Link>
+          </div>
+          <a href="tel:8135550200" className="bg-[#0891B2] text-white font-bold px-4 py-2 rounded text-sm">(813) 555-0200</a>
+        </div>
+      </nav>
 
-      <section className="bg-[#0C4A6E] py-12 px-4 text-center">
-        <h1 className="text-4xl font-bold text-white">Request an Appointment</h1>
-        <p className="text-white/70 text-lg mt-3">We confirm within 2 hours via text or email.</p>
+      {/* Teal header */}
+      <section className="bg-[#0891B2] py-12 px-4 text-center">
+        <h1 className="text-3xl font-black text-white mb-2">Request an Appointment</h1>
+        <p className="text-white/70">Same-day and next-day availability in most cases.</p>
       </section>
 
-      <section className="py-14 bg-gray-50 px-4">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.4fr_1fr] gap-10">
-          {/* Form */}
-          <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
-            <h2 className="text-xl font-bold text-[#0C4A6E] mb-6">Appointment Request</h2>
-            <form className="space-y-5">
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Patient Type</label>
-                <div className="flex gap-4">
-                  <label className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
-                    <input type="radio" name="patientType" defaultChecked className="accent-[#0891B2]" /> New Patient
-                  </label>
-                  <label className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
-                    <input type="radio" name="patientType" className="accent-[#0891B2]" /> Existing Patient
-                  </label>
-                </div>
+      {/* Multi-step form */}
+      <section className="py-16 px-4">
+        <div className="max-w-2xl mx-auto">
+          {/* Progress bar */}
+          <div className="flex items-center mb-10">
+            {[1, 2, 3].map((s) => (
+              <div key={s} className="flex items-center flex-1 last:flex-none">
+                <div className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-black flex-shrink-0 transition-colors ${step >= s ? "bg-[#0891B2] text-white" : "bg-gray-100 text-gray-400"}`}>{s}</div>
+                {s < 3 && <div className={`flex-1 h-0.5 mx-2 transition-colors ${step > s ? "bg-[#0891B2]" : "bg-gray-100"}`} />}
               </div>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">First Name *</label>
-                  <input type="text" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#0891B2] focus:outline-none" placeholder="First name" />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Last Name *</label>
-                  <input type="text" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#0891B2] focus:outline-none" placeholder="Last name" />
-                </div>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Date of Birth</label>
-                  <input type="date" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#0891B2] focus:outline-none" />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Phone Number *</label>
-                  <input type="tel" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#0891B2] focus:outline-none" placeholder="(813) 555-0100" />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Email Address</label>
-                <input type="email" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#0891B2] focus:outline-none" placeholder="you@email.com" />
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Visit Type *</label>
-                  <select className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 focus:ring-2 focus:ring-[#0891B2] focus:outline-none">
-                    <option value="">Select...</option>
-                    <option>New Patient Visit</option>
-                    <option>Annual Wellness Exam</option>
-                    <option>Sick / Urgent Visit</option>
-                    <option>Follow-Up</option>
-                    <option>Telehealth Visit</option>
-                    <option>Sports Physical</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Department *</label>
-                  <select className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 focus:ring-2 focus:ring-[#0891B2] focus:outline-none">
-                    <option value="">Select...</option>
-                    <option>Primary Care</option>
-                    <option>Pediatrics</option>
-                    <option>Women&apos;s Health</option>
-                    <option>Mental Health</option>
-                    <option>Physical Therapy</option>
-                    <option>Telehealth</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Preferred Provider</label>
-                <select className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 focus:ring-2 focus:ring-[#0891B2] focus:outline-none">
-                  <option value="">No preference</option>
-                  <option>Dr. Amanda Chen, MD</option>
-                  <option>Dr. Marcus Webb, DO</option>
-                  <option>Dr. Priya Nair, MD</option>
-                  <option>Sarah Hoffman, LCSW</option>
-                </select>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Preferred Date</label>
-                  <input type="date" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#0891B2] focus:outline-none" />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Preferred Time</label>
-                  <select className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 focus:ring-2 focus:ring-[#0891B2] focus:outline-none">
-                    <option>Morning (7am–12pm)</option>
-                    <option>Afternoon (12pm–5pm)</option>
-                    <option>Evening (5pm–7pm)</option>
-                    <option>Saturday (8am–2pm)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Insurance Provider</label>
-                <input type="text" className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#0891B2] focus:outline-none" placeholder="e.g. Aetna, Blue Cross, Medicare" />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Reason for Visit / Notes</label>
-                <textarea rows={3} className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#0891B2] focus:outline-none resize-none" placeholder="Briefly describe your reason for visit or any relevant medical history..." />
-              </div>
-
-              <button type="submit" className="w-full bg-[#0891B2] hover:bg-[#0770A0] text-white font-bold py-4 rounded-xl text-lg transition-colors">
-                Request Appointment
-              </button>
-              <p className="text-gray-400 text-xs text-center">We confirm via text or email within 2 hours. Your information is kept confidential.</p>
-            </form>
+            ))}
           </div>
 
-          {/* Right side */}
-          <div className="space-y-5">
-            <div className="bg-[#0C4A6E] rounded-2xl p-6">
-              <h3 className="text-white font-bold text-lg mb-5">Office Hours</h3>
-              <div className="space-y-3">
-                {[
-                  { day: "Monday – Friday", hours: "7:00 am – 7:00 pm" },
-                  { day: "Saturday", hours: "8:00 am – 2:00 pm" },
-                  { day: "Telehealth", hours: "7 days a week" },
-                  { day: "After-Hours Nurse Line", hours: "Until 10:00 pm weekdays" },
-                ].map((h) => (
-                  <div key={h.day} className="flex justify-between border-b border-white/10 pb-3 last:border-0 last:pb-0">
-                    <span className="text-white/70 text-sm">{h.day}</span>
-                    <span className="text-white font-semibold text-sm">{h.hours}</span>
-                  </div>
+          {/* Step labels */}
+          <div className="flex justify-between text-xs font-bold uppercase tracking-widest text-gray-400 mb-8 -mt-4 px-1">
+            <span className={step >= 1 ? "text-[#0891B2]" : ""}>Reason</span>
+            <span className={step >= 2 ? "text-[#0891B2]" : ""}>Provider</span>
+            <span className={step >= 3 ? "text-[#0891B2]" : ""}>Details</span>
+          </div>
+
+          {/* Step 1 */}
+          {step === 1 && (
+            <div>
+              <h2 className="text-xl font-black text-[#0C4A6E] mb-5">What brings you in?</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {["Annual Physical / Wellness Exam","Sick Visit — I feel unwell","Follow-Up Appointment","New Patient Visit","Pediatric / Well-Child Visit","Immunizations Only","Telehealth Visit","Urgent Concern"].map((r) => (
+                  <button
+                    key={r}
+                    onClick={() => setReason(r)}
+                    className={`border-2 rounded-xl px-4 py-4 text-left text-sm font-semibold transition-colors ${reason === r ? "border-[#0891B2] bg-[#F0F9FF] text-[#0C4A6E]" : "border-gray-200 text-gray-600 hover:border-[#0891B2]/40"}`}
+                  >
+                    {r}
+                  </button>
                 ))}
               </div>
+              <button
+                onClick={() => setStep(2)}
+                disabled={!reason}
+                className="mt-6 bg-[#0891B2] hover:bg-[#0779a0] disabled:opacity-40 text-white font-black px-8 py-3 rounded w-full transition-colors"
+              >
+                Next: Choose Provider →
+              </button>
             </div>
+          )}
 
-            <div className="bg-white border border-gray-100 rounded-2xl p-6">
-              <h3 className="font-bold text-[#0C4A6E] text-lg mb-3">Our Location</h3>
-              <p className="text-gray-700 text-sm mb-1">2501 Rocky Point Road, Suite 400</p>
-              <p className="text-gray-700 text-sm mb-4">Tampa, FL 33607</p>
-              <a href="tel:8135550100" className="text-2xl font-bold text-[#0891B2] hover:underline block">(813) 555-0100</a>
-            </div>
-
-            <div className="bg-[#F0F9FF] border border-[#BAE6FD] rounded-2xl p-6">
-              <h3 className="font-bold text-[#0C4A6E] mb-3">What to Bring to Your Appointment</h3>
-              <ul className="space-y-2">
-                {["Photo ID (driver's license or passport)", "Insurance card", "List of current medications and dosages", "Medical records from previous providers", "Completed new patient forms (we email these)", "List of questions for your provider"].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-gray-600 text-sm">
-                    <span className="text-[#0891B2] font-bold mt-0.5">✓</span> {item}
-                  </li>
+          {/* Step 2 */}
+          {step === 2 && (
+            <div>
+              <h2 className="text-xl font-black text-[#0C4A6E] mb-5">Select a provider</h2>
+              <div className="space-y-3">
+                {[
+                  { name: "Dr. Maria Santos, MD", spec: "Family Medicine", avail: "Next available: Today 2:30 PM" },
+                  { name: "Dr. James Park, MD", spec: "Internal Medicine", avail: "Next available: Tomorrow 9:00 AM" },
+                  { name: "Dr. Emily Chen, DO", spec: "Pediatrics", avail: "Next available: Today 4:00 PM" },
+                  { name: "Dr. Robert Williams, MD", spec: "Urgent Care & Family Medicine", avail: "Walk-in available now" },
+                  { name: "No preference", spec: "First available provider", avail: "Next available: Today 1:00 PM" },
+                ].map((p) => (
+                  <button
+                    key={p.name}
+                    onClick={() => setProvider(p.name)}
+                    className={`border-2 rounded-xl p-4 w-full text-left transition-colors ${provider === p.name ? "border-[#0891B2] bg-[#F0F9FF]" : "border-gray-200 hover:border-[#0891B2]/40"}`}
+                  >
+                    <p className="font-black text-[#0C4A6E] text-sm">{p.name}</p>
+                    <p className="text-gray-400 text-xs">{p.spec}</p>
+                    <p className="text-[#0891B2] text-xs font-bold mt-1">{p.avail}</p>
+                  </button>
                 ))}
-              </ul>
+              </div>
+              <div className="flex gap-3 mt-6">
+                <button onClick={() => setStep(1)} className="flex-1 border-2 border-gray-200 text-gray-600 font-bold py-3 rounded hover:border-gray-400 transition-colors">← Back</button>
+                <button onClick={() => setStep(3)} disabled={!provider} className="flex-1 bg-[#0891B2] hover:bg-[#0779a0] disabled:opacity-40 text-white font-black py-3 rounded transition-colors">Next: Your Details →</button>
+              </div>
             </div>
+          )}
 
-            <div className="bg-yellow-50 border border-yellow-200 rounded-2xl p-5">
-              <p className="font-bold text-yellow-800 text-sm mb-1">Insurance Verification Note</p>
-              <p className="text-yellow-700 text-xs leading-relaxed">We verify insurance before your visit. Please provide your insurance information when scheduling. If you&apos;re uninsured, we offer self-pay rates — call to discuss.</p>
+          {/* Step 3 */}
+          {step === 3 && (
+            <div>
+              <h2 className="text-xl font-black text-[#0C4A6E] mb-5">Your contact details</h2>
+              <div className="bg-[#F0F9FF] rounded-xl p-4 mb-6 text-sm">
+                <p className="text-gray-500">Booking: <strong className="text-[#0C4A6E]">{reason}</strong> with <strong className="text-[#0C4A6E]">{provider}</strong></p>
+              </div>
+              <form className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <input className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#0891B2]" placeholder="First Name" />
+                  <input className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#0891B2]" placeholder="Last Name" />
+                </div>
+                <input type="tel" className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#0891B2]" placeholder="Phone Number" />
+                <input type="email" className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#0891B2]" placeholder="Email Address" />
+                <select className="border border-gray-200 rounded-lg px-4 py-3 text-base bg-white w-full focus:outline-none focus:border-[#0891B2] text-gray-700">
+                  <option>Insurance Plan</option>
+                  <option>Blue Cross Blue Shield</option>
+                  <option>Aetna</option>
+                  <option>Cigna</option>
+                  <option>United Healthcare</option>
+                  <option>Medicare</option>
+                  <option>Medicaid</option>
+                  <option>Self-Pay</option>
+                  <option>Other</option>
+                </select>
+                <textarea className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full h-20 resize-none focus:outline-none focus:border-[#0891B2]" placeholder="Additional notes (optional)" />
+                <div className="flex gap-3">
+                  <button type="button" onClick={() => setStep(2)} className="flex-1 border-2 border-gray-200 text-gray-600 font-bold py-3 rounded hover:border-gray-400 transition-colors">← Back</button>
+                  <button type="submit" className="flex-1 bg-[#0891B2] hover:bg-[#0779a0] text-white font-black py-3 rounded transition-colors">Confirm Appointment</button>
+                </div>
+                <p className="text-center text-gray-400 text-xs">We will call to confirm your appointment within 2 hours.</p>
+              </form>
             </div>
+          )}
+        </div>
+      </section>
 
-            <div className="bg-[#0891B2] rounded-2xl p-5 text-center">
-              <p className="text-white/80 text-sm mb-1">Need urgent care today?</p>
-              <a href="tel:8135550100" className="text-3xl font-bold text-white">(813) 555-0100</a>
-              <p className="text-white/60 text-xs mt-1">Same-day slots held for urgent needs</p>
+      {/* Location + hours */}
+      <section className="bg-[#F0F9FF] border-t border-blue-100 py-14 px-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2 bg-gray-200 rounded-2xl aspect-video flex items-center justify-center text-gray-400">Location Map</div>
+          <div>
+            <h3 className="font-black text-[#0C4A6E] mb-4">Location & Hours</h3>
+            <p className="text-gray-600 text-sm mb-1 font-semibold">4501 N. Armenia Ave, Suite 200</p>
+            <p className="text-gray-500 text-sm mb-4">Tampa, FL 33603</p>
+            <div className="space-y-2 text-sm">
+              {[["Mon – Fri","7:00 AM – 7:00 PM"],["Saturday","8:00 AM – 2:00 PM"],["Sunday","Closed"],["Urgent Walk-In","Mon–Sat 8 AM – 6 PM"]].map(([d, h]) => (
+                <div key={d} className="flex justify-between border-b border-gray-200 pb-1.5 last:border-0">
+                  <span className="text-gray-500">{d}</span><span className="font-bold text-gray-800">{h}</span>
+                </div>
+              ))}
             </div>
+            <a href="tel:8135550200" className="mt-5 block bg-[#0891B2] hover:bg-[#0779a0] text-white font-black px-5 py-3 rounded text-center transition-colors">(813) 555-0200</a>
           </div>
         </div>
       </section>

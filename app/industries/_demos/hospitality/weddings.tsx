@@ -1,148 +1,104 @@
-// weddings: elegant but LIGHT, 4-step process, proposal form, gallery placeholders
 import Link from "next/link";
 
 const steps = [
-  { num: "01", title: "Initial Inquiry", body: "Submit your event details and we&apos;ll respond within 24 hours to schedule a complimentary consultation." },
-  { num: "02", title: "Menu Tasting", body: "We invite you to a private tasting session so you can experience the quality and make informed menu decisions." },
-  { num: "03", title: "Proposal & Planning", body: "We create a detailed proposal with menu, staffing, timeline, and pricing. We revise until everything is right." },
-  { num: "04", title: "Your Wedding Day", body: "Our team arrives early, sets up flawlessly, and handles every detail — so you can be present and enjoy your day." },
+  { num: "01", title: "Initial Consultation", desc: "A 30-minute call to learn about your vision, venue, and guest count. No pitch — just listening." },
+  { num: "02", title: "Tasting & Menu Design", desc: "Complimentary tasting for two. We design a menu around your preferences, dietary needs, and season." },
+  { num: "03", title: "Detailed Proposal", desc: "Itemized pricing with no hidden fees. You know exactly what you&apos;re getting before you sign anything." },
+  { num: "04", title: "Your Wedding Day", desc: "A dedicated lead coordinator on-site from setup through teardown. You enjoy your day — we handle everything." },
 ];
 
-const menuHighlights = [
-  { course: "Passed Appetizers", items: ["Prosciutto-wrapped melon", "Bruschetta with heirloom tomato", "Mini crab cakes with remoulade", "Brie en croûte with fig jam"] },
-  { course: "Plated Dinner", items: ["Filet mignon with truffle demi-glace", "Pan-seared salmon with lemon beurre blanc", "Chicken Marsala with wild mushroom", "Vegetarian: Risotto Primavera"] },
-  { course: "Dessert Station", items: ["Wedding cake service", "Assorted macarons and petit fours", "Fresh fruit display", "Espresso & dessert coffee station"] },
+const packages = [
+  { name: "Elopement Celebration", guests: "Up to 30", price: "Starting at $1,800", includes: ["Passed appetizers + champagne","Intimate plated dinner","2 service staff","Cake cutting service"] },
+  { name: "The Garden Party", guests: "30–100 guests", price: "Starting at $3,800", includes: ["Cocktail hour with passed appetizers","Buffet or family-style dinner","Full bar coordination","4 service staff"] },
+  { name: "The Grand Celebration", guests: "100–300 guests", price: "Starting at $8,500", includes: ["Full cocktail hour","Plated 3-course dinner","Custom dessert display","Full bar program","8–16 service staff"] },
 ];
 
-export default function HospitalityWeddings() {
+export default function Weddings() {
   return (
-    <div className="bg-[#FAFAF8] font-sans">
-      <nav className="bg-[#FAFAF8] border-b border-[#E8E4DC]">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
-          <div className="font-bold text-[#1C1917] text-lg tracking-tight">TERRA<span className="font-light text-[#6B7C5C]">BELLA</span></div>
-          <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-[#4A4540]">
-            <Link href="home" className="hover:text-[#1C1917]">Home</Link>
-            <Link href="catering" className="hover:text-[#1C1917]">Catering</Link>
-            <Link href="weddings" className="text-[#6B7C5C] border-b border-[#6B7C5C]">Weddings</Link>
-            <Link href="corporate-events" className="hover:text-[#1C1917]">Corporate</Link>
-            <Link href="about" className="hover:text-[#1C1917]">Our Story</Link>
+    <div className="bg-[#F9F6F0] font-serif">
+      <nav className="bg-[#F9F6F0] border-b border-stone-200 sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
+          <Link href="home" className="text-2xl font-bold tracking-tight text-stone-800 italic">Terra Bella<span className="not-italic font-light text-stone-500"> Events</span></Link>
+          <div className="hidden lg:flex items-center gap-8">
+            <Link href="weddings" className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-800">Weddings</Link>
+            <Link href="catering" className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-400 hover:text-stone-800">Catering</Link>
+            <Link href="corporate-events" className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-400 hover:text-stone-800">Corporate</Link>
+            <Link href="contact" className="border border-stone-800 font-sans text-xs font-semibold uppercase tracking-widest text-stone-800 px-5 py-2.5 hover:bg-stone-800 hover:text-white transition-colors">Start Planning</Link>
           </div>
-          <Link href="contact" className="bg-[#1C1917] text-white font-semibold px-4 py-2 rounded text-sm hover:bg-[#2C2921] transition-colors">Request a Proposal</Link>
         </div>
       </nav>
 
-      <div className="bg-[#F5F3EF] py-14 px-4 text-center border-b border-[#E8E4DC]">
-        <p className="text-[#6B7C5C] text-xs font-bold uppercase tracking-[0.2em] mb-3">Wedding Services</p>
-        <h1 className="text-4xl font-bold text-[#1C1917] mb-3" style={{fontFamily: "Georgia, serif"}}>Wedding Catering &amp; Reception Services</h1>
-        <p className="text-[#6B6560] text-lg max-w-2xl mx-auto">Every detail of your reception matters to us — because it matters to you.</p>
-      </div>
+      {/* Editorial hero */}
+      <section className="py-24 px-6 text-center">
+        <p className="font-sans text-xs tracking-[0.2em] text-stone-400 uppercase mb-5">Wedding Catering & Events</p>
+        <h1 className="text-5xl lg:text-7xl font-bold text-stone-800 italic leading-tight mb-6">Your Day.<br />Our Best Work.</h1>
+        <p className="text-stone-500 font-sans text-lg max-w-lg mx-auto leading-relaxed mb-10">We&apos;ve catered weddings from 10 to 300 guests at venues across Tampa Bay. Every one is treated like it&apos;s the only one on our calendar.</p>
+        <Link href="contact" className="inline-block bg-stone-800 text-[#F9F6F0] font-sans font-semibold px-10 py-4 uppercase text-xs tracking-widest hover:bg-stone-900 transition-colors">Schedule a Consultation</Link>
+      </section>
 
-      {/* What's included */}
-      <section className="py-14 bg-[#FAFAF8] px-4">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
-          <div>
-            <h2 className="text-2xl font-bold text-[#1C1917] mb-6" style={{fontFamily: "Georgia, serif"}}>What&apos;s Included</h2>
-            <ul className="space-y-3">
-              {["Full menu customization around your preferences and dietary needs", "Private tasting session for the engaged couple and up to 4 guests", "Day-of coordination with your venue and wedding planner", "Professional service staff — servers, captain, and team lead", "Setup, breakdown, and linen service", "Custom printed menu cards for tables", "Timeline planning with your event coordinator", "Post-event cleanup"].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[#4A4540]">
-                  <span className="text-[#6B7C5C] font-bold mt-0.5 flex-shrink-0">✓</span> {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-[#E8E4DC] rounded-2xl aspect-[4/3] flex items-center justify-center text-[#B0A898] text-sm">
-            Wedding Photo Placeholder
-          </div>
+      {/* Gallery row */}
+      <section className="px-6 pb-20">
+        <div className="max-w-6xl mx-auto grid grid-cols-3 gap-3">
+          <div className="bg-stone-200 rounded-xl aspect-[3/4] flex items-center justify-center text-stone-400 font-sans text-xs">Ceremony Photo</div>
+          <div className="bg-stone-300 rounded-xl aspect-[3/4] flex items-center justify-center text-stone-400 font-sans text-xs mt-8">Reception Photo</div>
+          <div className="bg-stone-200 rounded-xl aspect-[3/4] flex items-center justify-center text-stone-400 font-sans text-xs">Detail Photo</div>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-14 bg-[#F5F3EF] px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1C1917] text-center mb-10" style={{fontFamily: "Georgia, serif"}}>How It Works</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* 4-step process */}
+      <section className="bg-stone-800 py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <p className="font-sans text-xs tracking-[0.2em] text-stone-400 uppercase mb-4">How We Work</p>
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#F9F6F0] italic mb-14">From First Call to First Dance</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((s) => (
-              <div key={s.num} className="text-center">
-                <div className="text-4xl font-bold text-[#6B7C5C] mb-3">{s.num}</div>
-                <h3 className="font-bold text-[#1C1917] mb-2">{s.title}</h3>
-                <p className="text-[#6B6560] text-sm leading-relaxed">{s.body}</p>
+              <div key={s.num} className="border-t border-stone-600 pt-6">
+                <p className="font-sans text-5xl font-bold text-stone-600 mb-4">{s.num}</p>
+                <h3 className="font-bold text-[#F9F6F0] text-lg italic mb-3">{s.title}</h3>
+                <p className="text-stone-400 font-sans text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Menu highlights */}
-      <section className="py-14 bg-[#FAFAF8] px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1C1917] mb-8" style={{fontFamily: "Georgia, serif"}}>Sample Menu Options</h2>
-          <p className="text-[#6B6560] mb-8">All menus are customized. These are examples of what we&apos;ve created for past weddings.</p>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {menuHighlights.map((course) => (
-              <div key={course.course} className="bg-[#F5F3EF] border border-[#E8E4DC] rounded-2xl p-6">
-                <h3 className="font-bold text-[#1C1917] mb-4 text-sm uppercase tracking-wider">{course.course}</h3>
-                <ul className="space-y-2">
-                  {course.items.map((item) => (
-                    <li key={item} className="text-[#6B6560] text-sm flex items-start gap-2"><span className="text-[#6B7C5C]">·</span> {item}</li>
+      {/* Packages */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <p className="font-sans text-xs tracking-[0.2em] text-stone-400 uppercase mb-4 text-center">Starting Points</p>
+          <h2 className="text-3xl font-bold text-stone-800 italic text-center mb-12">Wedding Packages</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {packages.map((pkg) => (
+              <div key={pkg.name} className="border border-stone-200 rounded-2xl p-8 hover:shadow-sm transition-shadow">
+                <p className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-400 mb-2">{pkg.guests}</p>
+                <h3 className="text-2xl font-bold text-stone-800 italic mb-1">{pkg.name}</h3>
+                <p className="text-stone-500 font-sans font-semibold mb-6">{pkg.price}</p>
+                <ul className="space-y-2 mb-8">
+                  {pkg.includes.map((item) => (
+                    <li key={item} className="flex items-start gap-3 font-sans text-sm text-stone-600">
+                      <span className="text-stone-300 mt-0.5">—</span>{item}
+                    </li>
                   ))}
                 </ul>
+                <Link href="contact" className="block text-center border border-stone-300 font-sans text-xs font-semibold uppercase tracking-widest text-stone-600 py-3 hover:border-stone-800 hover:text-stone-800 transition-colors">Request a Quote</Link>
               </div>
             ))}
           </div>
+          <p className="text-stone-400 font-sans text-xs text-center mt-6">All packages are customizable. Pricing varies by guest count, venue, and menu selections.</p>
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="py-14 bg-[#F5F3EF] px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1C1917] mb-8 text-center" style={{fontFamily: "Georgia, serif"}}>Recent Weddings</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            {[1,2,3,4,5,6].map((n) => (
-              <div key={n} className="bg-[#E8E4DC] aspect-square rounded-2xl flex items-center justify-center text-[#B0A898] text-xs">Photo {n}</div>
-            ))}
-          </div>
-        </div>
+      {/* Testimonial */}
+      <section className="border-t border-stone-200 py-20 px-6 text-center">
+        <p className="text-stone-800 text-2xl italic font-bold mb-6 max-w-2xl mx-auto">"Every single guest told us the food was the best they&apos;d ever had at a wedding. Terra Bella made that possible."</p>
+        <p className="font-sans text-xs text-stone-400 uppercase tracking-widest">— MELISSA & DAVID K., NOVEMBER 2024</p>
       </section>
 
-      {/* Form */}
-      <section className="py-14 bg-[#FAFAF8] px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1C1917] text-center mb-8" style={{fontFamily: "Georgia, serif"}}>Request a Proposal</h2>
-          <form className="bg-[#F5F3EF] border border-[#E8E4DC] rounded-2xl p-8 space-y-5">
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-[#6B6560] uppercase tracking-wider mb-1.5">Your Name</label>
-                <input type="text" className="w-full border border-[#D5D0C8] bg-white rounded-lg px-4 py-3 text-sm text-[#1C1917] focus:ring-2 focus:ring-[#6B7C5C] focus:outline-none" placeholder="Name" />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-[#6B6560] uppercase tracking-wider mb-1.5">Email Address</label>
-                <input type="email" className="w-full border border-[#D5D0C8] bg-white rounded-lg px-4 py-3 text-sm text-[#1C1917] focus:ring-2 focus:ring-[#6B7C5C] focus:outline-none" placeholder="you@email.com" />
-              </div>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-[#6B6560] uppercase tracking-wider mb-1.5">Wedding Date</label>
-                <input type="date" className="w-full border border-[#D5D0C8] bg-white rounded-lg px-4 py-3 text-sm text-[#1C1917] focus:ring-2 focus:ring-[#6B7C5C] focus:outline-none" />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-[#6B6560] uppercase tracking-wider mb-1.5">Estimated Guest Count</label>
-                <input type="text" className="w-full border border-[#D5D0C8] bg-white rounded-lg px-4 py-3 text-sm text-[#1C1917] focus:ring-2 focus:ring-[#6B7C5C] focus:outline-none" placeholder="e.g. 150" />
-              </div>
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-[#6B6560] uppercase tracking-wider mb-1.5">Venue / Location</label>
-              <input type="text" className="w-full border border-[#D5D0C8] bg-white rounded-lg px-4 py-3 text-sm text-[#1C1917] focus:ring-2 focus:ring-[#6B7C5C] focus:outline-none" placeholder="Venue name or address" />
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-[#6B6560] uppercase tracking-wider mb-1.5">Tell us about your vision</label>
-              <textarea rows={4} className="w-full border border-[#D5D0C8] bg-white rounded-lg px-4 py-3 text-sm text-[#1C1917] focus:ring-2 focus:ring-[#6B7C5C] focus:outline-none resize-none" placeholder="Style, cuisine preferences, dietary needs, anything else you&apos;d like us to know..." />
-            </div>
-            <button type="submit" className="w-full bg-[#1C1917] hover:bg-[#2C2921] text-white font-semibold py-4 rounded-xl transition-colors">
-              Request Proposal
-            </button>
-            <p className="text-[#9A9590] text-xs text-center">We typically respond within 24 hours. No obligation.</p>
-          </form>
-        </div>
+      {/* CTA */}
+      <section className="bg-[#F9F6F0] border-t border-stone-200 py-16 px-6 text-center">
+        <h2 className="text-3xl font-bold text-stone-800 italic mb-4">Let&apos;s Talk About Your Wedding</h2>
+        <p className="text-stone-500 font-sans mb-8">Free 30-minute consultations, with complimentary tasting for booked clients.</p>
+        <Link href="contact" className="inline-block bg-stone-800 text-[#F9F6F0] font-sans font-semibold px-10 py-4 uppercase text-xs tracking-widest hover:bg-stone-900 transition-colors">Schedule Consultation</Link>
       </section>
     </div>
   );

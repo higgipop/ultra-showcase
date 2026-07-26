@@ -1,94 +1,145 @@
-// dennishernandez.com: dark hero, red accent, practice area cards with settlement ranges, no-fee bar
 import Link from "next/link";
 
-const practiceAreas = [
-  { name: "Personal Injury", icon: "⚖️", desc: "Injuries caused by another party's negligence — medical bills, lost wages, and pain & suffering.", range: "$50,000–$17,000,000", href: "personal-injury" },
-  { name: "Car Accidents", icon: "🚗", desc: "T-bone, rear-end, DUI hits, uninsured motorist claims. We fight insurance companies daily.", range: "$35,000–$15,000,000", href: "personal-injury" },
-  { name: "Motorcycle Accidents", icon: "🏍️", desc: "Severe injuries from rider impacts. We know how to counter bias against motorcyclists.", range: "$80,000–$9,000,000", href: "personal-injury" },
-  { name: "Slip & Fall", icon: "🏥", desc: "Premises liability — wet floors, broken stairs, poor lighting, negligent property owners.", range: "$25,000–$5,000,000", href: "personal-injury" },
-  { name: "Medical Malpractice", icon: "🩺", desc: "Surgical errors, misdiagnosis, birth injuries, medication mistakes. Complex cases we handle.", range: "$100,000–$8,000,000", href: "personal-injury" },
-  { name: "Wrongful Death", icon: "🕊️", desc: "We pursue maximum compensation for families who've lost a loved one through negligence.", range: "$500,000–$17,000,000", href: "personal-injury" },
+const areas = [
+  {
+    num: "01",
+    name: "Personal Injury",
+    href: "personal-injury",
+    best: "$17.5M",
+    range: "$50K – $17.5M",
+    desc: "Car accidents, truck crashes, motorcycle accidents, slip and fall, premises liability, and product defect injuries. Florida operates under comparative negligence — you may still recover even if partially at fault.",
+    items: ["Car & motorcycle accidents","Commercial truck accidents","Slip, trip & fall injuries","Premises liability","Product liability","Dog bites & animal attacks"],
+  },
+  {
+    num: "02",
+    name: "Medical Malpractice",
+    href: "practice-areas",
+    best: "$15.2M",
+    range: "$500K – $15.2M",
+    desc: "Surgical errors, misdiagnosis, delayed diagnosis, birth injuries, anesthesia errors, and nursing home negligence. These cases require expert testimony and aggressive pursuit — we have the resources to take on hospitals and insurance companies.",
+    items: ["Surgical errors","Misdiagnosis / delayed diagnosis","Birth injuries","Anesthesia complications","Nursing home abuse","Hospital negligence"],
+  },
+  {
+    num: "03",
+    name: "Wrongful Death",
+    href: "practice-areas",
+    best: "$9.8M",
+    range: "$250K – $9.8M",
+    desc: "When someone dies due to another party's negligence, their family deserves justice and compensation. We handle wrongful death claims with the sensitivity and urgency the situation demands.",
+    items: ["Loss of consortium","Funeral & burial expenses","Medical expenses prior to death","Lost future income & support","Pain & suffering","Estate claims"],
+  },
+  {
+    num: "04",
+    name: "Business Disputes",
+    href: "business-litigation",
+    best: "$4.2M",
+    range: "$100K – $4.2M",
+    desc: "Contract disputes, partnership disagreements, non-compete violations, fraud, and business torts. We represent both plaintiffs and defendants in complex commercial litigation with speed and precision.",
+    items: ["Breach of contract","Partnership & shareholder disputes","Non-compete enforcement","Business fraud & misrepresentation","Trade secret theft","Commercial lease disputes"],
+  },
+  {
+    num: "05",
+    name: "Employment Law",
+    href: "contact",
+    best: "$2.8M",
+    range: "$25K – $2.8M",
+    desc: "Workplace discrimination, wrongful termination, wage theft, sexual harassment, and FMLA retaliation. Florida employees have rights — we help enforce them.",
+    items: ["Wrongful termination","Discrimination (race, sex, age, disability)","Sexual harassment","Wage & hour violations","FMLA retaliation","Whistleblower claims"],
+  },
+  {
+    num: "06",
+    name: "Estate & Probate",
+    href: "contact",
+    best: "$1.5M",
+    range: "Varies",
+    desc: "Will contests, trust disputes, probate administration, and elder law. We protect beneficiaries, executors, and trustees navigating complex estate matters.",
+    items: ["Will contests","Trust litigation","Probate administration","Guardianship disputes","Power of attorney challenges","Elder financial abuse"],
+  },
 ];
 
-const settlements = [
-  { amount: "$17M", type: "Motorcycle Accident" },
-  { amount: "$15M", type: "Auto Accident" },
-  { amount: "$9M", type: "Trucking Accident" },
-  { amount: "$5M", type: "Wrongful Death" },
-  { amount: "$3M", type: "Slip & Fall" },
-];
-
-export default function LegalPracticeAreas() {
+export default function PracticeAreas() {
   return (
     <div className="bg-white font-sans">
       {/* Top bar */}
-      <div className="bg-[#DC2626] text-white text-center py-2 text-sm font-bold">
-        NO FEES UNLESS WE WIN · CALL (813) 555-0100 · 24/7
+      <div className="bg-[#DC2626] text-white text-center text-sm py-2 font-bold">
+        FREE CASE EVALUATION · No Fee Unless We Win · <a href="tel:8135550300" className="underline">(813) 555-0300</a>
       </div>
-
-      {/* Hero */}
-      <section className="bg-[#111827] py-16 px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-[#DC2626] text-xs font-bold uppercase tracking-[0.2em] mb-4">Practice Areas</p>
-          <h1 className="text-4xl lg:text-5xl font-black text-white mb-4">What Type of Case Do You Have?</h1>
-          <p className="text-gray-400 text-lg mb-8">Tell us what happened — free consultation, no fees unless we win.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="contact" className="bg-[#DC2626] hover:bg-[#b91c1c] text-white font-black px-10 py-4 rounded text-xl transition-colors">FREE CASE REVIEW</Link>
-            <a href="tel:8135550100" className="border-2 border-white text-white hover:bg-white hover:text-[#111827] font-bold px-10 py-4 rounded text-xl transition-colors">(813) 555-0100</a>
+      <nav className="bg-[#111827]">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+          <Link href="home" className="font-black text-white text-xl">GARCIA<span className="text-[#DC2626]">LAW</span></Link>
+          <div className="hidden lg:flex gap-6 text-sm font-semibold text-gray-300">
+            <Link href="practice-areas" className="text-white">Practice Areas</Link>
+            <Link href="personal-injury" className="hover:text-white">Personal Injury</Link>
+            <Link href="business-litigation" className="hover:text-white">Business</Link>
+            <Link href="about" className="hover:text-white">Attorneys</Link>
           </div>
+          <Link href="contact" className="bg-[#DC2626] hover:bg-red-700 text-white font-black px-4 py-2 rounded text-sm transition-colors">FREE CASE REVIEW</Link>
         </div>
-      </section>
+      </nav>
 
-      {/* Practice area cards */}
-      <section className="py-16 bg-gray-50 px-4">
+      {/* Header */}
+      <section className="bg-[#111827] py-12 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {practiceAreas.map((pa) => (
-              <div key={pa.name} className="bg-white rounded-2xl border border-gray-100 hover:border-[#DC2626]/30 hover:shadow-lg transition-all p-7 flex flex-col">
-                <div className="text-4xl mb-4">{pa.icon}</div>
-                <h2 className="text-xl font-black text-gray-900 mb-3">{pa.name}</h2>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">{pa.desc}</p>
-                <div className="bg-gray-50 rounded-xl px-4 py-3 mb-4">
-                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-0.5">Average settlements</p>
-                  <p className="text-[#DC2626] font-black text-lg">{pa.range}</p>
-                </div>
-                <Link href={pa.href} className="block bg-[#DC2626] hover:bg-[#b91c1c] text-white font-black py-3 rounded-xl text-center transition-colors text-sm">
-                  Free Consultation →
-                </Link>
-              </div>
-            ))}
-          </div>
+          <h1 className="text-3xl lg:text-4xl font-black text-white mb-2">Practice Areas</h1>
+          <p className="text-gray-400 text-lg">We fight in courts and at the negotiating table — and we win.</p>
         </div>
       </section>
 
-      {/* No-fee full-width bar */}
-      <section className="bg-[#DC2626] py-6 px-4 text-center">
-        <p className="text-white font-black text-xl tracking-wider">NO FEES UNLESS WE WIN · CALL (813) 555-0100 · 24/7</p>
+      {/* No-fee bar */}
+      <section className="bg-[#DC2626] py-4 px-4">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 text-white font-black text-sm text-center">
+          <span>NO FEE UNLESS WE WIN</span>
+          <span>|</span>
+          <span>FREE CONSULTATIONS</span>
+          <span>|</span>
+          <span>24/7 AVAILABILITY</span>
+          <span>|</span>
+          <span>SPANISH SPOKEN</span>
+        </div>
       </section>
 
-      {/* Settlement showcase */}
-      <section className="bg-[#111827] py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-[#DC2626] text-xs font-bold uppercase tracking-widest text-center mb-6">Recent Results</p>
-          <div className="flex flex-wrap justify-center gap-6">
-            {settlements.map((s) => (
-              <div key={s.amount} className="text-center">
-                <p className="text-4xl lg:text-5xl font-black text-white">{s.amount}</p>
-                <p className="text-gray-400 text-sm mt-1">{s.type}</p>
+      {/* Numbered practice area list */}
+      <section className="py-12 px-4">
+        <div className="max-w-5xl mx-auto space-y-0">
+          {areas.map((area, i) => (
+            <div key={area.num} className={`py-10 border-b border-gray-100 ${i % 2 === 1 ? "lg:pl-12" : ""}`}>
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <div className="flex items-start gap-4 lg:block">
+                  <span className="text-5xl font-black text-gray-100 leading-none">{area.num}</span>
+                  <div className="lg:mt-2">
+                    <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1 lg:mt-4">Best Result</div>
+                    <div className="text-2xl font-black text-[#DC2626]">{area.best}</div>
+                    <div className="text-xs text-gray-400">{area.range} typical range</div>
+                  </div>
+                </div>
+                <div className="lg:col-span-3">
+                  <h2 className="text-2xl font-black text-[#111827] mb-3">{area.name}</h2>
+                  <p className="text-gray-600 leading-relaxed mb-5">{area.desc}</p>
+                  <div className="grid grid-cols-2 gap-2 mb-5">
+                    {area.items.map((item) => (
+                      <div key={item} className="flex items-start gap-2 text-gray-700 text-sm">
+                        <span className="text-[#DC2626] font-black mt-0.5 flex-shrink-0">›</span>{item}
+                      </div>
+                    ))}
+                  </div>
+                  <Link href={area.href} className="inline-block bg-[#111827] hover:bg-[#DC2626] text-white font-bold px-6 py-2.5 rounded text-sm transition-colors">
+                    Discuss My {area.name} Case →
+                  </Link>
+                </div>
               </div>
-            ))}
-          </div>
-          <p className="text-gray-600 text-xs text-center mt-8">Past results do not guarantee future outcomes.</p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-14 bg-white px-4 text-center border-t border-gray-100">
-        <h2 className="text-3xl font-black text-gray-900 mb-3">Not sure if you have a case?</h2>
-        <p className="text-gray-500 text-lg mb-8 max-w-2xl mx-auto">Call us or submit your information — a licensed attorney will review your situation at no cost and no obligation.</p>
-        <Link href="contact" className="inline-block bg-[#DC2626] hover:bg-[#b91c1c] text-white font-black px-12 py-5 rounded text-xl transition-colors">
-          GET MY FREE CASE EVALUATION
-        </Link>
+      <section className="bg-[#111827] py-14 px-4 text-center">
+        <h2 className="text-2xl font-black text-white mb-3">Not Sure Which Practice Area Fits Your Case?</h2>
+        <p className="text-gray-400 mb-8">Call us. One of our attorneys will listen and tell you honestly whether you have a case — at no charge.</p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:8135550300" className="bg-[#DC2626] hover:bg-red-700 text-white font-black px-10 py-4 rounded text-xl transition-colors">(813) 555-0300</a>
+          <Link href="contact" className="border border-white/30 hover:border-white text-white font-bold px-10 py-4 rounded transition-colors">Submit Case Online</Link>
+        </div>
       </section>
     </div>
   );

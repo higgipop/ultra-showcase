@@ -1,146 +1,150 @@
-// paligentech.com: dark nav, white body, C4ISR/EW/Sensor Fusion/Mission Integration, sidebar + FAQ
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 
-const services = [
+const tabs = [
   {
-    title: "C4ISR Architecture & Integration",
-    body: "We design and integrate Command, Control, Communications, Computers, Intelligence, Surveillance, and Reconnaissance (C4ISR) systems for airborne, ground, and maritime platforms. Our engineers have supported programs across AFSOC, SOCOM, and US Army aviation.",
-    includes: ["Architecture design using DoDAF and SysML", "Integration of sensors, radios, and mission computers", "Software-Defined Radio (SDR) signal processing", "Link 16 / VMF / JCIDS message formatting", "Interoperability testing (COI / OV compliance)"],
+    label: "C4ISR",
+    content: "Command, Control, Communications, Computers, Intelligence, Surveillance, and Reconnaissance systems integration across all domains. We architect and integrate sensor networks, data links, and mission networks for joint-force interoperability.",
+    capabilities: ["Joint tactical radio system (JTRS) integration","Link 16 / MADL data link integration","Intelligence fusion and processing","Network-centric warfare architecture","Command post automation","Interoperability testing (IOP/IOT&E)"],
   },
   {
-    title: "Electronic Warfare (EW) Systems Support",
-    body: "From threat modeling to ECM system integration, our EW team supports radar warning receiver (RWR), directed infrared countermeasures (DIRCM), and electronic attack (EA) systems across fixed-wing, rotary-wing, and unmanned platforms.",
-    includes: ["Electronic Order of Battle (EOB) analysis", "Radar Warning Receiver (RWR) integration and test", "DIRCM system integration (AN/AAQ series)", "EA waveform development and compliance testing", "MIL-STD-461 electromagnetic compatibility (EMC)"],
+    label: "Electronic Warfare",
+    content: "Electronic Warfare system integration, including ESM, ECM, and EA capabilities. Our team supports EW system-of-systems design, integration, and test across airborne and ground platforms.",
+    capabilities: ["Electronic Support Measures (ESM) integration","Electronic Attack (EA) system design","Radar warning receiver (RWR) integration","Jamming system development and test","EW spectrum planning and deconfliction","SIGINT collection system integration"],
   },
   {
-    title: "Sensor Fusion & Data Processing",
-    body: "We develop and integrate multi-INT sensor fusion pipelines that combine radar, EO/IR, SIGINT, and ADS-B data streams into coherent situational awareness for operators. Processing architectures include edge compute, GPU-accelerated analytics, and cloud-connected intelligence.",
-    includes: ["Multi-source data fusion architecture design", "Real-time track management and correlation", "EO/IR sensor integration (Full-Motion Video)", "SIGINT exploitation pipeline development", "GPU-accelerated signal processing (CUDA)"],
+    label: "Sensor Fusion",
+    content: "Multi-INT sensor fusion enabling real-time battlefield awareness. We design algorithms and integration architectures that combine RADAR, EO/IR, SIGINT, and HUMINT into actionable common operating pictures.",
+    capabilities: ["Multi-sensor data fusion algorithms","EO/IR and RADAR fusion processing","Common Operating Picture (COP) generation","Track management and correlation","Latency optimization for real-time systems","AI/ML-enhanced target detection"],
   },
   {
-    title: "Mission System Integration",
-    body: "End-to-end mission system integration including weapons management, stores management, and cockpit human-machine interface (HMI) updates. We support DO-178C compliance, airworthiness certification, and qualification testing across MIL-STD and FAA standards.",
-    includes: ["Weapons Management System (WMS) integration", "Stores Management System (SMS) software updates", "HMI / cockpit display integration (MFD / HUD)", "DO-178C software assurance (DAL A–C)", "Ground and flight test support (OT&E / DT&E)"],
+    label: "Mission Systems",
+    content: "End-to-end mission system integration from requirements through operational testing. We manage complex system-of-systems programs with formal SEMP, IMP, and IMS deliverables.",
+    capabilities: ["Mission computer integration","Stores management system (SMS) integration","Flight management system (FMS) integration","Avionics software integration (DO-178C)","System-of-systems architecture","Operational flight program (OFP) development"],
   },
-];
-
-const platforms = [
-  "MH-60 Black Hawk", "CH-47 Chinook", "UH-72 Lakota", "AH-64 Apache",
-  "C-130 Hercules", "C-12 Huron", "Fixed-wing ISR platforms",
-  "UAS (Group 3–5)", "Ground vehicles (JLTV, HMMWV, Bradley)",
-];
-
-const faqs = [
-  { q: "What platform experience does your systems integration team have?", a: "Our engineers have directly supported integration programs on multiple rotary-wing, fixed-wing, and ground platforms including MH-60, CH-47, C-130, and UAS programs across AFSOC and US Army Aviation." },
-  { q: "Do you support both hardware and software integration?", a: "Yes. Our team covers both domains — from hardware rack design and cable harness definition through firmware, RTOS software, and HMI display software. We act as a single integrating contractor across the full system stack." },
-  { q: "Can you support Test & Evaluation requirements?", a: "We have T&E support capabilities including DT&E test planning, ground lab integration, hardware-in-the-loop (HWIL) simulation, and flight test data reduction. We also support OT&E planning as a technical resource to the PM." },
-  { q: "How do you handle DO-178C compliance for airborne software?", a: "Our software team includes DO-178C-experienced engineers at DAL A–D. We maintain a compliant development environment including traceability tooling (DOORS, Jama), code coverage tools, and review processes aligned to the applicable DAL." },
-  { q: "What is your experience with SOCOM and special operations programs?", a: "We have supported multiple special operations programs through both direct contracts and as a subcontractor. We understand the tempo, security requirements, and program sensitivity typical of SOF acquisitions." },
 ];
 
 export default function DefenseSystemsIntegration() {
+  const [activeTab, setActiveTab] = useState(0);
+
   return (
     <div className="bg-white font-sans">
-      <nav className="bg-[#0F1929] sticky top-0 z-40">
+      {/* Dark nav */}
+      <nav className="bg-[#0F1929]">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-          <div className="font-black text-white text-lg tracking-tight">APEX<span className="text-[#0057FF]">DEFENSE</span></div>
-          <div className="hidden lg:flex items-center gap-6 text-sm font-semibold text-gray-300">
+          <Link href="home" className="font-black text-white text-lg tracking-tight">APEX<span className="text-[#0057FF]">DEFENSE</span></Link>
+          <div className="hidden lg:flex items-center gap-7 text-sm font-semibold text-gray-300">
             <Link href="about" className="hover:text-white">About Us</Link>
-            <Link href="capabilities" className="hover:text-white">Divisions</Link>
-            <Link href="systems-integration" className="text-white border-b border-white pb-0.5">Systems Integration</Link>
-            <Link href="contact" className="hover:text-white">Contact</Link>
+            <Link href="capabilities" className="hover:text-white">Capabilities</Link>
           </div>
-          <div className="flex items-center gap-3">
-            <Link href="contact" className="bg-[#0057FF] hover:bg-[#0048d9] text-white font-semibold px-4 py-2 rounded text-sm transition-colors">Contact Our PMO</Link>
-          </div>
+          <Link href="contact" className="bg-[#0057FF] hover:bg-[#0048d9] text-white font-semibold px-4 py-2 rounded text-sm transition-colors">Contact Us</Link>
         </div>
       </nav>
 
-      <div className="bg-[#0F1929] py-12 px-4">
-        <div className="max-w-5xl mx-auto">
-          <nav className="text-xs text-gray-500 mb-4">
-            <Link href="home" className="hover:text-white">Home</Link> <span className="mx-1">/</span>
-            <Link href="capabilities" className="hover:text-white">Capabilities</Link> <span className="mx-1">/</span>
-            <span className="text-gray-300">Systems Integration</span>
-          </nav>
-          <h1 className="text-4xl font-black text-white mb-3">Systems Integration Division</h1>
-          <p className="text-white/60 text-lg">C4ISR · Electronic Warfare · Sensor Fusion · Mission Systems</p>
-        </div>
-      </div>
-
-      <section className="py-14 px-4">
-        <div className="max-w-5xl mx-auto grid lg:grid-cols-[1fr_300px] gap-10 items-start">
-          {/* Main content */}
-          <div>
-            <div className="space-y-10">
-              {services.map((s, i) => (
-                <div key={s.title} className={`${i > 0 ? "border-t border-gray-100 pt-10" : ""}`}>
-                  <h2 className="text-xl font-black text-[#0F1929] mb-3">{s.title}</h2>
-                  <p className="text-gray-600 leading-relaxed mb-5">{s.body}</p>
-                  <ul className="grid sm:grid-cols-2 gap-2">
-                    {s.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-gray-600 text-sm">
-                        <span className="text-[#0057FF] font-bold mt-0.5 flex-shrink-0">·</span> {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            {/* FAQ */}
-            <div className="mt-14 pt-10 border-t border-gray-100">
-              <h2 className="text-xl font-black text-[#0F1929] mb-8">Frequently Asked Questions</h2>
-              <div className="space-y-8">
-                {faqs.map((faq) => (
-                  <div key={faq.q} className="border-b border-gray-50 pb-8 last:border-0">
-                    <h3 className="font-bold text-gray-900 mb-2">{faq.q}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{faq.a}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+      {/* Full-width image hero */}
+      <section className="bg-[#0F1929] relative py-20 lg:py-28 px-4">
+        <div className="absolute inset-0 bg-gray-800 opacity-30" />
+        <div className="max-w-7xl mx-auto relative">
+          <div className="text-white/40 text-xs font-semibold mb-4">
+            <Link href="home" className="hover:text-white">Home</Link>
+            <span className="mx-2">›</span>
+            <Link href="capabilities" className="hover:text-white">Capabilities</Link>
+            <span className="mx-2">›</span>
+            <span className="text-white/70">Systems Integration</span>
           </div>
+          <h1 className="text-4xl lg:text-5xl font-black text-white leading-tight max-w-3xl mb-4">
+            Systems Integration Division
+          </h1>
+          <p className="text-white/70 text-lg max-w-2xl leading-relaxed">
+            C4ISR · Electronic Warfare · Sensor Fusion · Mission Systems — full lifecycle integration for airborne, maritime, and ground platforms.
+          </p>
+        </div>
+      </section>
 
-          {/* Sidebar */}
-          <div className="space-y-5 lg:sticky lg:top-20">
-            {/* Contact mini-form */}
-            <div className="bg-[#0F1929] rounded-2xl p-6">
-              <h3 className="text-white font-black mb-4">Contact Our Program Office</h3>
-              <form className="space-y-3">
-                <input type="text" placeholder="Full Name" className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-[#0057FF]" />
-                <input type="text" placeholder="Organization" className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-[#0057FF]" />
-                <input type="email" placeholder="Work Email" className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-[#0057FF]" />
-                <textarea rows={3} placeholder="Describe your program or RFI..." className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-[#0057FF] resize-none" />
-                <button type="submit" className="w-full bg-[#0057FF] hover:bg-[#0048d9] text-white font-bold py-3 rounded-lg text-sm transition-colors">
-                  Send Inquiry
-                </button>
-              </form>
-            </div>
-
-            {/* Platform experience */}
-            <div className="bg-white border border-gray-100 rounded-2xl p-5">
-              <h3 className="font-black text-[#0F1929] mb-4 text-sm">Platform Experience</h3>
-              <ul className="space-y-2">
-                {platforms.map((p) => (
-                  <li key={p} className="flex items-center gap-2 text-gray-600 text-xs">
-                    <span className="text-[#0057FF] font-bold">·</span> {p}
+      {/* Tabbed content */}
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex gap-0 border-b border-gray-200 mb-10 overflow-x-auto">
+            {tabs.map((t, i) => (
+              <button
+                key={t.label}
+                onClick={() => setActiveTab(i)}
+                className={`px-6 py-3 text-sm font-bold whitespace-nowrap border-b-2 transition-colors ${activeTab === i ? "border-[#0057FF] text-[#0057FF]" : "border-transparent text-gray-500 hover:text-[#0F1929]"}`}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="text-2xl font-black text-[#0F1929] mb-4">{tabs[activeTab].label} Integration</h2>
+              <p className="text-gray-600 leading-relaxed mb-6">{tabs[activeTab].content}</p>
+              <ul className="space-y-3">
+                {tabs[activeTab].capabilities.map((cap) => (
+                  <li key={cap} className="flex items-start gap-3 text-gray-700 text-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0057FF] flex-shrink-0 mt-2" />{cap}
                   </li>
                 ))}
               </ul>
             </div>
-
-            {/* Related */}
-            <div className="bg-[#F8FAFC] border border-gray-100 rounded-2xl p-5">
-              <h3 className="font-black text-[#0F1929] mb-3 text-sm">Related Capabilities</h3>
-              <ul className="space-y-2">
-                {["Cybersecurity", "Software Engineering", "Program Support"].map((c) => (
-                  <li key={c}><Link href="capabilities" className="text-[#0057FF] text-sm font-semibold hover:underline">{c} →</Link></li>
-                ))}
-              </ul>
+            <div className="bg-gray-100 rounded-2xl aspect-video flex items-center justify-center text-gray-400 text-sm">
+              {tabs[activeTab].label} Photo
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Platform experience sidebar + contact form */}
+      <section className="bg-[#F8FAFC] py-16 px-4 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="lg:col-span-2">
+            <h2 className="text-xl font-black text-[#0F1929] mb-6">Contact Our Systems Integration Team</h2>
+            <form className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input className="border border-gray-200 rounded-lg px-4 py-3 text-base bg-white w-full focus:outline-none focus:border-[#0057FF]" placeholder="Name" />
+                <input className="border border-gray-200 rounded-lg px-4 py-3 text-base bg-white w-full focus:outline-none focus:border-[#0057FF]" placeholder="Organization" />
+              </div>
+              <input className="border border-gray-200 rounded-lg px-4 py-3 text-base bg-white w-full focus:outline-none focus:border-[#0057FF]" placeholder="Program / Platform" />
+              <select className="border border-gray-200 rounded-lg px-4 py-3 text-base bg-white w-full focus:outline-none focus:border-[#0057FF] text-gray-700">
+                <option>Area of Interest</option>
+                <option>C4ISR Integration</option>
+                <option>Electronic Warfare</option>
+                <option>Sensor Fusion</option>
+                <option>Mission Systems</option>
+              </select>
+              <textarea className="border border-gray-200 rounded-lg px-4 py-3 text-base bg-white w-full h-28 resize-none focus:outline-none focus:border-[#0057FF]" placeholder="Program requirement details" />
+              <button type="submit" className="bg-[#0057FF] hover:bg-[#0048d9] text-white font-bold px-8 py-3 rounded text-sm transition-colors">Submit Inquiry</button>
+            </form>
+          </div>
+          <div>
+            <h3 className="font-black text-[#0F1929] mb-4 text-sm uppercase tracking-widest">Platform Experience</h3>
+            <div className="space-y-2">
+              {["F/A-18 E/F Super Hornet","EA-18G Growler","P-8A Poseidon","V-22 Osprey","UH-60 Black Hawk","MQ-9 Reaper","M-ATV Ground Platform","Littoral Combat Ship (LCS)"].map((p) => (
+                <div key={p} className="flex items-center gap-3 py-2 border-b border-gray-200 last:border-0">
+                  <span className="text-[#0057FF] text-xs font-bold">✓</span>
+                  <span className="text-gray-700 text-sm">{p}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cert strip */}
+      <section className="bg-[#0F1929] py-10 px-4">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 text-white/50 text-xs font-bold uppercase tracking-widest">
+          {["MIL-STD-464","DO-178C","IEEE 802.11","MIL-STD-461","NATO STANAG 4586","JITC Certified"].map((c) => (
+            <span key={c}>{c}</span>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 px-4 text-center">
+        <h2 className="text-2xl font-black text-[#0F1929] mb-4">Need systems integration support?</h2>
+        <p className="text-gray-500 mb-8">Tell us about your platform and program timeline. We'll staff cleared engineers within 30 days.</p>
+        <Link href="contact" className="inline-block bg-[#0057FF] hover:bg-[#0048d9] text-white font-bold px-10 py-4 rounded transition-colors">Start a Conversation</Link>
       </section>
     </div>
   );
