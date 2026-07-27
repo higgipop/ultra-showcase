@@ -18,13 +18,15 @@ export default function CNCMachining() {
       </nav>
 
       {/* Page header */}
-      <section className="border-b border-gray-100 py-12 px-4">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative min-h-[38vh] flex items-end overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1565372126718-7ec951dd1beb?w=1800&q=80&auto=format&fit=crop" alt="CNC machining" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F1923] via-[#0F1923]/75 to-[#0F1923]/25" />
+        <div className="relative max-w-7xl mx-auto px-4 pb-10 w-full">
           <div className="text-gray-400 text-xs mb-3">
-            <Link href="home" className="hover:text-gray-600">Home</Link> › <Link href="capabilities" className="hover:text-gray-600">Capabilities</Link> › CNC Machining
+            <Link href="home" className="hover:text-gray-200">Home</Link> › <Link href="capabilities" className="hover:text-gray-200">Capabilities</Link> › CNC Machining
           </div>
-          <h1 className="text-4xl font-black text-[#0F1923]">CNC Machining</h1>
-          <p className="text-gray-500 mt-2 text-lg">3, 4 & 5-Axis Milling · Turning · Grinding · EDM</p>
+          <h1 className="text-4xl font-black text-white">CNC Machining</h1>
+          <p className="text-gray-300 mt-2 text-lg">3, 4 & 5-Axis Milling · Turning · Grinding · EDM</p>
         </div>
       </section>
 

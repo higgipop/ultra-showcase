@@ -72,11 +72,16 @@ export default function FinancialServices() {
       </nav>
 
       {/* Header */}
-      <section className="py-20 px-6 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-5">Our Services</p>
-          <h1 className="text-5xl font-bold text-[#1B2B4B] leading-tight mb-6">What We Do — and How We Charge</h1>
-          <p className="text-gray-500 text-lg max-w-2xl leading-relaxed">As fee-only fiduciaries, we are compensated only by our clients — never by product commissions. Our fees are transparent and tied to the value we deliver.</p>
+      <section className="py-16 px-6 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-5">Our Services</p>
+            <h1 className="text-4xl lg:text-5xl font-bold text-[#1B2B4B] leading-tight mb-6">What We Do — and How We Charge</h1>
+            <p className="text-gray-500 text-lg leading-relaxed">As fee-only fiduciaries, we are compensated only by our clients — never by product commissions. Our fees are transparent and tied to the value we deliver.</p>
+          </div>
+          <div className="rounded-2xl overflow-hidden aspect-video">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80&auto=format&fit=crop" alt="Financial planning" className="w-full h-full object-cover" />
+          </div>
         </div>
       </section>
 

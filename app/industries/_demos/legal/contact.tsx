@@ -18,9 +18,13 @@ export default function LegalContact() {
       </nav>
 
       {/* Dark header */}
-      <section className="bg-[#111827] py-12 px-4 text-center">
-        <h1 className="text-3xl font-black text-white mb-2">Free Case Evaluation</h1>
-        <p className="text-gray-400 text-lg">Tell us what happened. An attorney will call you within 1 hour.</p>
+      <section className="relative min-h-[35vh] flex items-end overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1800&q=80&auto=format&fit=crop" alt="Attorney" className="absolute inset-0 w-full h-full object-cover object-top" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/80 to-[#111827]/30" />
+        <div className="relative max-w-7xl mx-auto px-4 pb-12 w-full text-center">
+          <h1 className="text-3xl font-black text-white mb-2">Free Case Evaluation</h1>
+          <p className="text-gray-300 text-lg">Tell us what happened. An attorney will call you within 1 hour.</p>
+        </div>
       </section>
 
       {/* Two-column: form left, what happens next right */}

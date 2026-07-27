@@ -50,8 +50,10 @@ export default function LegalHome() {
       </nav>
 
       {/* Dark hero with case eval form */}
-      <section className="bg-[#111827] py-16 lg:py-24 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="relative py-16 lg:py-24 px-4 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1800&q=80&auto=format&fit=crop" alt="Courthouse" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#111827]/95 via-[#111827]/80 to-[#111827]/60" />
+        <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-block bg-[#DC2626] text-white text-xs font-black px-3 py-1.5 rounded uppercase tracking-wider mb-5">$200M+ Recovered for Clients</div>
             <h1 className="text-4xl lg:text-5xl font-black text-white leading-tight mb-5">

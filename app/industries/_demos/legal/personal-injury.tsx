@@ -41,10 +41,12 @@ export default function PersonalInjury() {
       </nav>
 
       {/* Dark page header */}
-      <section className="bg-[#111827] py-10 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-gray-500 text-xs mb-3">
-            <Link href="home" className="hover:text-gray-300">Home</Link> › <Link href="practice-areas" className="hover:text-gray-300">Practice Areas</Link> › Personal Injury
+      <section className="relative min-h-[35vh] flex items-end overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1521587760785-c88a93e57e1e?w=1800&q=80&auto=format&fit=crop" alt="Legal books" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/80 to-[#111827]/30" />
+        <div className="relative max-w-7xl mx-auto px-4 pb-10 w-full">
+          <div className="text-gray-400 text-xs mb-3">
+            <Link href="home" className="hover:text-gray-200">Home</Link> › <Link href="practice-areas" className="hover:text-gray-200">Practice Areas</Link> › Personal Injury
           </div>
           <h1 className="text-4xl font-black text-white">Personal Injury</h1>
         </div>

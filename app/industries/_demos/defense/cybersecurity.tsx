@@ -30,8 +30,11 @@ export default function DefenseCybersecurity() {
 
       {/* Split hero */}
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[420px]">
-        {/* Left dark */}
-        <div className="bg-[#0F1929] px-8 py-16 flex flex-col justify-center">
+        {/* Left dark — with photo */}
+        <div className="relative px-8 py-16 flex flex-col justify-center overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80&auto=format&fit=crop" alt="Cybersecurity" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#0F1929]/90" />
+          <div className="relative">
           <p className="text-[#0057FF] text-xs font-bold uppercase tracking-[0.3em] mb-4">Cybersecurity Division</p>
           <h1 className="text-3xl lg:text-4xl font-black text-white leading-tight mb-6">CMMC · Zero Trust · NIST 800-171</h1>
           <p className="text-white/70 leading-relaxed mb-8">
@@ -41,6 +44,7 @@ export default function DefenseCybersecurity() {
             {["CMMC C3PAO Partner","NIST 800-171","Zero Trust","IL4/IL5 Capable","TS/SCI Cleared Team"].map((b) => (
               <span key={b} className="bg-[#0057FF]/20 border border-[#0057FF]/40 text-[#0057FF] text-xs font-bold px-3 py-1.5 rounded">{b}</span>
             ))}
+          </div>
           </div>
         </div>
         {/* Right form */}

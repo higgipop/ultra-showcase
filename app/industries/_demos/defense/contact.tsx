@@ -17,10 +17,12 @@ export default function DefenseContact() {
       </nav>
 
       {/* Page header */}
-      <section className="border-b border-gray-100 py-12 px-4">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative min-h-[38vh] flex items-end overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1521737604579-b5cd6882c0a6?w=1800&q=80&auto=format&fit=crop" alt="Team meeting" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F1929] via-[#0F1929]/80 to-[#0F1929]/30" />
+        <div className="relative max-w-7xl mx-auto px-4 pb-10 w-full">
           <p className="text-[#0057FF] text-xs font-bold uppercase tracking-[0.3em] mb-3">Program Office Contact</p>
-          <h1 className="text-4xl font-black text-[#0F1929]">Contact Our PMO</h1>
+          <h1 className="text-4xl font-black text-white">Contact Our PMO</h1>
         </div>
       </section>
 

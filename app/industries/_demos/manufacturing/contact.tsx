@@ -16,10 +16,12 @@ export default function ManufacturingContact() {
       </nav>
 
       {/* Header */}
-      <section className="border-b border-gray-100 py-12 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-black text-[#0F1923] mb-2">Request a Quote</h1>
-          <p className="text-gray-500 text-lg">We respond to all RFQs within 48 business hours.</p>
+      <section className="relative min-h-[38vh] flex items-end overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=80&auto=format&fit=crop" alt="Manufacturing facility" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F1923] via-[#0F1923]/80 to-[#0F1923]/30" />
+        <div className="relative max-w-7xl mx-auto px-4 pb-10 w-full">
+          <h1 className="text-4xl font-black text-white mb-2">Request a Quote</h1>
+          <p className="text-gray-300 text-lg">We respond to all RFQs within 48 business hours.</p>
         </div>
       </section>
 

@@ -15,11 +15,16 @@ export default function FinancialContact() {
       </nav>
 
       {/* Header */}
-      <section className="py-20 px-6 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-5">Start a Conversation</p>
-          <h1 className="text-5xl font-bold text-[#1B2B4B] leading-tight mb-6">Schedule a Complimentary 30-Minute Call</h1>
-          <p className="text-gray-500 text-xl max-w-2xl leading-relaxed">No pitch. No obligation. We want to understand your situation and give you an honest answer about whether we can help.</p>
+      <section className="py-16 px-6 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-5">Start a Conversation</p>
+            <h1 className="text-4xl lg:text-5xl font-bold text-[#1B2B4B] leading-tight mb-6">Schedule a Complimentary 30-Minute Call</h1>
+            <p className="text-gray-500 text-lg leading-relaxed">No pitch. No obligation. We want to understand your situation and give you an honest answer about whether we can help.</p>
+          </div>
+          <div className="rounded-2xl overflow-hidden aspect-video">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80&auto=format&fit=crop" alt="Financial advisor meeting" className="w-full h-full object-cover" />
+          </div>
         </div>
       </section>
 

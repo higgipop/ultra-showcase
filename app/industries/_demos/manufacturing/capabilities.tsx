@@ -48,14 +48,16 @@ export default function ManufacturingCapabilities() {
         </div>
       </nav>
 
-      {/* White hero */}
-      <section className="py-14 px-4 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-black text-[#0F1923] mb-4">Full Capabilities</h1>
-          <p className="text-gray-500 text-lg max-w-2xl mb-6">Complete list of our manufacturing, inspection, and finishing capabilities. All work is performed in our ISO-certified facility in Orlando, FL.</p>
+      {/* Photo hero */}
+      <section className="relative min-h-[42vh] flex items-end overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1800&q=80&auto=format&fit=crop" alt="Manufacturing facility" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F1923] via-[#0F1923]/75 to-[#0F1923]/20" />
+        <div className="relative max-w-7xl mx-auto px-4 pb-12 w-full">
+          <h1 className="text-4xl font-black text-white mb-4">Full Capabilities</h1>
+          <p className="text-gray-300 text-lg max-w-2xl mb-6">Complete list of our manufacturing, inspection, and finishing capabilities. All work is performed in our ISO-certified facility in Orlando, FL.</p>
           <div className="flex flex-wrap gap-2">
             {["CAGE: 5XY31","NAICS: 332710","NAICS: 332721","NAICS: 336412","ITAR Registered","SAM.gov Active"].map((b) => (
-              <span key={b} className="border border-gray-200 text-gray-600 text-xs font-semibold px-3 py-1.5 rounded-full">{b}</span>
+              <span key={b} className="border border-white/20 text-white/80 text-xs font-semibold px-3 py-1.5 rounded-full">{b}</span>
             ))}
           </div>
         </div>

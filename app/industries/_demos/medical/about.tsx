@@ -1,34 +1,16 @@
 import Link from "next/link";
 
 const providers = [
-  {
-    name: "Dr. Maria Santos, MD",
-    title: "Family Medicine",
-    creds: "Board-Certified Family Medicine · MD, University of Florida · Residency: USF Health",
-    bio: "Dr. Santos has been practicing family medicine in Tampa Bay for 18 years. She specializes in chronic disease management, preventive care, and women's health. She is fluent in Spanish and English.",
-    accepting: true,
-  },
-  {
-    name: "Dr. James Park, MD",
-    title: "Internal Medicine",
-    creds: "Board-Certified Internal Medicine · MD, Emory University · Fellowship: Mayo Clinic",
-    bio: "Dr. Park focuses on adult medicine, complex chronic conditions, and preventive cardiology. He spent 5 years at Mayo Clinic before returning to Tampa Bay to serve his community.",
-    accepting: true,
-  },
-  {
-    name: "Dr. Emily Chen, DO",
-    title: "Pediatrics",
-    creds: "Board-Certified Pediatrics · DO, NSU College of Osteopathic Medicine · Residency: All Children's Hospital",
-    bio: "Dr. Chen has dedicated her career to pediatric medicine, from newborns to teens. She is known for her patience with anxious children and clear communication with parents.",
-    accepting: true,
-  },
-  {
-    name: "Dr. Robert Williams, MD",
-    title: "Family Medicine & Urgent Care",
-    creds: "Board-Certified Family Medicine · MD, USF Morsani · Fellowship: Global Health",
-    bio: "Dr. Williams leads our urgent care services and also maintains a panel of primary care patients. He has extensive international health experience and speaks conversational Haitian Creole.",
-    accepting: false,
-  },
+  { name: "Dr. Sarah Chen, MD", specialty: "Primary Care & Internal Medicine", bio: "Dr. Chen completed her residency at Johns Hopkins and has been practicing in Tampa Bay for 12 years. She specializes in preventive care and chronic disease management.", creds: ["MD, Johns Hopkins University","Board Certified, Internal Medicine","ABIM Diplomate","15+ years experience"], img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&auto=format&fit=crop&crop=faces" },
+  { name: "Dr. James Park, MD", specialty: "Primary Care & Men's Health", bio: "Dr. Park joined BayMedical in 2015 after a decade at Tampa General. He focuses on cardiovascular risk reduction and preventive medicine for adult men.", creds: ["MD, University of Florida","Board Certified, Family Medicine","Fellow, American Academy of Family Physicians","10+ years experience"], img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&auto=format&fit=crop&crop=faces" },
+  { name: "Dr. Maria Lopez, MD", specialty: "Pediatrics", bio: "Dr. Lopez trained at CHOP and has dedicated her career to children's health. She is fluent in English and Spanish and sees patients from birth through age 18.", creds: ["MD, University of Miami","Board Certified, Pediatrics","Fellow, American Academy of Pediatrics","8+ years experience"], img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop&crop=faces" },
+  { name: "Dr. Thomas Reed, DO", specialty: "Geriatrics & Preventive Medicine", bio: "Dr. Reed specializes in care for adults over 65 and coordinates complex multi-specialty care. He is known for his thoroughness and his patients' exceptional outcomes.", creds: ["DO, A.T. Still University","Board Certified, Internal Medicine","Certificate of Added Qualification, Geriatrics","18+ years experience"], img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80&auto=format&fit=crop&crop=faces" },
+];
+
+const support = [
+  { name: "Keisha Davis, RN", role: "Head Nurse", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80&auto=format&fit=crop&crop=faces" },
+  { name: "Angela Torres, MA", role: "Medical Assistant", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop&crop=faces" },
+  { name: "David Kim, PA-C", role: "Physician Assistant", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop&crop=faces" },
 ];
 
 export default function MedicalAbout() {
@@ -36,7 +18,7 @@ export default function MedicalAbout() {
     <div className="bg-white font-sans">
       <nav className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-          <Link href="home" className="font-black text-[#0C4A6E] text-xl">Bay<span className="text-[#0891B2]">Medical</span></Link>
+          <Link href="home" className="font-black text-[#0C4A6E] text-xl tracking-tight">Bay<span className="text-[#0891B2]">Medical</span></Link>
           <div className="hidden lg:flex gap-6 text-sm font-semibold text-gray-600">
             <Link href="services" className="hover:text-[#0891B2]">Services</Link>
             <Link href="primary-care" className="hover:text-[#0891B2]">Primary Care</Link>
@@ -47,94 +29,68 @@ export default function MedicalAbout() {
         </div>
       </nav>
 
-      {/* Header */}
-      <section className="bg-[#0C4A6E] py-12 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl font-black text-white mb-2">Meet Your Providers</h1>
-          <p className="text-white/60">Board-certified physicians committed to your long-term health.</p>
+      {/* Photo strip hero */}
+      <section className="py-14 px-4 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <p className="text-[#0891B2] text-xs font-bold uppercase tracking-[0.25em] mb-3">Our Care Team</p>
+            <h1 className="text-3xl lg:text-5xl font-black text-[#0C4A6E] leading-tight mb-4">Meet Your Providers</h1>
+            <p className="text-gray-500 text-lg leading-relaxed">Board-certified physicians committed to building long-term relationships with their patients — not just treating the immediate complaint.</p>
+          </div>
+          <div className="rounded-2xl overflow-hidden aspect-video">
+            <img src="https://images.unsplash.com/photo-1519494026892-476d51a0a4ec?w=1200&q=80&auto=format&fit=crop" alt="BayMedical clinic" className="w-full h-full object-cover" />
+          </div>
         </div>
       </section>
 
-      {/* Large provider cards */}
+      {/* Provider profiles */}
       <section className="py-16 px-4">
-        <div className="max-w-5xl mx-auto space-y-8">
+        <div className="max-w-7xl mx-auto space-y-10">
           {providers.map((p, i) => (
-            <div key={p.name} className={`rounded-2xl border border-gray-100 overflow-hidden hover:shadow-md transition-shadow ${i % 2 === 0 ? "" : "bg-[#F0F9FF] border-blue-100"}`}>
-              <div className="grid grid-cols-1 sm:grid-cols-4 gap-0">
-                <div className="sm:col-span-1 overflow-hidden min-h-[200px]">
-                  <img src={i % 2 === 0 ? "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80&auto=format&fit=crop&crop=faces" : "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80&auto=format&fit=crop&crop=faces"} alt="Provider" className="w-full h-full object-cover object-top" />
+            <div key={p.name} className={`grid grid-cols-1 lg:grid-cols-4 gap-8 items-start ${i > 0 ? "border-t border-gray-100 pt-10" : ""}`}>
+              <div className="rounded-2xl overflow-hidden aspect-square lg:aspect-[3/4]">
+                <img src={p.img} alt={p.name} className="w-full h-full object-cover object-top" />
+              </div>
+              <div className="lg:col-span-3">
+                <h2 className="text-2xl font-black text-[#0C4A6E] mb-1">{p.name}</h2>
+                <p className="text-[#0891B2] font-semibold text-sm mb-4">{p.specialty}</p>
+                <p className="text-gray-600 leading-relaxed mb-5">{p.bio}</p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {p.creds.map((c) => (
+                    <span key={c} className="bg-[#F0F9FF] border border-[#0891B2]/20 text-[#0C4A6E] text-xs font-bold px-3 py-1.5 rounded-full">{c}</span>
+                  ))}
                 </div>
-                <div className="sm:col-span-3 p-7">
-                  <div className="flex items-start justify-between flex-wrap gap-3 mb-1">
-                    <div>
-                      <h2 className="text-xl font-black text-[#0C4A6E]">{p.name}</h2>
-                      <p className="text-[#0891B2] font-bold text-sm">{p.title}</p>
-                    </div>
-                    <span className={`text-xs font-bold px-3 py-1.5 rounded-full ${p.accepting ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-500"}`}>
-                      {p.accepting ? "✓ Accepting New Patients" : "Not Accepting New Patients"}
-                    </span>
-                  </div>
-                  <p className="text-gray-400 text-xs mb-3">{p.creds}</p>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-5">{p.bio}</p>
-                  {p.accepting && (
-                    <Link href="contact" className="inline-block bg-[#0891B2] hover:bg-[#0779a0] text-white font-bold px-5 py-2.5 rounded text-sm transition-colors">
-                      Book with {p.name.split(" ")[1]} →
-                    </Link>
-                  )}
-                </div>
+                <Link href="contact" className="inline-block bg-[#0891B2] hover:bg-[#0779a0] text-white font-bold px-5 py-2.5 rounded text-sm transition-colors">Book with Dr. {p.name.split(" ")[1]} →</Link>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Practice philosophy */}
-      <section className="bg-[#0C4A6E] py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-black text-white mb-6">Our Philosophy</h2>
-          <blockquote className="text-white/80 text-xl leading-relaxed italic">
-            "We believe the best healthcare is built on relationships — a physician who knows you, your history, and your goals is better equipped to keep you healthy than any technology alone."
-          </blockquote>
-          <p className="text-white/40 text-sm mt-4">— Dr. Maria Santos, Founder</p>
+      {/* Support staff */}
+      <section className="bg-[#F0F9FF] border-y border-[#0891B2]/10 py-14 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-xl font-black text-[#0C4A6E] mb-8">Support Staff</h2>
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-5">
+            {support.map((s) => (
+              <div key={s.name} className="text-center">
+                <div className="w-16 h-16 rounded-full overflow-hidden mx-auto mb-2 border-2 border-[#0891B2]/20">
+                  <img src={s.img} alt={s.name} className="w-full h-full object-cover object-top" />
+                </div>
+                <p className="font-bold text-[#0C4A6E] text-xs">{s.name.split(",")[0]}</p>
+                <p className="text-gray-400 text-xs">{s.role}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Support staff + awards */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-xl font-black text-[#0C4A6E] mb-5">Our Support Team</h2>
-            <div className="space-y-3">
-              {[
-                ["Jennifer Torres, RN","Lead Nurse, 12 years"],
-                ["Carlos Rivera, MA","Medical Assistant, Bilingual (Spanish)"],
-                ["Sarah Kim, LPN","Pediatric Specialist"],
-                ["David Lopez, Phlebotomist","In-house lab, certified"],
-                ["Amanda Wright","Patient Coordinator"],
-              ].map(([name, role]) => (
-                <div key={name} className="flex items-center gap-4 py-3 border-b border-gray-100 last:border-0">
-                  <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&q=80&auto=format&fit=crop&crop=faces" alt="Staff member" className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900 text-sm">{name}</p>
-                    <p className="text-gray-400 text-xs">{role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h2 className="text-xl font-black text-[#0C4A6E] mb-5">Awards & Recognition</h2>
-            <div className="grid grid-cols-2 gap-3">
-              {["Tampa Bay's Best Primary Care 2024","USF Health Community Partner","NCQA Patient-Centered Medical Home","Press Ganey Excellence Award","Florida Medical Association Member","AAFP Member Practice","ACP Member Practice","Google 4.9★ (340+ reviews)"].map((a) => (
-                <div key={a} className="border border-gray-100 rounded-xl p-4">
-                  <span className="text-[#0891B2] text-lg block mb-1">🏆</span>
-                  <p className="text-gray-700 text-xs font-semibold leading-snug">{a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* Awards strip */}
+      <section className="bg-[#0C4A6E] py-12 px-4">
+        <div className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-center">
+          {["Patients' Choice Award 2024","Best Primary Care Tampa Bay — Tampa Bay Times","Top Docs 2023 — Tampa Magazine","NCQA Patient-Centered Medical Home","Healthgrades Outstanding Patient Experience"].map((a) => (
+            <span key={a} className="border border-white/20 rounded-lg px-4 py-2 text-white text-xs font-semibold text-center">{a}</span>
+          ))}
         </div>
       </section>
     </div>

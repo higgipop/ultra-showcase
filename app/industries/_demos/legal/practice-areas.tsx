@@ -78,10 +78,12 @@ export default function PracticeAreas() {
       </nav>
 
       {/* Header */}
-      <section className="bg-[#111827] py-12 px-4">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative min-h-[40vh] flex items-end overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1602777650893-9de71065d1b9?w=1800&q=80&auto=format&fit=crop" alt="Courtroom" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/80 to-[#111827]/40" />
+        <div className="relative max-w-7xl mx-auto px-4 pb-12 w-full">
           <h1 className="text-3xl lg:text-4xl font-black text-white mb-2">Practice Areas</h1>
-          <p className="text-gray-400 text-lg">We fight in courts and at the negotiating table — and we win.</p>
+          <p className="text-gray-300 text-lg">We fight in courts and at the negotiating table — and we win.</p>
         </div>
       </section>
 

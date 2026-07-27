@@ -25,11 +25,16 @@ export default function RetirementPlanning() {
       </nav>
 
       {/* Header */}
-      <section className="py-20 px-6 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-5">Retirement Income Planning</p>
-          <h1 className="text-5xl font-bold text-[#1B2B4B] leading-tight mb-6">Accumulating Wealth and Distributing It Are Two Very Different Problems</h1>
-          <p className="text-gray-500 text-xl leading-relaxed max-w-2xl">The questions change when you retire. We specialize in the distribution phase — Social Security, Medicare, RMDs, withdrawal sequencing, and income sustainability.</p>
+      <section className="py-16 px-6 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-5">Retirement Income Planning</p>
+            <h1 className="text-4xl lg:text-5xl font-bold text-[#1B2B4B] leading-tight mb-6">Accumulating Wealth and Distributing It Are Two Very Different Problems</h1>
+            <p className="text-gray-500 text-lg leading-relaxed">The questions change when you retire. We specialize in the distribution phase — Social Security, Medicare, RMDs, withdrawal sequencing, and income sustainability.</p>
+          </div>
+          <div className="rounded-2xl overflow-hidden aspect-video">
+            <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&q=80&auto=format&fit=crop" alt="Retirement planning" className="w-full h-full object-cover" />
+          </div>
         </div>
       </section>
 

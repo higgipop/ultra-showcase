@@ -31,11 +31,16 @@ export default function WealthManagement() {
       </nav>
 
       {/* Header */}
-      <section className="py-20 px-6 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-5">Wealth Management</p>
-          <h1 className="text-5xl font-bold text-[#1B2B4B] leading-tight mb-6">Your Portfolio Is One Part of Your Financial Plan</h1>
-          <p className="text-gray-500 text-xl leading-relaxed max-w-2xl">Most advisors start and end with your investment account. We start with your goals — then build an investment strategy designed to support them.</p>
+      <section className="py-16 px-6 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-5">Wealth Management</p>
+            <h1 className="text-4xl lg:text-5xl font-bold text-[#1B2B4B] leading-tight mb-6">Your Portfolio Is One Part of Your Financial Plan</h1>
+            <p className="text-gray-500 text-lg leading-relaxed">Most advisors start and end with your investment account. We start with your goals — then build an investment strategy designed to support them.</p>
+          </div>
+          <div className="rounded-2xl overflow-hidden aspect-video">
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80&auto=format&fit=crop" alt="Investment charts" className="w-full h-full object-cover" />
+          </div>
         </div>
       </section>
 

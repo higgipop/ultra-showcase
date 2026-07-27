@@ -15,10 +15,14 @@ export default function HospitalityContact() {
       </nav>
 
       {/* Header */}
-      <section className="py-20 px-6 border-b border-stone-200 text-center">
-        <p className="font-sans text-xs tracking-[0.2em] text-stone-400 uppercase mb-4">Let&apos;s Talk</p>
-        <h1 className="text-5xl font-bold text-stone-800 italic mb-4">Tell Us About Your Event</h1>
-        <p className="text-stone-500 font-sans max-w-md mx-auto">We respond to all inquiries within one business day. No commitment required to get a proposal.</p>
+      <section className="relative min-h-[45vh] flex items-end overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1519671282429-b1f99c9e9dca?w=1800&q=80&auto=format&fit=crop" alt="Elegant event setup" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/70 to-stone-900/20" />
+        <div className="relative max-w-6xl mx-auto px-6 pb-14 w-full text-center">
+          <p className="font-sans text-xs tracking-[0.2em] text-stone-300 uppercase mb-4">Let&apos;s Talk</p>
+          <h1 className="text-5xl font-bold text-white italic mb-4">Tell Us About Your Event</h1>
+          <p className="text-stone-300 font-sans max-w-md mx-auto">We respond to all inquiries within one business day. No commitment required to get a proposal.</p>
+        </div>
       </section>
 
       {/* Two-column forms */}

@@ -35,14 +35,19 @@ export default function BusinessLitigation() {
               <a href="tel:8135550300" className="border-2 border-[#111827] text-[#111827] font-bold px-8 py-4 rounded hover:bg-[#111827] hover:text-white transition-colors">(813) 555-0300</a>
             </div>
           </div>
-          {/* Stats column */}
-          <div className="grid grid-cols-2 gap-4">
-            {[["$50M+","Recovered for business clients"],["200+","Commercial cases won"],["25 yrs","Business litigation experience"],["95%","Client satisfaction rate"]].map(([num, label]) => (
-              <div key={label} className="bg-gray-50 border border-gray-100 rounded-2xl p-6 text-center">
-                <p className="text-3xl font-black text-[#DC2626] mb-1">{num}</p>
-                <p className="text-gray-500 text-sm">{label}</p>
-              </div>
-            ))}
+          {/* Photo + stats */}
+          <div className="space-y-4">
+            <div className="rounded-2xl overflow-hidden aspect-video">
+              <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=1200&q=80&auto=format&fit=crop" alt="Business meeting" className="w-full h-full object-cover" />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[["$50M+","Recovered"],["200+","Cases won"],["25 yrs","Experience"],["95%","Satisfaction"]].map(([num, label]) => (
+                <div key={label} className="bg-gray-50 border border-gray-100 rounded-xl p-4 text-center">
+                  <p className="text-2xl font-black text-[#DC2626] mb-0.5">{num}</p>
+                  <p className="text-gray-500 text-xs">{label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
