@@ -5,14 +5,17 @@ import Link from "next/link";
 const divisionTabs = [
   {
     label: "Systems Integration",
+    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=80&auto=format&fit=crop",
     items: ["C4ISR architecture and integration", "Electronic Warfare (EW) support", "Sensor fusion and data processing", "Mission system integration", "Test & Evaluation (T&E)", "MIL-STD-464 / IEEE compliance"],
   },
   {
     label: "Cybersecurity",
+    img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=900&q=80&auto=format&fit=crop",
     items: ["CMMC Level 2 & Level 3 implementation", "NIST 800-171 gap assessment", "Zero Trust architecture design", "Penetration testing and red team exercises", "Security Operations Center (SOC) support", "Incident response planning"],
   },
   {
     label: "Engineering Support",
+    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80&auto=format&fit=crop",
     items: ["RTOS development and DO-178C compliance", "MIL-STD-498 documentation", "DevSecOps pipeline implementation", "Embedded systems and firmware engineering", "Systems Engineering Management Plan (SEMP)", "Program Management Office (PMO) support"],
   },
 ];
@@ -21,6 +24,27 @@ const missionTabs = [
   { label: "Our Vision", content: "To be the trusted technology partner for the programs that matter most to national security — known for technical excellence, integrity, and the quality of our people." },
   { label: "Our Mission", content: "Delivering mission-critical solutions with unwavering precision and integrity. We exist to serve the programs that protect our nation and its allies." },
   { label: "Our Values", content: "Others Before Self · Authenticity & Integrity · Excellence in Everything · Urgency When It Matters · Accountability Without Exception" },
+];
+
+const divisions = [
+  {
+    title: "Systems Integration",
+    desc: "C4ISR architecture, sensor fusion, and mission system integration for airborne and ground platforms.",
+    href: "systems-integration",
+    img: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=900&q=80&auto=format&fit=crop",
+  },
+  {
+    title: "Cybersecurity",
+    desc: "CMMC L2/L3, Zero Trust architecture, NIST 800-171 compliance, and penetration testing.",
+    href: "cybersecurity",
+    img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=900&q=80&auto=format&fit=crop",
+  },
+  {
+    title: "Engineering & Program Support",
+    desc: "RTOS development, DO-178C, DevSecOps pipelines, and PMO support for complex defense programs.",
+    href: "capabilities",
+    img: "https://images.unsplash.com/photo-1521737604579-b5cd6882c0a6?w=900&q=80&auto=format&fit=crop",
+  },
 ];
 
 export default function DefenseHome() {
@@ -58,20 +82,23 @@ export default function DefenseHome() {
         )}
       </nav>
 
-      {/* Hero */}
-      <section className="bg-[#0F1929] py-24 lg:py-32 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="bg-gray-700 w-full h-full" />
-        </div>
-        <div className="max-w-7xl mx-auto relative">
+      {/* Hero — full-bleed photo with dark overlay */}
+      <section className="relative min-h-[85vh] flex items-end overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1540575467537-409ae19e97c6?w=1800&q=80&auto=format&fit=crop"
+          alt="Defense and aerospace"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F1929] via-[#0F1929]/70 to-[#0F1929]/30" />
+        <div className="relative max-w-7xl mx-auto px-4 pb-20 lg:pb-28 w-full">
           <p className="text-[#0057FF] text-xs font-bold uppercase tracking-[0.3em] mb-5">Engineered for Excellence</p>
-          <h1 className="text-4xl lg:text-6xl font-black text-white leading-tight mb-4 max-w-3xl">
-            Forging the Way Ahead
+          <h1 className="text-4xl lg:text-7xl font-black text-white leading-tight mb-5 max-w-4xl">
+            Forging the<br />Way Ahead
           </h1>
-          <p className="text-white/50 text-sm font-semibold uppercase tracking-widest mb-6">
+          <p className="text-white/60 text-sm font-semibold uppercase tracking-widest mb-6">
             Systems Integration · Cybersecurity · Software Engineering · Program Support
           </p>
-          <p className="text-white/70 text-lg max-w-2xl leading-relaxed mb-10">
+          <p className="text-white/75 text-lg max-w-2xl leading-relaxed mb-10">
             APEX Defense delivers mission-critical technology solutions for the U.S. Department of Defense and allied nations. 100% American-owned. Cleared personnel. Results that matter.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -81,25 +108,21 @@ export default function DefenseHome() {
         </div>
       </section>
 
-      {/* 3 Division cards — white bg */}
+      {/* 3 Division cards — white bg, each different photo */}
       <section className="bg-white py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              { title: "Systems Integration", desc: "C4ISR architecture, sensor fusion, and mission system integration for airborne and ground platforms.", href: "systems-integration" },
-              { title: "Cybersecurity", desc: "CMMC L2/L3, Zero Trust architecture, NIST 800-171 compliance, and penetration testing.", href: "cybersecurity" },
-              { title: "Engineering & Program Support", desc: "RTOS development, DO-178C, DevSecOps pipelines, and PMO support for complex defense programs.", href: "capabilities" },
-            ].map((d) => (
-              <div key={d.title} className="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group">
-                <div className="aspect-video overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1540575467537-409ae19e97c6?w=900&q=80&auto=format&fit=crop" alt="Defense division" className="w-full h-full object-cover" />
+            {divisions.map((d) => (
+              <Link key={d.title} href={d.href} className="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow group block">
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img src={d.img} alt={d.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6">
                   <h2 className="font-black text-[#0F1929] text-lg mb-2 group-hover:text-[#0057FF] transition-colors">{d.title}</h2>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">{d.desc}</p>
-                  <Link href={d.href} className="text-[#0057FF] font-bold text-sm hover:underline">Learn More →</Link>
+                  <span className="text-[#0057FF] font-bold text-sm">Learn More →</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -108,8 +131,12 @@ export default function DefenseHome() {
       {/* Sticky split — who we are + mission tabs */}
       <section className="bg-[#F8FAFC] py-16 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div className="rounded-2xl aspect-[4/3] overflow-hidden lg:sticky lg:top-24">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=80&auto=format&fit=crop" alt="APEX Defense facility" className="w-full h-full object-cover" />
+          <div className="rounded-2xl overflow-hidden lg:sticky lg:top-24">
+            <img
+              src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1200&q=80&auto=format&fit=crop"
+              alt="APEX Defense facility"
+              className="w-full aspect-[4/3] object-cover"
+            />
           </div>
           <div>
             <p className="text-[#0057FF] text-xs font-bold uppercase tracking-[0.25em] mb-3">Who We Are</p>
@@ -137,15 +164,23 @@ export default function DefenseHome() {
         </div>
       </section>
 
-      {/* Parallax-style dark banner */}
-      <section className="bg-[#0F1929] py-20 px-4 text-center">
-        <p className="text-[#0057FF] text-xs font-bold uppercase tracking-[0.3em] mb-4">Ensuring Maximum Efficiency</p>
-        <h2 className="text-3xl lg:text-5xl font-black text-white italic leading-tight max-w-3xl mx-auto mb-6">
-          "We're committed to reshaping the future by reinventing technology."
-        </h2>
-        <p className="text-white/60 text-lg max-w-2xl mx-auto">
-          A snapshot of the capabilities APEX Defense has to offer — from CMMC compliance to C4ISR integration to full-lifecycle program support.
-        </p>
+      {/* Parallax-style dark banner — real photo background */}
+      <section className="relative py-28 px-4 text-center overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1800&q=80&auto=format&fit=crop"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#0F1929]/85" />
+        <div className="relative">
+          <p className="text-[#0057FF] text-xs font-bold uppercase tracking-[0.3em] mb-4">Ensuring Maximum Efficiency</p>
+          <h2 className="text-3xl lg:text-5xl font-black text-white italic leading-tight max-w-3xl mx-auto mb-6">
+            &ldquo;We&rsquo;re committed to reshaping the future by reinventing technology.&rdquo;
+          </h2>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            A snapshot of the capabilities APEX Defense has to offer — from CMMC compliance to C4ISR integration to full-lifecycle program support.
+          </p>
+        </div>
       </section>
 
       {/* Capabilities tabs */}
@@ -168,7 +203,7 @@ export default function DefenseHome() {
             <ul className="space-y-3">
               {divisionTabs[divTab].items.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <span className="w-2 h-2 rounded-full bg-[#0057FF] flex-shrink-0 mt-2" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0057FF] flex-shrink-0 mt-2" />
                   <span className="leading-snug">{item}</span>
                 </li>
               ))}
@@ -176,28 +211,36 @@ export default function DefenseHome() {
                 <Link href="contact" className="text-[#0057FF] font-bold text-sm hover:underline">Request a Capability Briefing →</Link>
               </li>
             </ul>
-            <div className="rounded-2xl aspect-video overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80&auto=format&fit=crop" alt={divisionTabs[divTab].label} className="w-full h-full object-cover" />
+            <div className="rounded-2xl overflow-hidden">
+              <img
+                src={divisionTabs[divTab].img}
+                alt={divisionTabs[divTab].label}
+                className="w-full aspect-video object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Careers text + video */}
+      {/* Careers */}
       <section className="bg-[#F8FAFC] border-y border-gray-100 py-16 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-[#0057FF] text-xs font-bold uppercase tracking-[0.25em] mb-3">Careers</p>
             <h2 className="text-2xl font-black text-[#0F1929] mb-4">A Team Committed to Our Mission</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              We believe people make the difference. Our community outreach, modern headquarters, and mission-driven culture shape our company's positive impact on those around us and on national security.
+              We believe people make the difference. Our mission-driven culture, modern HQ, and commitment to cleared talent development shape our impact on national security.
             </p>
             <Link href="about" className="inline-block border border-[#0F1929] text-[#0F1929] font-bold px-6 py-3 rounded hover:bg-[#0F1929] hover:text-white transition-colors text-sm">View Open Positions</Link>
           </div>
-          <div className="relative rounded-2xl aspect-video overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1522071820083-09fd938f5e3b?w=1200&q=80&auto=format&fit=crop" alt="Team culture" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-              <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
+          <div className="relative rounded-2xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1522071820083-09fd938f5e3b?w=1200&q=80&auto=format&fit=crop"
+              alt="Team culture"
+              className="w-full aspect-video object-cover"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/25">
+              <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
                 <svg className="w-6 h-6 text-gray-800 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
@@ -205,7 +248,7 @@ export default function DefenseHome() {
         </div>
       </section>
 
-      {/* Split-color CTA banner */}
+      {/* CTA banner */}
       <section className="bg-[#0F1929] py-20 px-4 text-center">
         <h2 className="text-4xl lg:text-5xl font-black leading-tight mb-6">
           <span className="text-white block">Design a</span>
