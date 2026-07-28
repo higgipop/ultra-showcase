@@ -37,7 +37,7 @@ export default function LegalAbout() {
   return (
     <div className="bg-white font-sans">
       <div className="bg-[#DC2626] text-white text-center text-sm py-2 font-bold">
-        FREE CASE EVALUATION · No Fee Unless We Win · <a href="tel:8135550300" className="underline">(813) 555-0300</a>
+        FREE CASE EVALUATION · No Fee Unless We Win · <a href="tel:8132617700" className="underline">(813) 261-7700</a>
       </div>
       <nav className="bg-[#111827]">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">

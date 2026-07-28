@@ -1,140 +1,217 @@
-"use client";
-import { useState } from "react";
 import Link from "next/link";
 
-const insurances = ["Blue Cross","Aetna","Cigna","United Healthcare","Humana","Medicare","Medicaid","Tricare","Oscar","Molina","Ambetter","AvMed","Florida Blue","Anthem","WellCare","Bright Health"];
+const callouts = [
+  {
+    title: "Cost Savings",
+    desc: "Avg 60% less than ER visits for occupational injuries. We bill employers directly.",
+    icon: (
+      <svg className="w-6 h-6 text-[#10B981]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Same-Day Availability",
+    desc: "Walk-ins welcome. Most appointments confirmed same-day. No referral required.",
+    icon: (
+      <svg className="w-6 h-6 text-[#10B981]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Direct Billing",
+    desc: "We bill employers and carriers directly. No paperwork burden for your HR team.",
+    icon: (
+      <svg className="w-6 h-6 text-[#10B981]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 12l2 2 4-4"/><path d="M21 12c.552 0 1-.448 1-1V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9"/>
+      </svg>
+    ),
+  },
+];
 
-const providers = [
-  { name: "Dr. Sarah Chen, MD", specialty: "Primary Care", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80&auto=format&fit=crop&crop=faces" },
-  { name: "Dr. James Park, MD", specialty: "Internal Medicine", img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80&auto=format&fit=crop&crop=faces" },
-  { name: "Dr. Maria Lopez, MD", specialty: "Pediatrics", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop&crop=faces" },
+const services = [
+  { name: "Workers’ Compensation", desc: "Injury treatment, documentation, and return-to-work coordination for your team." },
+  { name: "Drug & Alcohol Testing", desc: "DOT-compliant collection, SAMHSA-certified lab, MRO review, rapid results." },
+  { name: "DOT Physicals", desc: "Federal Motor Carrier Safety Administration certified medical examiners." },
+  { name: "Pre-Employment Physicals", desc: "Baseline exams, lift testing, and clearance documentation for new hires." },
+  { name: "Injury & Illness Care", desc: "Occupational injury treatment with direct OSHA 300 log support." },
+  { name: "Wellness Programs", desc: "Annual screenings, biometrics, and flu clinics — on-site or at our facilities." },
+];
+
+const locations = [
+  { city: "Tampa", address: "4220 W. Boy Scout Blvd.", hours: "Mon–Fri 7am–6pm · Sat 8am–2pm" },
+  { city: "St. Petersburg", address: "2222 Dr. MLK Jr. St. N", hours: "Mon–Fri 7am–5pm" },
+  { city: "Brandon", address: "707 W. Brandon Blvd., Suite 105", hours: "Mon–Fri 7am–5pm" },
+  { city: "Clearwater", address: "1520 N. McMullen Booth Rd.", hours: "Mon–Fri 7am–5pm" },
+];
+
+const employerBenefits = [
+  "Direct billing to employer or insurance carrier — no employee out-of-pocket",
+  "Designated account manager for multi-employee relationships",
+  "Electronic results delivery within 24–48 hours",
+  "OSHA 300 recordkeeping support included",
+  "On-site collection available for teams of 10 or more",
 ];
 
 export default function MedicalHome() {
-  const [navOpen, setNavOpen] = useState(false);
-
   return (
     <div className="bg-white font-sans">
+      {/* Nav */}
       <nav className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-          <Link href="home" className="font-black text-[#0C4A6E] text-xl tracking-tight">Bay<span className="text-[#0891B2]">Medical</span></Link>
-          <div className="hidden lg:flex gap-6 text-sm font-semibold text-gray-600">
-            <Link href="services" className="hover:text-[#0891B2]">Services</Link>
-            <Link href="primary-care" className="hover:text-[#0891B2]">Primary Care</Link>
-            <Link href="pediatrics" className="hover:text-[#0891B2]">Pediatrics</Link>
-            <Link href="about" className="hover:text-[#0891B2]">Providers</Link>
+          <Link href="home" className="font-black text-[#0F1729] text-lg tracking-tight">
+            GC<span className="text-[#10B981]">Ohealth</span>
+          </Link>
+          <div className="hidden lg:flex gap-7 text-sm font-semibold text-gray-600">
+            <Link href="services" className="hover:text-[#0F1729] transition-colors">Services</Link>
+            <Link href="services" className="hover:text-[#0F1729] transition-colors">Employers</Link>
+            <Link href="contact" className="hover:text-[#0F1729] transition-colors">Locations</Link>
+            <Link href="about" className="hover:text-[#0F1729] transition-colors">About</Link>
           </div>
           <div className="flex gap-3 items-center">
-            <a href="tel:8135550200" className="hidden sm:block text-[#0891B2] font-bold text-sm">(813) 555-0200</a>
-            <Link href="contact" className="bg-[#0891B2] hover:bg-[#0779a0] text-white font-bold px-4 py-2 rounded text-sm transition-colors">Book Appointment</Link>
-            <button className="lg:hidden text-gray-500 p-1" onClick={() => setNavOpen(!navOpen)}>
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
+            <a href="tel:8138723200" className="hidden sm:block text-gray-600 font-semibold text-sm hover:text-[#0F1729] transition-colors">(813) 872-3200</a>
+            <Link href="contact" className="bg-[#0F1729] hover:bg-[#1a2640] text-white font-bold px-4 py-2 rounded text-sm transition-colors">Schedule Now</Link>
           </div>
         </div>
-        {navOpen && (
-          <div className="lg:hidden border-t border-gray-100 px-4 py-4 flex flex-col gap-4 text-sm font-semibold text-gray-700">
-            <Link href="services">Services</Link>
-            <Link href="primary-care">Primary Care</Link>
-            <Link href="pediatrics">Pediatrics</Link>
-            <Link href="about">Providers</Link>
-            <Link href="contact">Book Appointment</Link>
-          </div>
-        )}
       </nav>
 
-      {/* Hero — text left, photo right */}
-      <section className="py-16 lg:py-24 px-4 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Hero — dark navy */}
+      <section className="bg-[#0F1729] py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-[#0891B2] text-xs font-bold uppercase tracking-[0.25em] mb-4">Accepting New Patients</p>
-            <h1 className="text-4xl lg:text-5xl font-black text-[#0C4A6E] leading-tight mb-4">Compassionate Care for the Whole Family</h1>
-            <p className="text-gray-500 text-lg leading-relaxed mb-6">Board-certified physicians. Same-day and next-day appointments. Most major insurance accepted. Telehealth available.</p>
-            <div className="flex flex-wrap gap-4 text-gray-700 text-sm font-semibold mb-8">
-              <span className="flex items-center gap-1.5"><span className="text-[#0891B2] font-black">✓</span> Same-Day Appointments</span>
-              <span className="flex items-center gap-1.5"><span className="text-[#0891B2] font-black">✓</span> Telehealth Available</span>
-              <span className="flex items-center gap-1.5"><span className="text-[#0891B2] font-black">✓</span> 16+ Insurances Accepted</span>
-            </div>
+            <p className="text-[#10B981] text-xs font-bold uppercase tracking-widest mb-4">Tampa&rsquo;s Occupational Health Specialists</p>
+            <h1 className="text-4xl lg:text-5xl font-black text-white leading-tight mb-5">
+              Fast. Affordable. Occupational Care Your Team Can Count On.
+            </h1>
+            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+              Workers&rsquo; comp, drug testing, DOT physicals, and injury care — all under one roof. No ER wait times. No specialist referrals.
+            </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="contact" className="bg-[#0891B2] hover:bg-[#0779a0] text-white font-black px-8 py-4 rounded text-center transition-colors">Book Appointment</Link>
-              <a href="tel:8135550200" className="border-2 border-[#0891B2] text-[#0891B2] font-bold px-8 py-4 rounded text-center hover:bg-[#0891B2] hover:text-white transition-colors">(813) 555-0200</a>
-            </div>
-          </div>
-          <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-            <img src="https://images.unsplash.com/photo-1519494026892-476d51a0a4ec?w=1200&q=80&auto=format&fit=crop" alt="BayMedical clinic" className="w-full h-full object-cover" />
-          </div>
-        </div>
-      </section>
-
-      {/* Inline booking form — full width below hero */}
-      <section className="bg-[#0C4A6E] py-10 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-white font-black text-lg mb-5 text-center">Book an Appointment Online</h2>
-          <form className="grid grid-cols-1 sm:grid-cols-4 gap-3">
-            <input className="border-0 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:ring-2 focus:ring-[#0891B2] bg-white" placeholder="Your Name" />
-            <input type="tel" className="border-0 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:ring-2 focus:ring-[#0891B2] bg-white" placeholder="Phone Number" />
-            <select className="border-0 rounded-lg px-4 py-3 text-base bg-white w-full focus:outline-none focus:ring-2 focus:ring-[#0891B2] text-gray-700">
-              <option>Appointment Type</option>
-              <option>Primary Care</option>
-              <option>Pediatrics</option>
-              <option>Telehealth</option>
-              <option>Annual Physical</option>
-            </select>
-            <button type="submit" className="bg-[#0891B2] hover:bg-[#0779a0] text-white font-black py-3 rounded-lg transition-colors">Request Appt.</button>
-          </form>
-        </div>
-      </section>
-
-      {/* Provider cards */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <p className="text-[#0891B2] text-xs font-bold uppercase tracking-[0.2em] mb-2">Meet Your Care Team</p>
-              <h2 className="text-2xl font-black text-[#0C4A6E]">Our Providers</h2>
-            </div>
-            <Link href="about" className="text-[#0891B2] font-bold text-sm hover:underline">View All →</Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {providers.map((p) => (
-              <Link key={p.name} href="about" className="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group block">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={p.img} alt={p.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="p-5">
-                  <p className="font-black text-[#0C4A6E] group-hover:text-[#0891B2] transition-colors">{p.name}</p>
-                  <p className="text-gray-500 text-sm">{p.specialty}</p>
-                  <span className="text-[#0891B2] font-bold text-sm mt-2 block">Book with Dr. →</span>
-                </div>
+              <Link href="contact" className="bg-[#10B981] hover:bg-[#0d9e6e] text-white font-bold px-7 py-4 rounded text-center transition-colors">
+                Schedule Online
               </Link>
+              <a href="tel:8138723200" className="border-2 border-white/20 hover:border-white text-white font-bold px-7 py-4 rounded text-center transition-colors">
+                (813) 872-3200
+              </a>
+            </div>
+          </div>
+
+          {/* Stats panel */}
+          <div className="bg-white rounded-2xl p-8">
+            <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">By the Numbers</p>
+            <div className="space-y-5">
+              {[
+                { val: "20 min", label: "Average wait time" },
+                { val: "4", label: "Tampa Bay locations" },
+                { val: "60%", label: "Avg savings vs. ER" },
+              ].map((s) => (
+                <div key={s.label} className="flex items-center justify-between border-b border-gray-100 pb-5 last:border-0 last:pb-0">
+                  <span className="text-gray-500 text-sm">{s.label}</span>
+                  <span className="text-2xl font-black text-[#0F1729]">{s.val}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Three callout boxes */}
+      <section className="py-16 bg-gray-50 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-5">
+          {callouts.map((c) => (
+            <div key={c.title} className="bg-white border border-gray-200 rounded-xl p-6">
+              <div className="w-11 h-11 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+                {c.icon}
+              </div>
+              <h3 className="font-black text-[#0F1729] text-base mb-2">{c.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Services grid */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <p className="text-[#10B981] text-xs font-bold uppercase tracking-widest mb-2">What We Offer</p>
+            <h2 className="text-3xl font-black text-[#0F1729]">Occupational Health Services</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {services.map((s) => (
+              <div key={s.name} className="border border-gray-100 rounded-xl p-6 hover:border-[#10B981] hover:shadow-sm transition-all group">
+                <h3 className="font-black text-[#0F1729] text-sm mb-2 group-hover:text-[#10B981] transition-colors">{s.name}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Employer section */}
+      <section className="py-20 bg-[#0F1729]">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p className="text-[#10B981] text-xs font-bold uppercase tracking-widest mb-3">For Employers</p>
+            <h2 className="text-3xl font-black text-white mb-5 leading-tight">
+              Built for employers, not waiting rooms.
+            </h2>
+            <p className="text-gray-400 leading-relaxed mb-8">
+              We&rsquo;ve structured every process around making occupational health easy for HR teams, safety managers, and operations directors. Set up a company account and we handle the rest.
+            </p>
+            <ul className="space-y-3 mb-8">
+              {employerBenefits.map((b) => (
+                <li key={b} className="flex items-start gap-3 text-gray-300 text-sm">
+                  <span className="w-5 h-5 bg-[#10B981]/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-2.5 h-2.5 text-[#10B981]" viewBox="0 0 12 12" fill="currentColor">
+                      <path d="M10.28 2.28a.75.75 0 0 0-1.06 0L4.5 7l-1.72-1.72a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.06 0l5.25-5.25a.75.75 0 0 0 0-1.06Z" />
+                    </svg>
+                  </span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <Link href="contact" className="inline-block bg-[#10B981] hover:bg-[#0d9e6e] text-white font-bold px-6 py-3 rounded transition-colors">
+              Set Up an Employer Account
+            </Link>
+          </div>
+          <div className="space-y-3">
+            <p className="text-[#10B981] text-xs font-bold uppercase tracking-widest mb-5">Our Locations</p>
+            {locations.map((l) => (
+              <div key={l.city} className="bg-white/5 border border-white/10 rounded-xl p-5">
+                <p className="font-black text-white text-sm mb-1">{l.city}</p>
+                <p className="text-gray-400 text-xs">{l.address}</p>
+                <p className="text-gray-500 text-xs mt-1">{l.hours}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Stats strip */}
-      <section className="bg-[#F8FAFC] border-y border-gray-100 py-12 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          {[["15+","Years in Practice"],["3","Locations"],["98%","Patient Satisfaction"],["Same Day","Most Appointments"]].map(([num, label]) => (
+      <section className="bg-gray-50 border-y border-gray-100 py-12">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          {[["4", "Locations"], ["20 min", "Avg Wait"], ["60%", "Savings vs. ER"], ["15+", "Years Serving Tampa Bay"]].map(([val, label]) => (
             <div key={label}>
-              <p className="text-3xl font-black text-[#0891B2]">{num}</p>
+              <p className="text-3xl font-black text-[#0F1729]">{val}</p>
               <p className="text-gray-500 text-sm mt-1">{label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Insurance wall */}
-      <section className="py-14 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-[#0891B2] text-xs font-bold uppercase tracking-[0.2em] mb-2">Accepted Insurance</p>
-          <h2 className="text-2xl font-black text-[#0C4A6E] mb-8">We Accept 16+ Insurance Plans</h2>
-          <div className="flex flex-wrap gap-2 justify-center">
-            {insurances.map((ins) => (
-              <span key={ins} className="bg-white border border-gray-200 rounded-full text-xs px-4 py-2 text-gray-600 font-semibold">{ins}</span>
-            ))}
-          </div>
-          <p className="text-gray-400 text-sm mt-5">Don&apos;t see your insurance? Call us — we may still be in-network.</p>
+      {/* CTA */}
+      <section className="bg-[#0F1729] py-16 text-center px-4">
+        <h2 className="text-3xl font-black text-white mb-3">Set up your employer account today.</h2>
+        <p className="text-gray-400 text-lg mb-8">One setup call. Direct billing. Same-day access for your team across all four locations.</p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="contact" className="bg-[#10B981] hover:bg-[#0d9e6e] text-white font-black px-10 py-4 rounded text-lg transition-colors">
+            Set Up Employer Account
+          </Link>
+          <a href="tel:8138723200" className="border-2 border-white/20 hover:border-white text-white font-bold px-10 py-4 rounded text-lg transition-colors">
+            (813) 872-3200
+          </a>
         </div>
       </section>
     </div>

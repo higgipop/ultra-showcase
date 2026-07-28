@@ -43,7 +43,7 @@ const divisions = [
     title: "Engineering & Program Support",
     desc: "RTOS development, DO-178C, DevSecOps pipelines, and PMO support for complex defense programs.",
     href: "capabilities",
-    img: "https://images.unsplash.com/photo-1521737604579-b5cd6882c0a6?w=900&q=80&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=900&q=80&auto=format&fit=crop",
   },
 ];
 
@@ -85,7 +85,7 @@ export default function DefenseHome() {
       {/* Hero — full-bleed photo with dark overlay */}
       <section className="relative min-h-[85vh] flex items-end overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1540575467537-409ae19e97c6?w=1800&q=80&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1800&q=80&auto=format&fit=crop"
           alt="Defense and aerospace"
           className="absolute inset-0 w-full h-full object-cover"
         />

@@ -62,7 +62,7 @@ export default function PracticeAreas() {
     <div className="bg-white font-sans">
       {/* Top bar */}
       <div className="bg-[#DC2626] text-white text-center text-sm py-2 font-bold">
-        FREE CASE EVALUATION · No Fee Unless We Win · <a href="tel:8135550300" className="underline">(813) 555-0300</a>
+        FREE CASE EVALUATION · No Fee Unless We Win · <a href="tel:8132617700" className="underline">(813) 261-7700</a>
       </div>
       <nav className="bg-[#111827]">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
@@ -139,7 +139,7 @@ export default function PracticeAreas() {
         <h2 className="text-2xl font-black text-white mb-3">Not Sure Which Practice Area Fits Your Case?</h2>
         <p className="text-gray-400 mb-8">Call us. One of our attorneys will listen and tell you honestly whether you have a case — at no charge.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:8135550300" className="bg-[#DC2626] hover:bg-red-700 text-white font-black px-10 py-4 rounded text-xl transition-colors">(813) 555-0300</a>
+          <a href="tel:8132617700" className="bg-[#DC2626] hover:bg-red-700 text-white font-black px-10 py-4 rounded text-xl transition-colors">(813) 261-7700</a>
           <Link href="contact" className="border border-white/30 hover:border-white text-white font-bold px-10 py-4 rounded transition-colors">Submit Case Online</Link>
         </div>
       </section>

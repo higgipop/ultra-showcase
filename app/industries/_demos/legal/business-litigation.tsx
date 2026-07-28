@@ -4,7 +4,7 @@ export default function BusinessLitigation() {
   return (
     <div className="bg-white font-sans">
       <div className="bg-[#111827] text-white text-center text-sm py-2 font-semibold">
-        Commercial Litigation · Business Disputes · Contract Law · <a href="tel:8135550300" className="text-[#DC2626] font-bold underline">(813) 555-0300</a>
+        Commercial Litigation · Business Disputes · Contract Law · <a href="tel:8132617700" className="text-[#DC2626] font-bold underline">(813) 261-7700</a>
       </div>
       <nav className="bg-[#111827] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
@@ -32,7 +32,7 @@ export default function BusinessLitigation() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="contact" className="bg-[#111827] hover:bg-[#DC2626] text-white font-black px-8 py-4 rounded transition-colors">Request Consultation</Link>
-              <a href="tel:8135550300" className="border-2 border-[#111827] text-[#111827] font-bold px-8 py-4 rounded hover:bg-[#111827] hover:text-white transition-colors">(813) 555-0300</a>
+              <a href="tel:8132617700" className="border-2 border-[#111827] text-[#111827] font-bold px-8 py-4 rounded hover:bg-[#111827] hover:text-white transition-colors">(813) 261-7700</a>
             </div>
           </div>
           {/* Photo + stats */}

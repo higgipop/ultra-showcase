@@ -102,7 +102,7 @@ export default function DefenseCapabilities() {
               </ul>
             </div>
             <div className={`rounded-2xl aspect-video overflow-hidden ${cap.reverse ? "lg:order-1" : ""}`}>
-              <img src={cap.title.includes("Cyber") ? "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=900&q=80&auto=format&fit=crop" : cap.title.includes("System") ? "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80&auto=format&fit=crop" : cap.title.includes("Software") ? "https://images.unsplash.com/photo-1521737604579-b5cd6882c0a6?w=900&q=80&auto=format&fit=crop" : "https://images.unsplash.com/photo-1540575467537-409ae19e97c6?w=900&q=80&auto=format&fit=crop"} alt={cap.title} className="w-full h-full object-cover" />
+              <img src={cap.title.includes("Cyber") ? "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=900&q=80&auto=format&fit=crop" : cap.title.includes("System") ? "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80&auto=format&fit=crop" : cap.title.includes("Software") ? "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=900&q=80&auto=format&fit=crop" : "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=900&q=80&auto=format&fit=crop"} alt={cap.title} className="w-full h-full object-cover" />
             </div>
           </div>
         </section>

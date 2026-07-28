@@ -18,7 +18,7 @@ export default function DefenseContact() {
 
       {/* Page header */}
       <section className="relative min-h-[38vh] flex items-end overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1521737604579-b5cd6882c0a6?w=1800&q=80&auto=format&fit=crop" alt="Team meeting" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1800&q=80&auto=format&fit=crop" alt="Team meeting" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1929] via-[#0F1929]/80 to-[#0F1929]/30" />
         <div className="relative max-w-7xl mx-auto px-4 pb-10 w-full">
           <p className="text-[#0057FF] text-xs font-bold uppercase tracking-[0.3em] mb-3">Program Office Contact</p>
@@ -118,8 +118,8 @@ export default function DefenseContact() {
               <p className="font-black text-[#0F1929] text-sm uppercase tracking-widest mb-4">Office Locations</p>
               <div className="space-y-4">
                 {[
-                  { label: "HQ — Arlington, VA", lines: ["4600 N. Fairfax Dr., Suite 400", "Arlington, VA 22203", "(703) 555-0100"] },
-                  { label: "Satellite — Huntsville, AL", lines: ["2011 Research Park Blvd.", "Huntsville, AL 35805", "(256) 555-0200"] },
+                  { label: "HQ — Arlington, VA", lines: ["4600 N. Fairfax Dr., Suite 400", "Arlington, VA 22203", "(703) 852-4600"] },
+                  { label: "Satellite — Huntsville, AL", lines: ["2011 Research Park Blvd.", "Huntsville, AL 35805", "(256) 652-0200"] },
                 ].map((loc) => (
                   <div key={loc.label}>
                     <p className="text-xs font-bold text-[#0057FF] mb-1">{loc.label}</p>

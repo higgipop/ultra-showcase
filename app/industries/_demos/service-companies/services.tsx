@@ -22,7 +22,7 @@ export default function ServiceCompaniesServices() {
   return (
     <div className="bg-white font-sans">
       <div className="bg-[#F58220] text-white text-center text-sm py-2 font-semibold">
-        Same-Day Service · Call <a href="tel:8135550100" className="underline">(813) 555-0100</a> · $50 OFF Any Repair
+        Same-Day Service · Call <a href="tel:8132056160" className="underline">(813) 205-6160</a> · $50 OFF Any Repair
       </div>
       <nav className="bg-white border-b border-gray-200 sticky top-[36px] z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
@@ -110,7 +110,7 @@ export default function ServiceCompaniesServices() {
         <div className="relative">
           <h2 className="text-2xl font-black text-white mb-3">Need Service Right Now?</h2>
           <p className="text-blue-200 mb-6 max-w-xl mx-auto">Same-day dispatch across Tampa Bay. Emergency line answered 24/7.</p>
-          <a href="tel:8135550100" className="inline-block bg-[#F58220] hover:bg-[#e07210] text-white font-black px-10 py-4 rounded text-xl transition-colors">(813) 555-0100</a>
+          <a href="tel:8132056160" className="inline-block bg-[#F58220] hover:bg-[#e07210] text-white font-black px-10 py-4 rounded text-xl transition-colors">(813) 205-6160</a>
         </div>
       </section>
     </div>

@@ -89,7 +89,7 @@ export default function DefenseSystemsIntegration() {
               </ul>
             </div>
             <div className="rounded-2xl aspect-video overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1540575467537-409ae19e97c6?w=900&q=80&auto=format&fit=crop" alt={tabs[activeTab].label} className="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=900&q=80&auto=format&fit=crop" alt={tabs[activeTab].label} className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

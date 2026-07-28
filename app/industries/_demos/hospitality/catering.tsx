@@ -77,7 +77,7 @@ export default function Catering() {
             ) : (
               <>
                 <div className="rounded-2xl aspect-[4/3] overflow-hidden order-last lg:order-first">
-                  <img src="https://images.unsplash.com/photo-1578985545062-7726a9ce7c2f?w=900&q=80&auto=format&fit=crop" alt={m.title} className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=900&q=80&auto=format&fit=crop" alt={m.title} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h2 className="text-3xl font-bold text-stone-800 italic mb-3">{m.title}</h2>

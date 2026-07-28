@@ -6,7 +6,7 @@ export default function ServiceCompaniesContact() {
   return (
     <div className="bg-white font-sans">
       <div className="bg-[#F58220] text-white text-center text-sm py-2 font-semibold">
-        Emergency? Call <a href="tel:8135550100" className="underline font-black">(813) 555-0100</a> — We Answer 24/7
+        Emergency? Call <a href="tel:8132056160" className="underline font-black">(813) 205-6160</a> — We Answer 24/7
       </div>
       <nav className="bg-white border-b border-gray-200 sticky top-[36px] z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
@@ -15,7 +15,7 @@ export default function ServiceCompaniesContact() {
             <Link href="services" className="hover:text-[#1B4B8A]">Services</Link>
             <Link href="about" className="hover:text-[#1B4B8A]">About</Link>
           </div>
-          <a href="tel:8135550100" className="bg-[#F58220] text-white font-black px-4 py-2 rounded text-sm">(813) 555-0100</a>
+          <a href="tel:8132056160" className="bg-[#F58220] text-white font-black px-4 py-2 rounded text-sm">(813) 205-6160</a>
         </div>
       </nav>
 
@@ -49,7 +49,7 @@ export default function ServiceCompaniesContact() {
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Phone Number</label>
-                  <input className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#1B4B8A] bg-white" placeholder="(813) 555-0000" />
+                  <input className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#1B4B8A] bg-white" placeholder="(813) XXX-XXXX" />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Service Needed</label>
@@ -83,7 +83,7 @@ export default function ServiceCompaniesContact() {
             <div>
               <h3 className="font-black text-gray-900 mb-4">Contact Info</h3>
               <div className="space-y-3 text-sm text-gray-600">
-                <p><span className="font-bold text-gray-800">Phone:</span> <a href="tel:8135550100" className="text-[#1B4B8A] font-bold">(813) 555-0100</a></p>
+                <p><span className="font-bold text-gray-800">Phone:</span> <a href="tel:8132056160" className="text-[#1B4B8A] font-bold">(813) 205-6160</a></p>
                 <p><span className="font-bold text-gray-800">Email:</span> service@comfortpro.com</p>
                 <p><span className="font-bold text-gray-800">Address:</span> 1234 Commerce Blvd, Tampa, FL 33602</p>
               </div>

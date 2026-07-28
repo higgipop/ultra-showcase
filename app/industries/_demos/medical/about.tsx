@@ -38,7 +38,7 @@ export default function MedicalAbout() {
             <p className="text-gray-500 text-lg leading-relaxed">Board-certified physicians committed to building long-term relationships with their patients — not just treating the immediate complaint.</p>
           </div>
           <div className="rounded-2xl overflow-hidden aspect-video">
-            <img src="https://images.unsplash.com/photo-1519494026892-476d51a0a4ec?w=1200&q=80&auto=format&fit=crop" alt="BayMedical clinic" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80&auto=format&fit=crop" alt="BayMedical clinic" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>

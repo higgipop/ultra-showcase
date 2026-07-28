@@ -16,7 +16,7 @@ export default function MedicalContact() {
             <Link href="services" className="hover:text-[#0891B2]">Services</Link>
             <Link href="about" className="hover:text-[#0891B2]">Providers</Link>
           </div>
-          <a href="tel:8135550200" className="bg-[#0891B2] text-white font-bold px-4 py-2 rounded text-sm">(813) 555-0200</a>
+          <a href="tel:8138723200" className="bg-[#0891B2] text-white font-bold px-4 py-2 rounded text-sm">(813) 872-3200</a>
         </div>
       </nav>
 
@@ -142,7 +142,7 @@ export default function MedicalContact() {
       <section className="bg-[#F0F9FF] border-t border-blue-100 py-14 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 rounded-2xl aspect-video overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1519494026892-476d51a0a4ec?w=1200&q=80&auto=format&fit=crop" alt="Clinic location" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80&auto=format&fit=crop" alt="Clinic location" className="w-full h-full object-cover" />
           </div>
           <div>
             <h3 className="font-black text-[#0C4A6E] mb-4">Location & Hours</h3>
@@ -155,7 +155,7 @@ export default function MedicalContact() {
                 </div>
               ))}
             </div>
-            <a href="tel:8135550200" className="mt-5 block bg-[#0891B2] hover:bg-[#0779a0] text-white font-black px-5 py-3 rounded text-center transition-colors">(813) 555-0200</a>
+            <a href="tel:8138723200" className="mt-5 block bg-[#0891B2] hover:bg-[#0779a0] text-white font-black px-5 py-3 rounded text-center transition-colors">(813) 872-3200</a>
           </div>
         </div>
       </section>

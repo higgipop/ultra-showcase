@@ -110,7 +110,7 @@ export default function ManufacturingContact() {
               <p className="font-black text-[#0F1923] text-sm mb-3">Engineering Contact</p>
               <p className="text-gray-600 text-sm">James Park, Quality & Engineering</p>
               <p className="text-[#1E90FF] font-bold text-sm">jpark@apexmfg.com</p>
-              <p className="text-gray-500 text-sm">(407) 555-0400</p>
+              <p className="text-gray-500 text-sm">(407) 203-0400</p>
             </div>
             <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
               <p className="font-black text-[#0F1923] text-sm mb-3">Our Location</p>

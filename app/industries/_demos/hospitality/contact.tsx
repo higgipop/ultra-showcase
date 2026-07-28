@@ -48,7 +48,7 @@ export default function HospitalityContact() {
               </div>
               <div>
                 <label className="block font-sans text-xs font-semibold uppercase tracking-widest text-stone-400 mb-2">Phone</label>
-                <input type="tel" className="border border-stone-200 bg-white rounded-lg px-4 py-3 font-sans text-base text-stone-700 w-full focus:outline-none focus:border-stone-500" placeholder="(813) 555-0000" />
+                <input type="tel" className="border border-stone-200 bg-white rounded-lg px-4 py-3 font-sans text-base text-stone-700 w-full focus:outline-none focus:border-stone-500" placeholder="(813) XXX-XXXX" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -94,7 +94,7 @@ export default function HospitalityContact() {
             <div className="border-t border-stone-200 pt-8 space-y-5">
               <div>
                 <p className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-400 mb-1">Phone</p>
-                <p className="text-stone-700 font-sans">(813) 555-0220</p>
+                <p className="text-stone-700 font-sans">(813) 254-5220</p>
               </div>
               <div>
                 <p className="font-sans text-xs font-semibold uppercase tracking-widest text-stone-400 mb-1">Email</p>
@@ -117,7 +117,7 @@ export default function HospitalityContact() {
       <section className="bg-stone-800 py-16 px-6 text-center">
         <h2 className="text-3xl font-bold text-[#F9F6F0] italic mb-4">Not Sure Where to Start?</h2>
         <p className="text-stone-400 font-sans mb-8 max-w-md mx-auto">Call us. We&apos;re happy to talk through your event with no obligation — just a conversation to see if we&apos;re a good fit.</p>
-        <p className="text-[#F9F6F0] font-bold font-sans text-2xl">(813) 555-0220</p>
+        <p className="text-[#F9F6F0] font-bold font-sans text-2xl">(813) 254-5220</p>
       </section>
     </div>
   );

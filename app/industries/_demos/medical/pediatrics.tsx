@@ -39,11 +39,11 @@ export default function Pediatrics() {
             <p className="text-gray-500 text-lg leading-relaxed mb-5">Well-child visits, vaccinations, developmental screenings, and same-day sick appointments — all with providers who love working with kids.</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="contact" className="bg-[#0891B2] hover:bg-[#0779a0] text-white font-black px-6 py-3 rounded text-center transition-colors">Book Well-Child Visit</Link>
-              <a href="tel:8135550200" className="border-2 border-[#0891B2] text-[#0891B2] font-bold px-6 py-3 rounded text-center hover:bg-[#0891B2] hover:text-white transition-colors">(813) 555-0200</a>
+              <a href="tel:8138723200" className="border-2 border-[#0891B2] text-[#0891B2] font-bold px-6 py-3 rounded text-center hover:bg-[#0891B2] hover:text-white transition-colors">(813) 872-3200</a>
             </div>
           </div>
           <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-            <img src="https://images.unsplash.com/photo-1471479917193-f1b6f6c16bc9?w=1200&q=80&auto=format&fit=crop" alt="Pediatric care" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&q=80&auto=format&fit=crop" alt="Pediatric care" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -92,7 +92,7 @@ export default function Pediatrics() {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden aspect-video">
-              <img src="https://images.unsplash.com/photo-1576671081951-c5a8d15c8ed7?w=900&q=80&auto=format&fit=crop" alt="Medical equipment" className="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=900&q=80&auto=format&fit=crop" alt="Medical equipment" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

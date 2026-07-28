@@ -10,7 +10,7 @@ export default function AirConditioning() {
   return (
     <div className="bg-white font-sans">
       <div className="bg-[#F58220] text-white text-center text-sm py-2 font-semibold">
-        Same-Day AC Service · <a href="tel:8135550100" className="underline">(813) 555-0100</a> · $50 OFF Repairs
+        Same-Day AC Service · <a href="tel:8132056160" className="underline">(813) 205-6160</a> · $50 OFF Repairs
       </div>
       <nav className="bg-white border-b border-gray-200 sticky top-[36px] z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
@@ -34,7 +34,7 @@ export default function AirConditioning() {
           <h1 className="text-3xl lg:text-5xl font-black text-white leading-tight mb-4">Air Conditioning Repair,<br />Installation &amp; Maintenance</h1>
           <p className="text-blue-200 leading-relaxed mb-6 max-w-2xl">Same-day AC repair by licensed, certified technicians. We service all brands and models. Emergency service 24/7.</p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a href="tel:8135550100" className="bg-[#F58220] text-white font-black px-6 py-3 rounded text-center hover:bg-[#e07210] transition-colors">(813) 555-0100</a>
+            <a href="tel:8132056160" className="bg-[#F58220] text-white font-black px-6 py-3 rounded text-center hover:bg-[#e07210] transition-colors">(813) 205-6160</a>
             <Link href="contact" className="border-2 border-white text-white font-bold px-6 py-3 rounded text-center hover:bg-white hover:text-[#1B4B8A] transition-colors">Book Online</Link>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function AirConditioning() {
       <section className="bg-[#1B4B8A] py-14 text-center px-4">
         <h2 className="text-2xl font-black text-white mb-3">AC Problem? We&rsquo;re Ready.</h2>
         <p className="text-blue-200 mb-6">Same-day appointments in most cases. No trip fee for estimates.</p>
-        <a href="tel:8135550100" className="inline-block bg-[#F58220] hover:bg-[#e07210] text-white font-black px-10 py-4 rounded text-xl transition-colors">(813) 555-0100</a>
+        <a href="tel:8132056160" className="inline-block bg-[#F58220] hover:bg-[#e07210] text-white font-black px-10 py-4 rounded text-xl transition-colors">(813) 205-6160</a>
       </section>
     </div>
   );

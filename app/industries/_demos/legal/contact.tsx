@@ -4,7 +4,7 @@ export default function LegalContact() {
   return (
     <div className="bg-white font-sans">
       <div className="bg-[#DC2626] text-white text-center text-sm py-2 font-bold">
-        FREE CASE EVALUATION · No Fee Unless We Win · <a href="tel:8135550300" className="underline">(813) 555-0300</a>
+        FREE CASE EVALUATION · No Fee Unless We Win · <a href="tel:8132617700" className="underline">(813) 261-7700</a>
       </div>
       <nav className="bg-[#111827]">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
@@ -47,7 +47,7 @@ export default function LegalContact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Phone *</label>
-                  <input type="tel" className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#DC2626]" placeholder="(813) 555-0000" />
+                  <input type="tel" className="border border-gray-200 rounded-lg px-4 py-3 text-base w-full focus:outline-none focus:border-[#DC2626]" placeholder="(813) XXX-XXXX" />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Email</label>
@@ -115,7 +115,7 @@ export default function LegalContact() {
               <p className="font-black text-[#111827] text-sm uppercase tracking-widest mb-4">Our Office</p>
               <p className="font-semibold text-gray-700 text-sm">4220 W. Boy Scout Blvd., Suite 800</p>
               <p className="text-gray-500 text-sm">Tampa, FL 33607</p>
-              <p className="text-[#DC2626] font-black text-xl mt-2">(813) 555-0300</p>
+              <p className="text-[#DC2626] font-black text-xl mt-2">(813) 261-7700</p>
               <p className="text-gray-400 text-xs mt-1">Available 24 hours · 7 days a week</p>
             </div>
           </div>

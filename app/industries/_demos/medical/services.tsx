@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const specialties = [
   { title: "Primary Care", href: "primary-care", img: "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=700&q=80&auto=format&fit=crop", desc: "Comprehensive adult medicine. Annual physicals, chronic disease management, preventive care, and acute illness treatment.", details: ["Annual physicals & wellness exams","Chronic disease management (diabetes, HTN, thyroid)","Acute illness visits","Preventive screenings & immunizations","Referrals to specialists"] },
-  { title: "Pediatrics", href: "pediatrics", img: "https://images.unsplash.com/photo-1471479917193-f1b6f6c16bc9?w=700&q=80&auto=format&fit=crop", desc: "Well-child visits, vaccinations, and sick care for newborns through age 18. Same-day sick appointments available.", details: ["Well-child visits (newborn–18)","Vaccine-preventable disease prevention","ADHD & developmental screening","Sports physicals","Same-day sick appointments"] },
+  { title: "Pediatrics", href: "pediatrics", img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&q=80&auto=format&fit=crop", desc: "Well-child visits, vaccinations, and sick care for newborns through age 18. Same-day sick appointments available.", details: ["Well-child visits (newborn–18)","Vaccine-preventable disease prevention","ADHD & developmental screening","Sports physicals","Same-day sick appointments"] },
   { title: "Telehealth", href: "contact", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&q=80&auto=format&fit=crop", desc: "Secure video visits with your provider from anywhere. Available for most non-emergency concerns.", details: ["Video visits via phone or computer","Prescription refills","Lab result reviews","Chronic care follow-ups","Available evenings & weekends"] },
-  { title: "Preventive Care", href: "services", img: "https://images.unsplash.com/photo-1576671081951-c5a8d15c8ed7?w=700&q=80&auto=format&fit=crop", desc: "Screenings, immunizations, and lifestyle medicine to keep you healthy before problems start.", details: ["Cancer screenings (colonoscopy, mammogram)","Cardiovascular risk assessment","Nutrition & weight counseling","Travel medicine & vaccinations","Medicare wellness visits"] },
+  { title: "Preventive Care", href: "services", img: "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=700&q=80&auto=format&fit=crop", desc: "Screenings, immunizations, and lifestyle medicine to keep you healthy before problems start.", details: ["Cancer screenings (colonoscopy, mammogram)","Cardiovascular risk assessment","Nutrition & weight counseling","Travel medicine & vaccinations","Medicare wellness visits"] },
   { title: "Women's Health", href: "services", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&auto=format&fit=crop", desc: "Annual exams, hormone management, prenatal referrals, and comprehensive women's health care.", details: ["Annual well-woman exams","Hormone therapy management","Birth control consultations","Osteoporosis screening","Menopause management"] },
   { title: "Chronic Disease", href: "primary-care", img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700&q=80&auto=format&fit=crop", desc: "Long-term management for diabetes, hypertension, heart disease, and other chronic conditions.", details: ["Type 1 & 2 diabetes management","Hypertension control","Thyroid disorders","Asthma & COPD","Quarterly check-ins & labs"] },
 ];
@@ -39,7 +39,7 @@ export default function MedicalServices() {
             <p className="text-sm text-gray-400">Same-day availability in most cases. Most major insurance accepted.</p>
           </div>
           <div className="rounded-2xl overflow-hidden aspect-video">
-            <img src="https://images.unsplash.com/photo-1519494026892-476d51a0a4ec?w=1200&q=80&auto=format&fit=crop" alt="BayMedical office" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80&auto=format&fit=crop" alt="BayMedical office" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -94,7 +94,7 @@ export default function MedicalServices() {
         <p className="text-cyan-200 mb-6 max-w-xl mx-auto">Don&apos;t wait weeks to be seen. We keep same-day slots open for sick visits and urgent concerns.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="contact" className="bg-[#0891B2] hover:bg-[#0779a0] text-white font-black px-8 py-4 rounded transition-colors">Book Online</Link>
-          <a href="tel:8135550200" className="border-2 border-white text-white font-bold px-8 py-4 rounded hover:bg-white hover:text-[#0C4A6E] transition-colors">(813) 555-0200</a>
+          <a href="tel:8138723200" className="border-2 border-white text-white font-bold px-8 py-4 rounded hover:bg-white hover:text-[#0C4A6E] transition-colors">(813) 872-3200</a>
         </div>
       </section>
     </div>

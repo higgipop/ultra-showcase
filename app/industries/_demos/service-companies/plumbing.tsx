@@ -13,7 +13,7 @@ export default function Plumbing() {
   return (
     <div className="bg-white font-sans">
       <div className="bg-[#DC2626] text-white text-center text-sm py-2 font-semibold">
-        Plumbing Emergency? Available 24/7 · <a href="tel:8135550100" className="underline">(813) 555-0100</a>
+        Plumbing Emergency? Available 24/7 · <a href="tel:8132056160" className="underline">(813) 205-6160</a>
       </div>
       <nav className="bg-white border-b border-gray-200 sticky top-[36px] z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
@@ -23,7 +23,7 @@ export default function Plumbing() {
             <Link href="plumbing" className="text-[#1B4B8A]">Plumbing</Link>
             <Link href="services" className="hover:text-[#1B4B8A]">All Services</Link>
           </div>
-          <a href="tel:8135550100" className="bg-[#DC2626] hover:bg-red-700 text-white font-black px-4 py-2 rounded text-sm transition-colors">EMERGENCY LINE</a>
+          <a href="tel:8132056160" className="bg-[#DC2626] hover:bg-red-700 text-white font-black px-4 py-2 rounded text-sm transition-colors">EMERGENCY LINE</a>
         </div>
       </nav>
 
@@ -36,7 +36,7 @@ export default function Plumbing() {
           <h1 className="text-3xl lg:text-5xl font-black text-white leading-tight mb-4">Emergency &amp; Residential Plumbing</h1>
           <p className="text-blue-200 leading-relaxed mb-6 max-w-2xl">Burst pipe? Clogged drain? No hot water? We dispatch a licensed plumber within 60 minutes — day or night, weekends and holidays.</p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a href="tel:8135550100" className="bg-[#DC2626] hover:bg-red-700 text-white font-black px-6 py-4 rounded text-lg text-center transition-colors">Emergency Line</a>
+            <a href="tel:8132056160" className="bg-[#DC2626] hover:bg-red-700 text-white font-black px-6 py-4 rounded text-lg text-center transition-colors">Emergency Line</a>
             <Link href="contact" className="border-2 border-white text-white font-bold px-6 py-4 rounded text-center hover:bg-white hover:text-[#1B4B8A] transition-colors">Schedule Non-Emergency</Link>
           </div>
         </div>
@@ -115,7 +115,7 @@ export default function Plumbing() {
       <section className="bg-[#1B4B8A] py-14 text-center px-4">
         <h2 className="text-2xl font-black text-white mb-3">Plumbing Problem? Don&apos;t Wait.</h2>
         <p className="text-blue-200 mb-6">Small leaks become big damage fast. We dispatch same-day.</p>
-        <a href="tel:8135550100" className="inline-block bg-[#F58220] hover:bg-[#e07210] text-white font-black px-10 py-4 rounded text-xl transition-colors">(813) 555-0100</a>
+        <a href="tel:8132056160" className="inline-block bg-[#F58220] hover:bg-[#e07210] text-white font-black px-10 py-4 rounded text-xl transition-colors">(813) 205-6160</a>
       </section>
     </div>
   );

@@ -46,7 +46,7 @@ export default function Weddings() {
             <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80&auto=format&fit=crop" alt="Wedding reception" className="w-full h-full object-cover" />
           </div>
           <div className="rounded-xl aspect-[3/4] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1578985545062-7726a9ce7c2f?w=700&q=80&auto=format&fit=crop" alt="Wedding detail" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=700&q=80&auto=format&fit=crop" alt="Wedding detail" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>

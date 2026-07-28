@@ -18,7 +18,7 @@ export default function LegalHome() {
     <div className="bg-white font-sans">
       {/* Top bar */}
       <div className="bg-[#DC2626] text-white text-center text-sm py-2 font-bold">
-        FREE CASE EVALUATION — No Fee Unless We Win · <a href="tel:8135550300" className="underline">(813) 555-0300</a>
+        FREE CASE EVALUATION — No Fee Unless We Win · <a href="tel:8132617700" className="underline">(813) 261-7700</a>
       </div>
 
       {/* Nav */}
@@ -32,7 +32,7 @@ export default function LegalHome() {
             <Link href="about" className="hover:text-white">Our Attorneys</Link>
           </div>
           <div className="flex items-center gap-3">
-            <a href="tel:8135550300" className="hidden md:block text-white/70 font-bold text-sm hover:text-white">(813) 555-0300</a>
+            <a href="tel:8132617700" className="hidden md:block text-white/70 font-bold text-sm hover:text-white">(813) 261-7700</a>
             <Link href="contact" className="bg-[#DC2626] hover:bg-red-700 text-white font-black px-4 py-2 rounded text-sm transition-colors">FREE CASE REVIEW</Link>
             <button className="lg:hidden text-gray-400 p-1" onClick={() => setNavOpen(!navOpen)}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -164,7 +164,7 @@ export default function LegalHome() {
         <h2 className="text-3xl font-black text-white mb-3">Don&apos;t Wait. Your Rights Have a Deadline.</h2>
         <p className="text-white/80 text-lg mb-8">Florida statute of limitations may limit your right to sue. Call now for a free evaluation.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:8135550300" className="bg-white text-[#DC2626] font-black px-10 py-4 rounded text-xl hover:bg-gray-50 transition-colors">(813) 555-0300</a>
+          <a href="tel:8132617700" className="bg-white text-[#DC2626] font-black px-10 py-4 rounded text-xl hover:bg-gray-50 transition-colors">(813) 261-7700</a>
           <Link href="contact" className="border-2 border-white text-white font-bold px-10 py-4 rounded text-lg hover:bg-white hover:text-[#DC2626] transition-colors">FREE Case Evaluation</Link>
         </div>
       </section>

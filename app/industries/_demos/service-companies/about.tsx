@@ -24,7 +24,7 @@ export default function ServiceCompaniesAbout() {
   return (
     <div className="bg-white font-sans">
       <div className="bg-[#F58220] text-white text-center text-sm py-2 font-semibold">
-        Same-Day Service · <a href="tel:8135550100" className="underline">(813) 555-0100</a>
+        Same-Day Service · <a href="tel:8132056160" className="underline">(813) 205-6160</a>
       </div>
       <nav className="bg-white border-b border-gray-200 sticky top-[36px] z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">

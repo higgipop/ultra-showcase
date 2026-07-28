@@ -51,7 +51,7 @@ export default function FinancialContact() {
               </div>
               <div>
                 <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Phone</label>
-                <input type="tel" className="border border-gray-200 rounded px-4 py-3 text-base w-full focus:outline-none focus:border-[#1B2B4B] text-gray-700" placeholder="(813) 555-0000" />
+                <input type="tel" className="border border-gray-200 rounded px-4 py-3 text-base w-full focus:outline-none focus:border-[#1B2B4B] text-gray-700" placeholder="(813) XXX-XXXX" />
               </div>
               <div>
                 <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Primary Concern</label>
@@ -110,7 +110,7 @@ export default function FinancialContact() {
             <div className="border-t border-gray-100 pt-6 space-y-4">
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Phone</p>
-                <p className="text-gray-700">(813) 555-0810</p>
+                <p className="text-gray-700">(813) 331-4810</p>
               </div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Email</p>

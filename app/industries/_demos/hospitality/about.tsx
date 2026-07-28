@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const team = [
-  { name: "Maria Costello", role: "Founder & Executive Chef", bio: "Maria spent 12 years at luxury resorts across Florida before founding Terra Bella in 2009. Her philosophy: food should feel like hospitality, not a transaction.", img: "https://images.unsplash.com/photo-1600565597073-b308c9f3489a?w=800&q=80&auto=format&fit=crop" },
+  { name: "Maria Costello", role: "Founder & Executive Chef", bio: "Maria spent 12 years at luxury resorts across Florida before founding Terra Bella in 2009. Her philosophy: food should feel like hospitality, not a transaction.", img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&auto=format&fit=crop" },
   { name: "Roberto Esposito", role: "Head of Operations", bio: "Roberto keeps everything running on event days — logistics, staffing, vendor coordination. 200+ events without a missed delivery window.", img: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80&auto=format&fit=crop" },
   { name: "Priya Nair", role: "Event Design Lead", bio: "Priya translates client vision into tablescaping, menu presentation, and venue flow. She has a background in interior design and it shows.", img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&auto=format&fit=crop" },
 ];
@@ -33,7 +33,7 @@ export default function HospitalityAbout() {
             <p className="text-stone-500 font-sans leading-relaxed">Today we&apos;ve catered over 2,000 events, from 10-person rehearsal dinners to 500-person corporate galas. The size of the event doesn&apos;t change how much care goes into the food and service.</p>
           </div>
           <div className="rounded-2xl aspect-square overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1600565597073-b308c9f3489a?w=900&q=80&auto=format&fit=crop" alt="Maria Costello, Founder" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80&auto=format&fit=crop" alt="Maria Costello, Founder" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>

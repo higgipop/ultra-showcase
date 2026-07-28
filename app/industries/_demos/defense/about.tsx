@@ -44,7 +44,7 @@ export default function DefenseAbout() {
             {leaders.map((l) => (
               <div key={l.name} className="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
                 <div className="rounded-xl aspect-square w-20 mb-4 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1521737604579-b5cd6882c0a6?w=120&q=80&auto=format&fit=crop&crop=faces" alt={l.name} className="w-full h-full object-cover object-top" />
+                  <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=120&q=80&auto=format&fit=crop&crop=faces" alt={l.name} className="w-full h-full object-cover object-top" />
                 </div>
                 <div className="flex items-start justify-between gap-2 mb-1">
                   <h3 className="font-black text-[#0F1929] text-base leading-snug">{l.name}</h3>
