@@ -42,7 +42,7 @@ export default function PersonalInjury() {
 
       {/* Dark page header */}
       <section className="relative min-h-[35vh] flex items-end overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1521587760785-c88a93e57e1e?w=1800&q=80&auto=format&fit=crop" alt="Legal books" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1800&q=80&auto=format&fit=crop" alt="Legal books" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/80 to-[#111827]/30" />
         <div className="relative max-w-7xl mx-auto px-4 pb-10 w-full">
           <div className="text-gray-400 text-xs mb-3">

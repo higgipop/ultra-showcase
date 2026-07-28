@@ -79,7 +79,7 @@ export default function PracticeAreas() {
 
       {/* Header */}
       <section className="relative min-h-[40vh] flex items-end overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1602777650893-9de71065d1b9?w=1800&q=80&auto=format&fit=crop" alt="Courtroom" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1800&q=80&auto=format&fit=crop" alt="Courtroom" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/80 to-[#111827]/40" />
         <div className="relative max-w-7xl mx-auto px-4 pb-12 w-full">
           <h1 className="text-3xl lg:text-4xl font-black text-white mb-2">Practice Areas</h1>
