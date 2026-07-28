@@ -95,7 +95,7 @@ export default function Home() {
         <div className="absolute top-0 left-0 right-0 h-1 cp-gradient-bar" />
         <video
           autoPlay muted loop playsInline preload="none"
-          className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none"
           aria-hidden="true"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
