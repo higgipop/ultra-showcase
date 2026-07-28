@@ -1,13 +1,77 @@
 import Link from "next/link";
 
 const industries = [
-  { slug: "service-companies", label: "Home Services", icon: "🔧", desc: "Plumbers, roofers, HVAC, landscapers" },
-  { slug: "medical", label: "Medical & Dental", icon: "⚕️", desc: "Practices, clinics, specialists" },
-  { slug: "legal", label: "Legal", icon: "⚖️", desc: "Law firms, injury, family, estate" },
-  { slug: "manufacturing", label: "Manufacturing", icon: "🏭", desc: "CNC, fabrication, industrial" },
-  { slug: "hospitality", label: "Hospitality", icon: "🍽️", desc: "Restaurants, catering, events, hotels" },
-  { slug: "financial", label: "Financial Services", icon: "📈", desc: "RIAs, CPAs, mortgage, insurance" },
-  { slug: "defense", label: "Defense & Government", icon: "🛡️", desc: "Contractors, federal, CMMC" },
+  {
+    slug: "service-companies",
+    label: "Home Services",
+    desc: "Plumbers, roofers, HVAC, landscapers",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+      </svg>
+    ),
+  },
+  {
+    slug: "medical",
+    label: "Medical & Dental",
+    desc: "Practices, clinics, specialists",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+        <path d="M12 5v14M5 12h14"/>
+      </svg>
+    ),
+  },
+  {
+    slug: "legal",
+    label: "Legal",
+    desc: "Law firms, injury, family, estate",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+        <path d="M12 3v18M3 8l9 4 9-4M3 16l9 4 9-4"/>
+      </svg>
+    ),
+  },
+  {
+    slug: "manufacturing",
+    label: "Manufacturing",
+    desc: "CNC, fabrication, industrial",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+      </svg>
+    ),
+  },
+  {
+    slug: "hospitality",
+    label: "Hospitality",
+    desc: "Restaurants, catering, events, hotels",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+        <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/>
+      </svg>
+    ),
+  },
+  {
+    slug: "financial",
+    label: "Financial Services",
+    desc: "RIAs, CPAs, mortgage, insurance",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+    ),
+  },
+  {
+    slug: "defense",
+    label: "Defense & Government",
+    desc: "Contractors, federal, CMMC",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    ),
+  },
 ];
 
 const howItWorks = [
@@ -31,7 +95,7 @@ export default function Home() {
         <div className="absolute top-0 left-0 right-0 h-1 cp-gradient-bar" />
         <video
           autoPlay muted loop playsInline preload="none"
-          className="absolute inset-0 w-full h-full object-cover opacity-[0.06] pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none"
           aria-hidden="true"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
@@ -59,7 +123,9 @@ export default function Home() {
                 href={`/industries/${ind.slug}`}
                 className="group relative bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[var(--color-primary)]/60 rounded-2xl p-6 transition-all duration-200"
               >
-                <div className="text-3xl mb-4">{ind.icon}</div>
+                <div className="w-10 h-10 rounded-xl cp-gradient-bar flex items-center justify-center mb-4 flex-shrink-0">
+                  {ind.icon}
+                </div>
                 <h2 className="font-bold text-white text-base mb-1 group-hover:cp-gradient-text transition-all">
                   {ind.label}
                 </h2>
@@ -135,7 +201,7 @@ export default function Home() {
             </div>
             <ul className="space-y-3">
               {[
-                "Custom design — no templates, no page builders",
+                "Built on Next.js — not WordPress, not a drag-and-drop builder",
                 "Mobile-first, scores 90+ on PageSpeed",
                 "Next.js on Vercel — global CDN, < 2s load time",
                 "On-page SEO baked into every page",
