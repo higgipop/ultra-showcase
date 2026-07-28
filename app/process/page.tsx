@@ -2,60 +2,60 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How We Work | ULTRA Design Agency",
+  title: "How It Works | ULTRA Design Agency",
   description:
-    "Our process from first call to live site — clear, collaborative, and built around your goals.",
+    "Choose a design, send your brand assets, go live in days. No design fees, no long timelines.",
 };
 
 const steps = [
   {
     num: "01",
-    phase: "Discovery",
-    title: "We start by listening.",
-    body: "Before we talk design or code, we learn your business. Who are your clients? What do they need to see before they trust you? What is your site failing to do right now? A 45-minute call and a short questionnaire give us everything we need to plan something that actually works.",
-    deliverable: "Project brief + goals document",
-    duration: "Week 1",
+    phase: "Choose",
+    title: "Pick your design.",
+    body: "Browse our design library and find the industry layout that fits your business. You're choosing layout, structure, and visual language — not color or logo. Those come next.",
+    deliverable: "Design confirmed",
+    duration: "Day 1",
   },
   {
     num: "02",
-    phase: "Strategy",
-    title: "Map the pages. Plan the words.",
-    body: "We define the site architecture — every page, its purpose, and how it connects to the next step in your buyer journey. Copywriting direction is set here so the design has something real to wrap around. No Lorem Ipsum. No placeholders.",
-    deliverable: "Sitemap + page-by-page content outline",
-    duration: "Week 1–2",
+    phase: "Prep",
+    title: "Send us your brand.",
+    body: "We give you a content checklist. You fill it in: logo files, brand colors and fonts, the copy for each page, and any photos you want to use. This is the only thing that can slow down the timeline — the faster you send it, the faster you're live.",
+    deliverable: "Content checklist complete",
+    duration: "Day 1–3",
   },
   {
     num: "03",
-    phase: "Design",
-    title: "One round of concepts. Full homepage first.",
-    body: "We design the homepage before anything else — it sets the visual language for the entire site. You review it. We refine. Once the homepage is locked, the rest of the pages come quickly because the hard decisions are already made.",
-    deliverable: "Homepage mockup + component library",
-    duration: "Week 2–3",
+    phase: "Build",
+    title: "We apply your brand to the design.",
+    body: "Your logo, colors, fonts, and content go into the design you chose. The layout stays as-is — that's what keeps cost low and the timeline fast. We build on Vercel: fast, modern, no WordPress, no plugin dependencies.",
+    deliverable: "Staging site ready",
+    duration: "Day 3–5",
   },
   {
     num: "04",
-    phase: "Build",
-    title: "Fast. Modern. No bloat.",
-    body: "Every site is built on Next.js and deployed to Vercel or Cloudflare — the same infrastructure that serves millions of requests per day for companies like Airbnb and Cloudflare themselves. No WordPress. No page builders. No plugin hell.",
-    deliverable: "Staging site — all pages, fully functional",
-    duration: "Week 3–5",
+    phase: "Review",
+    title: "One round of review.",
+    body: "You get a staging link. Go through every page — desktop and mobile. Send us your feedback in one pass. We make the changes and send it back. Nothing ships until you approve it.",
+    deliverable: "Final approval",
+    duration: "Day 5–6",
   },
   {
     num: "05",
-    phase: "Review",
-    title: "You review it. We fix it.",
-    body: "Two rounds of revisions are included. We review every page on desktop and mobile together. Your feedback goes in — and stays in. Nothing ships until you sign off.",
-    deliverable: "Revision log + final approval",
-    duration: "Week 5–6",
-  },
-  {
-    num: "06",
     phase: "Launch",
     title: "We handle every technical detail.",
-    body: "DNS, SSL, CDN configuration, sitemap submission to Google Search Console, Analytics setup, 301 redirects from your old URLs. You don't touch a setting. We flip the switch and send you a launch confirmation with everything documented.",
-    deliverable: "Live site + launch checklist",
-    duration: "Week 6",
+    body: "DNS, SSL, CDN, sitemap submission to Google Search Console, Analytics setup. You don't touch a setting. We flip the switch, confirm everything is live, and send you a launch summary.",
+    deliverable: "Live site + launch confirmation",
+    duration: "Day 7",
   },
+];
+
+const whatYouProvide = [
+  { item: "Logo files", detail: "SVG or high-res PNG, light and dark versions if you have them" },
+  { item: "Brand colors", detail: "Hex codes or a style guide — or tell us your primary color and we work from there" },
+  { item: "Fonts", detail: "What you use, or we match the feel of your industry design" },
+  { item: "Page copy", detail: "The words for each page — we give you the outline, you fill it in" },
+  { item: "Photos", detail: "Business photography, product shots, or team photos. Stock is fine if you don't have them." },
 ];
 
 const afterLaunch = [
@@ -65,7 +65,7 @@ const afterLaunch = [
   },
   {
     title: "Care Plan Onboarding",
-    body: "If you're starting a care plan, we set up monitoring, backups, and update schedules in the same week as launch.",
+    body: "We set up monitoring, performance tracking, and update workflows in the same week as launch.",
   },
   {
     title: "Google Indexing",
@@ -78,10 +78,10 @@ const afterLaunch = [
 ];
 
 const principles = [
-  { stat: "6", label: "weeks", note: "Typical timeline — start to live site" },
-  { stat: "2", label: "revision rounds", note: "Included in every project" },
-  { stat: "1", label: "point of contact", note: "No handoffs to account managers" },
-  { stat: "0", label: "surprises", note: "Fixed-scope contracts only" },
+  { stat: "~7", label: "days", note: "Typical time from content received to live site" },
+  { stat: "$0", label: "upfront", note: "No design fee — the design is already built" },
+  { stat: "1", label: "revision round", note: "Focused feedback, fast turnaround" },
+  { stat: "0", label: "surprises", note: "Fixed monthly rate, no hourly billing" },
 ];
 
 export default function ProcessPage() {
@@ -92,14 +92,14 @@ export default function ProcessPage() {
         <div className="absolute top-0 left-0 right-0 h-1 cp-gradient-bar" />
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-[var(--color-accent)] text-sm font-semibold tracking-widest uppercase mb-6">
-            How We Work
+            How It Works
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] max-w-4xl mb-8">
-            Six weeks from first call{" "}
-            <span className="cp-gradient-text">to live site.</span>
+            Choose a design.{" "}
+            <span className="cp-gradient-text">Live in days.</span>
           </h1>
           <p className="text-white/60 text-xl max-w-2xl leading-relaxed mb-12">
-            Every project follows the same six-phase process. You always know where we are, what comes next, and what you need to do.
+            You pick the design. You provide your brand. We put it together and launch it. No back-and-forth design rounds. No six-week timelines.
           </p>
           {/* Stat strip */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -127,7 +127,6 @@ export default function ProcessPage() {
                   i === 0 ? "border-t" : ""
                 }`}
               >
-                {/* Number + phase label */}
                 <div className="flex lg:flex-col items-center lg:items-start gap-4 lg:gap-2 py-8 pr-0 lg:pr-8 lg:py-10 border-r-0 lg:border-r border-gray-100">
                   <span className="text-5xl font-bold cp-gradient-text leading-none flex-shrink-0">
                     {step.num}
@@ -136,7 +135,6 @@ export default function ProcessPage() {
                     {step.phase}
                   </span>
                 </div>
-                {/* Content */}
                 <div className="py-8 lg:py-10 lg:pl-12">
                   <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-heading)] mb-4">
                     {step.title}
@@ -161,6 +159,38 @@ export default function ProcessPage() {
         </div>
       </section>
 
+      {/* What you provide */}
+      <section className="py-24 bg-[var(--color-mid)]">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-[var(--color-primary)] text-xs font-semibold tracking-widest uppercase mb-3">
+              Your Checklist
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-heading)] mb-4">
+              What you send us
+            </h2>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto">
+              We send you a content checklist the day you start. This is everything on it.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {whatYouProvide.map((w) => (
+              <div key={w.item} className="bg-white rounded-xl border border-gray-100 p-6">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="w-5 h-5 rounded-full cp-gradient-bar flex items-center justify-center flex-shrink-0">
+                    <svg className="w-3 h-3 text-white" viewBox="0 0 12 12" fill="currentColor">
+                      <path d="M10.28 2.28a.75.75 0 0 0-1.06 0L4.5 7l-1.72-1.72a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.06 0l5.25-5.25a.75.75 0 0 0 0-1.06Z" />
+                    </svg>
+                  </span>
+                  <h3 className="font-bold text-[var(--color-heading)]">{w.item}</h3>
+                </div>
+                <p className="text-sm text-gray-500 leading-relaxed pl-8">{w.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* After launch */}
       <section className="py-24 bg-[var(--color-dark)]">
         <div className="max-w-6xl mx-auto px-6">
@@ -173,7 +203,7 @@ export default function ProcessPage() {
                 Going live is the beginning, not the end.
               </h2>
               <p className="text-white/60 text-lg leading-relaxed">
-                We don&rsquo;t disappear after the invoice is paid. Every project comes with a 30-day support window, and most clients roll directly into a care plan so nothing is ever left unattended.
+                Every build comes with a 30-day support window and rolls directly into a care plan. Your site stays fast, secure, and up to date — without you having to think about it.
               </p>
             </div>
             <div className="space-y-4">
@@ -195,17 +225,17 @@ export default function ProcessPage() {
             Ready to Start
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-heading)] mb-6 leading-tight">
-            Tell us what you&rsquo;re building.
+            Pick a design and we&rsquo;ll take it from there.
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-10">
-            Most projects start with a 30-minute call. No sales pitch — just a conversation about what you need and whether we&rsquo;re the right fit.
+            Browse the demos, find what fits your industry, and reach out. We&rsquo;ll send you the content checklist the same day.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href="/industries"
               className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
             >
-              Start a Conversation
+              Browse Designs
             </Link>
             <Link
               href="/pricing"
