@@ -78,7 +78,7 @@ export default function ManufacturingIndex() {
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/5">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1565689157206-0fddef7589a2?w=1600&q=80&auto=format&fit=crop')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1565689157206-0fddef7589a2?w=1600&q=80&auto=format&fit=crop')" }} />
         <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-[#1E6FE8] text-xs font-bold uppercase tracking-[0.3em] mb-5">
