@@ -91,8 +91,9 @@ export default function ServiceCompaniesIndex() {
       </div>
 
       {/* Hero */}
-      <section className="bg-[#003087] py-16 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative bg-[#003087] py-16 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80&auto=format&fit=crop')" }} />
+        <div className="relative max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-10">
             <div className="flex-1 text-center lg:text-left">
               <p className="text-[#F97316] text-xs font-bold uppercase tracking-widest mb-3">

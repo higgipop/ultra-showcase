@@ -126,31 +126,38 @@ export default function MedicalIndex() {
             <p className="text-gray-400 text-xs mt-4">Same-day appointments available · Most insurance accepted</p>
           </div>
 
-          {/* Booking card */}
-          <div className="bg-white rounded-2xl border border-blue-100 shadow-lg p-7">
-            <p className="text-[#1D4ED8] text-xs font-bold uppercase tracking-widest mb-4">Quick Appointment Request</p>
-            <div className="space-y-3">
-              <div>
-                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">Full Name</label>
-                <div className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-300 bg-gray-50">Jane Smith</div>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
+          <div className="flex flex-col gap-5">
+            <img
+              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&q=80&auto=format&fit=crop"
+              alt="Healthcare professionals"
+              className="w-full h-48 object-cover rounded-2xl hidden lg:block"
+            />
+            {/* Booking card */}
+            <div className="bg-white rounded-2xl border border-blue-100 shadow-lg p-7">
+              <p className="text-[#1D4ED8] text-xs font-bold uppercase tracking-widest mb-4">Quick Appointment Request</p>
+              <div className="space-y-3">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">Service Type</label>
-                  <div className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-300 bg-gray-50">Primary Care</div>
+                  <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">Full Name</label>
+                  <div className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-300 bg-gray-50">Jane Smith</div>
                 </div>
-                <div>
-                  <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">Preferred Date</label>
-                  <div className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-300 bg-gray-50">Today</div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">Service Type</label>
+                    <div className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-300 bg-gray-50">Primary Care</div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">Preferred Date</label>
+                    <div className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-300 bg-gray-50">Today</div>
+                  </div>
+                </div>
+                <div className="bg-[#1D4ED8] text-white text-center font-semibold py-3 rounded-lg text-sm">
+                  Check Availability →
                 </div>
               </div>
-              <div className="bg-[#1D4ED8] text-white text-center font-semibold py-3 rounded-lg text-sm">
-                Check Availability →
+              <div className="flex items-center gap-2 mt-4 pt-4 border-t border-gray-100">
+                <span className="w-2 h-2 rounded-full bg-green-400 flex-shrink-0" />
+                <span className="text-xs text-gray-500">Same-day slots available at both locations</span>
               </div>
-            </div>
-            <div className="flex items-center gap-2 mt-4 pt-4 border-t border-gray-100">
-              <span className="w-2 h-2 rounded-full bg-green-400 flex-shrink-0" />
-              <span className="text-xs text-gray-500">Same-day slots available at both locations</span>
             </div>
           </div>
         </div>

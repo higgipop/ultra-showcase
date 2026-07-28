@@ -55,6 +55,8 @@ export default function EducationIndex() {
 
       {/* School hero */}
       <section className="bg-[#1B2B5B] pt-20 pb-16 px-6 text-center relative overflow-hidden">
+        {/* Photo overlay */}
+        <div className="absolute inset-0 bg-cover bg-center opacity-[0.12]" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80&auto=format&fit=crop')" }} />
         {/* Decorative cross */}
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none">
           <span style={{ fontFamily: "Georgia, serif" }} className="text-white text-[32rem] leading-none">✝</span>
