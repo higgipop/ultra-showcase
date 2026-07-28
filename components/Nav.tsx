@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const links = [
@@ -12,8 +13,12 @@ const links = [
 ];
 
 export default function Nav() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  // Hide on demo pages: /industries/{slug}/{page}
+  if (/^\/industries\/[^/]+\/[^/]+/.test(pathname)) return null;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -57,10 +62,10 @@ export default function Nav() {
 
         <div className="hidden xl:flex items-center gap-3 flex-shrink-0">
           <a
-            href="tel:8135550100"
+            href="tel:8132056160"
             className={`text-sm font-medium transition-colors ${scrolled ? "text-[var(--color-heading)]" : "text-white/70 hover:text-white"}`}
           >
-            (813) 555-0100
+            (813) 205-6160
           </a>
           <Link
             href="/contact"
@@ -98,7 +103,7 @@ export default function Nav() {
             </Link>
           ))}
           <div className="flex flex-col gap-3 pt-2 border-t border-gray-100">
-            <a href="tel:8135550100" className="text-sm text-gray-500 text-center">(813) 555-0100</a>
+            <a href="tel:8132056160" className="text-sm text-gray-500 text-center">(813) 205-6160</a>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}

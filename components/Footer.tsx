@@ -1,6 +1,10 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (/^\/industries\/[^/]+\/[^/]+/.test(pathname)) return null;
   const year = new Date().getFullYear();
   return (
     <footer className="bg-[var(--color-dark)] border-t border-white/10">
@@ -56,7 +60,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/25 text-xs">&copy; {year} ULTRA Design Agency · Tampa, FL · (813) 555-0100</p>
+          <p className="text-white/25 text-xs">&copy; {year} ULTRA Design Agency · Tampa, FL · (813) 205-6160</p>
           <p className="text-white/15 text-xs">Built with Next.js + Vercel</p>
         </div>
       </div>
