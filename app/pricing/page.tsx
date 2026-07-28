@@ -68,11 +68,11 @@ const carePlans = [
 ];
 
 const addOns = [
-  { name: "Copywriting", price: "$150/page", desc: "SEO-informed copy written for your audience. Headline, subheads, body — ready to drop into your design." },
+  { name: "Copywriting", price: "$500/page", desc: "SEO-informed copy written for your audience. Headline, subheads, body — ready to drop into your design." },
   { name: "Additional Pages", price: "$300/page", desc: "Need a page beyond the standard template set? We build it to match your design." },
   { name: "SEO Kickstart", price: "$350/mo", desc: "Local keyword research, on-page optimization, and GBP setup for the first 90 days." },
   { name: "Logo + Brand Identity", price: "$1,200", desc: "Logo, color palette, typography system, and brand guidelines PDF — everything we need to brand your site." },
-  { name: "Domain + Hosting Setup", price: "$250", desc: "DNS configuration, SSL, and a 1-year domain registration." },
+  { name: "Domain + Hosting Setup", price: "Included", desc: "DNS configuration, SSL, and a 1-year domain registration." },
   { name: "Website Audit", price: "$450", desc: "Full performance, SEO, and accessibility report with a prioritized fix list." },
 ];
 
