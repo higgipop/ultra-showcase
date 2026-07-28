@@ -58,6 +58,12 @@ import DefenseSystemsIntegration from "../../_demos/defense/systems-integration"
 import DefenseAbout from "../../_demos/defense/about";
 import DefenseContact from "../../_demos/defense/contact";
 
+// Education (4 pages)
+import EducationHome from "../../_demos/education/home";
+import EducationAdmissions from "../../_demos/education/admissions";
+import EducationAbout from "../../_demos/education/about";
+import EducationContact from "../../_demos/education/contact";
+
 type Props = { params: Promise<{ slug: string; page: string }> };
 
 // Short labels for demo banner navigation
@@ -83,6 +89,7 @@ const bannerLabels: Record<string, string> = {
   "systems-integration": "Systems",
   about: "About",
   contact: "Contact",
+  admissions: "Admissions",
 };
 
 // Full labels for metadata
@@ -106,6 +113,7 @@ const pageLabels: Record<string, string> = {
   "retirement-planning": "Retirement Planning Page",
   cybersecurity: "Cybersecurity Page",
   "systems-integration": "Systems Integration Page",
+  admissions: "Admissions Page",
   about: "About Page",
   contact: "Contact Page",
 };
@@ -118,6 +126,7 @@ const industryLabels: Record<string, string> = {
   hospitality: "Hospitality",
   financial: "Financial Services",
   defense: "Defense & Government",
+  education: "Education",
 };
 
 type ComponentMap = Record<string, Record<string, React.ComponentType>>;
@@ -179,6 +188,12 @@ const components: ComponentMap = {
     about: DefenseAbout,
     contact: DefenseContact,
   },
+  education: {
+    home: EducationHome,
+    admissions: EducationAdmissions,
+    about: EducationAbout,
+    contact: EducationContact,
+  },
 };
 
 const industryPages: Record<string, string[]> = {
@@ -189,6 +204,7 @@ const industryPages: Record<string, string[]> = {
   hospitality: ["home", "catering", "weddings", "corporate-events", "about", "contact"],
   financial: ["home", "services", "wealth-management", "retirement-planning", "about", "contact"],
   defense: ["home", "capabilities", "cybersecurity", "systems-integration", "about", "contact"],
+  education: ["home", "admissions", "about", "contact"],
 };
 
 export function generateStaticParams() {
